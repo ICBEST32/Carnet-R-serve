@@ -811,12 +811,61 @@ function downloadBlob(content, filename, type){
   setTimeout(()=> URL.revokeObjectURL(url), 2000);
 }
 
-document.getElementById('saveHtmlBtn').addEventListener('click', ()=>{
-  const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-  downloadBlob(fullHtml, 'carnet-reserve.html', 'text/html');
-  setStatus('Fichier HTML téléchargé — ouvre-le ensuite depuis Fichiers.', false);
-});
+document.getElementById('saveHtmlBtn').addEventListener('click', async () => {
+  const button = document.getElementById('saveHtmlBtn');
 
+  try {
+    button.disabled = true;
+    button.textContent = '⏳ Sauvegarde...';
+
+    setStatus('Envoi de la sauvegarde...', false);
+
+    const fullHtml =
+      '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+
+    const response = await fetch(
+      'TON_URL_SUPABASE',
+      {
+        method: 'POST',
+
+        headers: {
+          'Content-Type': 'application/json'
+        },
+
+        body: JSON.stringify({
+          content: fullHtml
+        })
+      }
+    );
+
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(
+        result.error || 'Erreur pendant la sauvegarde.'
+      );
+    }
+
+    setStatus(
+      '✅ Sauvegarde effectuée sur GitHub.',
+      false
+    );
+
+  } catch (error) {
+
+    console.error(error);
+
+    setStatus(
+      '❌ Échec de la sauvegarde : ' +
+      (error.message || 'Erreur inconnue.'),
+      true
+    );
+
+  } finally {
+    button.disabled = false;
+    button.textContent = '💾 Sauvegarder le HTML';
+  }
+});
 document.getElementById('saveJsonBtn').addEventListener('click', ()=>{
   const exportData = {
     exported_at: new Date().toISOString(),
