@@ -840,11 +840,15 @@ document.getElementById('saveHtmlBtn').addEventListener('click', async () => {
 
     const result = await response.json();
 
-    if (!response.ok || !result.success) {
-      throw new Error(
-        result.error || 'Erreur pendant la sauvegarde.'
-      );
-    }
+if (!response.ok || !result.success) {
+  console.error('Réponse Supabase :', result);
+
+  throw new Error(
+    result.error ||
+    result.message ||
+    `Erreur Supabase HTTP ${response.status}`
+  );
+}
 
     setStatus(
       '✅ Sauvegarde effectuée sur GitHub.',
