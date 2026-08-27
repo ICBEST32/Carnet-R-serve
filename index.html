@@ -368,11 +368,11 @@
         </div>
         <div class="quota-field">
           <label>Utilisés</label>
-          <span class="static-num" id="usedDaysVal">0</span>
+          <span class="static-num" id="usedDaysVal">20</span>
         </div>
         <div class="quota-field">
           <label>Restants</label>
-          <span class="static-num" id="remainingDaysVal">30</span>
+          <span class="static-num" id="remainingDaysVal">10</span>
         </div>
       </div>
     </div>
@@ -387,12 +387,12 @@
       <div class="calendar-pop" id="calendarPop">
         <div class="cal-nav">
           <button type="button" id="prevMonth" aria-label="Mois précédent">‹</button>
-          <span class="cal-month" id="calMonthLabel">Août 2026</span>
+          <span class="cal-month" id="calMonthLabel">Septembre 2026</span>
           <button type="button" id="nextMonth" aria-label="Mois suivant">›</button>
         </div>
-        <div class="cal-grid" id="calGrid"><div class="cal-dow">L</div><div class="cal-dow">M</div><div class="cal-dow">M</div><div class="cal-dow">J</div><div class="cal-dow">V</div><div class="cal-dow">S</div><div class="cal-dow">D</div><div class="cal-day muted"></div><div class="cal-day muted"></div><div class="cal-day muted"></div><div class="cal-day muted"></div><div class="cal-day muted"></div><button type="button" class="cal-day">1</button><button type="button" class="cal-day">2</button><button type="button" class="cal-day">3</button><button type="button" class="cal-day">4</button><button type="button" class="cal-day">5</button><button type="button" class="cal-day">6</button><button type="button" class="cal-day">7</button><button type="button" class="cal-day">8</button><button type="button" class="cal-day">9</button><button type="button" class="cal-day">10</button><button type="button" class="cal-day">11</button><button type="button" class="cal-day">12</button><button type="button" class="cal-day">13</button><button type="button" class="cal-day">14</button><button type="button" class="cal-day">15</button><button type="button" class="cal-day">16</button><button type="button" class="cal-day">17</button><button type="button" class="cal-day">18</button><button type="button" class="cal-day">19</button><button type="button" class="cal-day">20</button><button type="button" class="cal-day">21</button><button type="button" class="cal-day">22</button><button type="button" class="cal-day">23</button><button type="button" class="cal-day range-start">24</button><button type="button" class="cal-day today in-range">25</button><button type="button" class="cal-day in-range">26</button><button type="button" class="cal-day in-range">27</button><button type="button" class="cal-day range-end">28</button><button type="button" class="cal-day">29</button><button type="button" class="cal-day">30</button><button type="button" class="cal-day">31</button></div>
+        <div class="cal-grid" id="calGrid"><div class="cal-dow">L</div><div class="cal-dow">M</div><div class="cal-dow">M</div><div class="cal-dow">J</div><div class="cal-dow">V</div><div class="cal-dow">S</div><div class="cal-dow">D</div><div class="cal-day muted"></div><button type="button" class="cal-day">1</button><button type="button" class="cal-day">2</button><button type="button" class="cal-day">3</button><button type="button" class="cal-day">4</button><button type="button" class="cal-day">5</button><button type="button" class="cal-day">6</button><button type="button" class="cal-day">7</button><button type="button" class="cal-day">8</button><button type="button" class="cal-day">9</button><button type="button" class="cal-day">10</button><button type="button" class="cal-day">11</button><button type="button" class="cal-day">12</button><button type="button" class="cal-day">13</button><button type="button" class="cal-day">14</button><button type="button" class="cal-day range-start">15</button><button type="button" class="cal-day in-range">16</button><button type="button" class="cal-day range-end">17</button><button type="button" class="cal-day">18</button><button type="button" class="cal-day">19</button><button type="button" class="cal-day">20</button><button type="button" class="cal-day">21</button><button type="button" class="cal-day">22</button><button type="button" class="cal-day">23</button><button type="button" class="cal-day">24</button><button type="button" class="cal-day">25</button><button type="button" class="cal-day">26</button><button type="button" class="cal-day">27</button><button type="button" class="cal-day">28</button><button type="button" class="cal-day">29</button><button type="button" class="cal-day">30</button></div>
         <div class="cal-footer">
-          <span class="cal-selection" id="calSelection">Du 24/08/2026 au 28/08/2026</span>
+          <span class="cal-selection" id="calSelection">Du 15/09/2026 au 17/09/2026</span>
           <label class="weekend-toggle">
             <input type="checkbox" id="includeWeekends">
             Inclure week-ends
@@ -402,20 +402,80 @@
       </div>
     </div>
 
-    <div id="monthGroups"><div class="empty">Aucune période consignée pour le moment.</div></div>
+    <div id="monthGroups"><div class="month-group"><div class="month-title">Août 2026</div><ul class="period-list"><li class="entry">
+          <span>
+            <span class="range">04/08 → 06/08/2026</span>
+            <span class="meta">3 jours</span>
+          </span>
+          <span class="right">
+            <span class="amount">240 €</span>
+            <button class="pay-btn " data-id="mtbrr4p0jhy8">Marquer payé</button>
+            <button class="del" data-id="mtbrr4p0jhy8" aria-label="Supprimer la période">✕</button>
+          </span>
+        </li><li class="entry">
+          <span>
+            <span class="range">10/08 → 14/08/2026</span>
+            <span class="meta">5 jours</span>
+          </span>
+          <span class="right">
+            <span class="amount">400 €</span>
+            <button class="pay-btn " data-id="mtbpdnaji9oq">Marquer payé</button>
+            <button class="del" data-id="mtbpdnaji9oq" aria-label="Supprimer la période">✕</button>
+          </span>
+        </li><li class="entry">
+          <span>
+            <span class="range">17/08 → 21/08/2026</span>
+            <span class="meta">5 jours</span>
+          </span>
+          <span class="right">
+            <span class="amount">400 €</span>
+            <button class="pay-btn " data-id="mtbpf349jw21">Marquer payé</button>
+            <button class="del" data-id="mtbpf349jw21" aria-label="Supprimer la période">✕</button>
+          </span>
+        </li></ul></div><div class="month-group"><div class="month-title">Septembre 2026</div><ul class="period-list"><li class="entry paid">
+          <span>
+            <span class="range">09/09 → 12/09/2026</span>
+            <span class="meta">3 jours</span>
+          </span>
+          <span class="right">
+            <span class="amount">240 €</span>
+            <button class="pay-btn is-paid" data-id="mtbrv72d5f2g">Payé ✓</button>
+            <button class="del" data-id="mtbrv72d5f2g" aria-label="Supprimer la période">✕</button>
+          </span>
+        </li><li class="entry">
+          <span>
+            <span class="range">15/09 → 17/09/2026</span>
+            <span class="meta">3 jours</span>
+          </span>
+          <span class="right">
+            <span class="amount">240 €</span>
+            <button class="pay-btn " data-id="mtbs8bw93hn9">Marquer payé</button>
+            <button class="del" data-id="mtbs8bw93hn9" aria-label="Supprimer la période">✕</button>
+          </span>
+        </li><li class="entry">
+          <span>
+            <span class="range">25/09 → 27/09/2026</span>
+            <span class="meta">1 jour</span>
+          </span>
+          <span class="right">
+            <span class="amount">80 €</span>
+            <button class="pay-btn " data-id="mtbrzki3o11p">Marquer payé</button>
+            <button class="del" data-id="mtbrzki3o11p" aria-label="Supprimer la période">✕</button>
+          </span>
+        </li></ul></div></div>
 
     <div class="totals">
-      <div class="count" id="countText"><b>0</b> périodes — <b>0</b> jours</div>
+      <div class="count" id="countText"><b>6</b> périodes — <b>20</b> jours<div class="sub-line">dont 1360 € en attente de paiement (17 j.)</div></div>
       <div class="stamp">
         <div class="label">Total payé</div>
-        <div class="value" id="totalValue">0 €</div>
+        <div class="value" id="totalValue">240 €</div>
         <div class="rate">80 €/jour</div>
       </div>
     </div>
   </section>
 
   <div class="backup-row">
-    <button class="backup-btn" id="saveHtmlBtn">💾 Sauvegarder le HTML</button>
+    <button class="backup-btn" id="saveHtmlBtn" disabled="">⏳ Sauvegarde...</button>
     <button class="backup-btn" id="saveJsonBtn">📄 Exporter en JSON</button>
     <button class="backup-btn" id="loadJsonBtn">📥 Importer un JSON</button>
     <input type="file" id="jsonFileInput" accept="application/json,.json" style="display:none;">
@@ -425,7 +485,7 @@
     <button class="print-btn" id="printBtn">🖨 Imprimer le carnet</button>
     <button class="reset" id="resetBtn">Effacer tout le carnet</button>
   </footer>
-  <div class="status" id="status" style="color: rgb(139, 132, 101);">Carnet à jour (sauvegardé sur cet appareil).</div>
+  <div class="status" id="status" style="color: rgb(139, 132, 101);">Envoi de la sauvegarde...</div>
 </div>
 
 <script>
@@ -956,6 +1016,7 @@ loadQuotas().then(loadPeriods);
   });
 })();
 </script>
+
 
 
 
