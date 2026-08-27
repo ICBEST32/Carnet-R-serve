@@ -824,7 +824,7 @@ document.getElementById('saveHtmlBtn').addEventListener('click', async () => {
       '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
 
     const response = await fetch(
-      'TON_URL_SUPABASE',
+      'https://iwmtlbqwzbbnyrzggjdz.supabase.co/functions/v1/save-to-github',
       {
         method: 'POST',
 
