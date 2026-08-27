@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carnet de Réserve</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Carnet Réserve">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@600;800&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EDE6D6;
+    --olive: #3E4636;
+    --khaki: #A9A17E;
+    --ink: #1F2A24;
+    --rust: #A63A2E;
+    --gold: #C9A227;
+    --blue: #2B4C7E;
+    --blue-light: rgba(43,76,126,0.28);
+  }
+  *{ box-sizing:border-box; }
+
+  body{
+    margin:0;
+    min-height:100vh;
+    background: var(--olive);
+    background-image: repeating-linear-gradient(135deg, rgba(0,0,0,0.05) 0px, rgba(0,0,0,0.05) 2px, transparent 2px, transparent 6px);
+    font-family: 'Courier Prime', monospace;
+    color: var(--ink);
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    padding: 28px 14px 60px;
+  }
+
+  .carnet{
+    width:100%;
+    max-width: 640px;
+    background: var(--paper);
+    border: 1px solid rgba(31,42,36,0.35);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.15);
+    position:relative;
+    padding: 0 0 28px;
+  }
+  .carnet::before{
+    content:"";
+    position:absolute; top:0; left:0; right:0; height:10px;
+    background: repeating-linear-gradient(90deg, var(--gold) 0 14px, var(--olive) 14px 28px);
+    opacity:0.9;
+  }
+
+  header{ position:relative; padding: 34px 26px 18px; border-bottom: 2px solid var(--ink); margin-bottom: 10px; }
+  h1{ font-family:'Big Shoulders Stencil', sans-serif; font-weight:800; font-size:42px; letter-spacing:2px; margin:0; text-transform:uppercase; line-height:1; }
+  .sub{ font-size:13px; color:#5b5646; margin-top:8px; }
+
+  section{ padding: 0 26px; }
+
+  .field-label{ font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#5b5646; margin:18px 0 6px; font-weight:700; }
+
+  .install-banner{
+    max-width: 640px;
+    width:100%;
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    border-left: 5px solid var(--gold);
+    padding: 14px 16px;
+    margin: 0 0 12px;
+    font-size: 13px;
+    color: var(--ink);
+    display: none;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    line-height: 1.5;
+  }
+  .install-banner.show{ display: flex; }
+  .install-banner strong{ display:block; font-family:'Big Shoulders Stencil', sans-serif; letter-spacing:1px; font-size:15px; margin-bottom:4px; text-transform:uppercase; }
+  .install-banner .steps{ color:#5b5646; }
+  .install-banner .share-icon{ font-weight:700; }
+  .install-banner .close-banner{
+    background:none; border:none; color:#8b8465; font-size:18px; line-height:1; cursor:pointer; padding:0 2px; flex-shrink:0;
+  }
+  .install-banner .close-banner:hover{ color: var(--rust); }
+  @media print{ .install-banner{ display:none !important; } }
+
+  .quota-box{
+    border: 1px solid var(--ink);
+    background: rgba(169,161,126,0.15);
+    padding: 14px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+  .quota-title{
+    font-family:'Big Shoulders Stencil', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink);
+    display:flex;
+    align-items:center;
+    gap: 8px;
+  }
+  .year-nav{
+    background:none; border:1px solid var(--ink); color:var(--ink);
+    font-family:'Big Shoulders Stencil', sans-serif; font-size:14px; width:24px; height:24px; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; padding:0; flex-shrink:0;
+  }
+  .year-nav:hover{ background: var(--khaki); }
+  .quota-title span{ color:#8b8465; font-size:12px; letter-spacing:0.5px; text-transform:none; font-family:'Courier Prime', monospace; }
+  .quota-fields{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+  .quota-field{ display:flex; flex-direction:column; align-items:center; gap:2px; }
+  .quota-field label{ font-size:10px; letter-spacing:1px; text-transform:uppercase; color:#8b8465; }
+  .quota-field input{
+    width: 64px;
+    text-align:center;
+    font-family:'Courier Prime', monospace;
+    font-weight:700;
+    font-size:16px;
+    padding: 6px 4px;
+    border: 1px solid var(--ink);
+    background: #fbf8f0;
+    color: var(--ink);
+  }
+  .quota-field .static-num{
+    font-family:'Big Shoulders Stencil', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--olive);
+  }
+  .quota-field .static-num.over{ color: var(--rust); }
+
+  /* --- period picker trigger --- */
+  .picker-wrap{ position:relative; }
+  .picker-trigger{
+    width:100%;
+    text-align:left;
+    background:#fbf8f0;
+    border:1px solid var(--ink);
+    font-family:'Courier Prime', monospace;
+    font-size:15px;
+    padding:12px 14px;
+    color: var(--ink);
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .picker-trigger .ph{ color:#8b8465; }
+  .picker-trigger:focus-visible{ outline:2px solid var(--rust); outline-offset:1px; }
+
+  .calendar-pop{
+    position:absolute;
+    top: calc(100% + 8px);
+    left:0; right:0;
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    z-index: 20;
+    padding: 14px;
+    display:none;
+  }
+  .calendar-pop.open{ display:block; }
+
+  .cal-nav{ display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+  .cal-nav button{
+    background:none; border:1px solid var(--ink); color:var(--ink);
+    font-family:'Big Shoulders Stencil', sans-serif; font-size:16px; width:32px; height:32px; cursor:pointer;
+  }
+  .cal-nav button:hover{ background: var(--khaki); }
+  .cal-month{ font-family:'Big Shoulders Stencil', sans-serif; letter-spacing:1.5px; font-size:18px; text-transform:uppercase; }
+
+  .cal-grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:2px; }
+  .cal-dow{ font-size:10px; text-align:center; color:#8b8465; letter-spacing:1px; padding-bottom:4px; text-transform:uppercase; }
+  .cal-day{
+    aspect-ratio:1; display:flex; align-items:center; justify-content:center;
+    font-size:13px; cursor:pointer; background:transparent; border:1px solid transparent; color:var(--ink);
+  }
+  .cal-day.muted{ color:#c7c0aa; cursor:default; }
+  .cal-day.today{ border-color: var(--olive); }
+  .cal-day:hover:not(.muted){ background: var(--khaki); }
+  .cal-day.in-range{ background: var(--blue-light); }
+  .cal-day.range-start, .cal-day.range-end{ background: var(--blue); color: var(--paper); font-weight:700; }
+
+  .cal-footer{ display:flex; align-items:center; justify-content:space-between; margin-top:12px; gap:10px; flex-wrap:wrap; }
+  .cal-selection{ font-size:12px; color:#5b5646; }
+  .weekend-toggle{ display:flex; align-items:center; gap:6px; font-size:12px; color:#5b5646; cursor:pointer; user-select:none; }
+  .weekend-toggle input{ accent-color: var(--rust); width:14px; height:14px; }
+
+  .btn-confirm{
+    background: var(--olive); color: var(--paper); border:1px solid var(--ink);
+    font-family:'Big Shoulders Stencil', sans-serif; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+    font-size:14px; padding:9px 18px; cursor:pointer; width:100%; margin-top:10px;
+  }
+  .btn-confirm:hover{ background: var(--ink); }
+  .btn-confirm:disabled{ opacity:0.4; cursor:not-allowed; }
+
+  /* --- month groups --- */
+  .month-group{ margin-top: 22px; }
+  .month-title{
+    font-family:'Big Shoulders Stencil', sans-serif;
+    font-size:16px; letter-spacing:2px; text-transform:uppercase; color:var(--olive);
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:6px;
+  }
+  .month-title::after{ content:""; flex:1; height:0; border-top:2px double var(--ink); }
+
+  ul.period-list{ list-style:none; margin:0; padding:0; }
+
+  li.entry{
+    position:relative;
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding: 12px 2px; border-bottom: 1px dotted #8b8465; font-size:14px; overflow:hidden;
+  }
+  li.entry .range{ font-weight:700; letter-spacing:0.3px; }
+  li.entry .meta{ font-size:11px; color:#8b8465; display:block; margin-top:2px; }
+  li.entry .right{ display:flex; align-items:center; gap:10px; flex-shrink:0; }
+  li.entry .amount{ color:var(--olive); font-weight:700; }
+
+  li.entry.paid .range, li.entry.paid .amount{ color:#8b8465; }
+
+  .pay-btn{
+    background:none; border:1px solid var(--khaki); color:#5b5646;
+    font-family:'Courier Prime', monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase;
+    padding:4px 8px; cursor:pointer;
+  }
+  .pay-btn:hover{ border-color: var(--rust); color: var(--rust); }
+  .pay-btn.is-paid{
+    border: 2px solid var(--rust);
+    border-radius: 2px;
+    color: var(--rust);
+    background: rgba(166,58,46,0.06);
+    transform: rotate(-7deg);
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    opacity: 0.72;
+    mix-blend-mode: multiply;
+    box-shadow:
+      inset 0 0 0 1px rgba(166,58,46,0.25),
+      0 0 3px rgba(166,58,46,0.15);
+    filter: saturate(0.85) contrast(1.1);
+    text-shadow: 0 0 1px rgba(166,58,46,0.3);
+  }
+  .pay-btn.is-paid:hover{ opacity: 0.9; }
+
+  .del{
+    background:none; color:var(--rust); font-family:'Courier Prime', monospace; font-weight:700;
+    font-size:15px; padding:2px 6px; border:1px solid transparent; cursor:pointer;
+  }
+  .del:hover{ border-color: var(--rust); }
+
+  .empty{ padding:24px 2px; text-align:center; color:#8b8465; font-size:14px; }
+
+  .totals{ margin-top:26px; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap; }
+  .count{ font-size:13px; color:#5b5646; line-height:1.6; }
+  .count b{ color:var(--ink); font-size:15px; }
+  .count .sub-line{ font-size:12px; color:#8b8465; }
+
+  .stamp{
+    width:128px; height:128px; border-radius:50%; border:4px double var(--rust); color:var(--rust);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    transform: rotate(-9deg); opacity:0.88; flex-shrink:0; mix-blend-mode:multiply; text-align:center; padding:6px;
+  }
+  .stamp .label{ font-family:'Big Shoulders Stencil', sans-serif; font-size:12px; letter-spacing:2px; font-weight:700; }
+  .stamp .value{ font-family:'Big Shoulders Stencil', sans-serif; font-size:22px; font-weight:800; letter-spacing:1px; margin:2px 0; }
+  .stamp .rate{ font-size:10px; letter-spacing:1px; }
+
+  footer{ padding:16px 26px 0; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+  .print-btn{
+    background: var(--olive); color: var(--paper); border:1px solid var(--ink);
+    font-family:'Big Shoulders Stencil', sans-serif; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+    font-size:13px; padding:9px 18px; cursor:pointer;
+  }
+  .print-btn:hover{ background: var(--ink); }
+
+  .backup-row{
+    display:flex;
+    gap:10px;
+    flex-wrap: wrap;
+    padding: 0 26px;
+    margin-top: 14px;
+  }
+  .backup-btn{
+    background: none;
+    color: var(--olive);
+    border: 1px solid var(--olive);
+    font-family:'Big Shoulders Stencil', sans-serif; font-weight:700; letter-spacing:1.2px; text-transform:uppercase;
+    font-size: 12px;
+    padding: 8px 14px;
+    cursor: pointer;
+    flex: 1;
+    min-width: 160px;
+  }
+  .backup-btn:hover{ background: var(--khaki); }
+  @media print{ .backup-row{ display:none !important; } }
+  .reset{ background:none; color:#8b8465; font-size:11px; letter-spacing:1.5px; text-decoration:underline; padding:4px; cursor:pointer; border:none; }
+  .reset:hover{ color:var(--rust); }
+
+  @media print{
+    body{ background:#fff; padding:0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .carnet{ box-shadow:none; border:none; max-width:100%; }
+    .carnet::before{ display:none; }
+    .picker-wrap, footer, .status{ display:none !important; }
+    .pay-btn, .del{ display:none !important; }
+    li.entry.paid::after{ content:"— PAYÉ"; color:var(--rust); font-weight:700; font-size:11px; letter-spacing:1px; margin-left:8px; }
+    .month-group{ page-break-inside: avoid; }
+    .totals{
+      page-break-inside: avoid;
+      break-inside: avoid;
+      margin-top: 30px;
+      border-top: 1px solid var(--ink);
+      padding-top: 18px;
+    }
+    .stamp{
+      mix-blend-mode: normal !important;
+      opacity: 1 !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    @page{ size:A4; margin:16mm; }
+  }
+
+  .status{ font-size:12px; color:#8b8465; padding:0 26px; margin-top:8px; min-height:16px; }
+
+  @media (max-width:420px){
+    h1{ font-size:32px; }
+    .stamp{ width:104px; height:104px; }
+    li.entry{ flex-wrap:wrap; }
+  }
+</style>
+</head>
+<body>
+
+<div class="install-banner" id="installBanner">
+  <span>
+    <strong>Ajoute-la à l'écran d'accueil</strong>
+    <span class="steps">Touche <span class="share-icon">⬆️ Partager</span> en bas de Safari, puis <b>« Sur l'écran d'accueil »</b>. Tu pourras ensuite l'ouvrir comme une vraie appli.</span>
+  </span>
+  <button class="close-banner" id="closeBanner" aria-label="Fermer">✕</button>
+</div>
+
+<div class="carnet">
+  <header>
+    <h1>Carnet de réserve</h1>
+    <div class="sub">Enregistrement des périodes de réserve</div>
+  </header>
+
+  <section>
+    <div class="field-label">Quota annuel</div>
+    <div class="quota-box">
+      <div class="quota-title">
+        <button type="button" class="year-nav" id="prevYear" aria-label="Année précédente">‹</button>
+        Réserve <span id="quotaYear">2025</span>
+        <button type="button" class="year-nav" id="nextYear" aria-label="Année suivante">›</button>
+      </div>
+      <div class="quota-fields">
+        <div class="quota-field">
+          <label for="quotaInput">Accordés</label>
+          <input type="number" id="quotaInput" min="0" step="1" inputmode="numeric">
+        </div>
+        <div class="quota-field">
+          <label>Utilisés</label>
+          <span class="static-num" id="usedDaysVal">0</span>
+        </div>
+        <div class="quota-field">
+          <label>Restants</label>
+          <span class="static-num" id="remainingDaysVal">30</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field-label">Nouvelle période</div>
+    <div class="picker-wrap">
+      <button type="button" class="picker-trigger" id="pickerTrigger">
+        <span id="pickerLabel" class="ph">Choisir une période…</span>
+        <span>📅</span>
+      </button>
+
+      <div class="calendar-pop" id="calendarPop">
+        <div class="cal-nav">
+          <button type="button" id="prevMonth" aria-label="Mois précédent">‹</button>
+          <span class="cal-month" id="calMonthLabel">Août 2026</span>
+          <button type="button" id="nextMonth" aria-label="Mois suivant">›</button>
+        </div>
+        <div class="cal-grid" id="calGrid"><div class="cal-dow">L</div><div class="cal-dow">M</div><div class="cal-dow">M</div><div class="cal-dow">J</div><div class="cal-dow">V</div><div class="cal-dow">S</div><div class="cal-dow">D</div><div class="cal-day muted"></div><div class="cal-day muted"></div><div class="cal-day muted"></div><div class="cal-day muted"></div><div class="cal-day muted"></div><button type="button" class="cal-day">1</button><button type="button" class="cal-day">2</button><button type="button" class="cal-day">3</button><button type="button" class="cal-day">4</button><button type="button" class="cal-day">5</button><button type="button" class="cal-day">6</button><button type="button" class="cal-day">7</button><button type="button" class="cal-day">8</button><button type="button" class="cal-day">9</button><button type="button" class="cal-day">10</button><button type="button" class="cal-day">11</button><button type="button" class="cal-day">12</button><button type="button" class="cal-day">13</button><button type="button" class="cal-day range-start">14</button><button type="button" class="cal-day in-range">15</button><button type="button" class="cal-day in-range">16</button><button type="button" class="cal-day in-range">17</button><button type="button" class="cal-day range-end">18</button><button type="button" class="cal-day">19</button><button type="button" class="cal-day">20</button><button type="button" class="cal-day">21</button><button type="button" class="cal-day">22</button><button type="button" class="cal-day">23</button><button type="button" class="cal-day">24</button><button type="button" class="cal-day">25</button><button type="button" class="cal-day">26</button><button type="button" class="cal-day today">27</button><button type="button" class="cal-day">28</button><button type="button" class="cal-day">29</button><button type="button" class="cal-day">30</button><button type="button" class="cal-day">31</button></div>
+        <div class="cal-footer">
+          <span class="cal-selection" id="calSelection">Du 14/08/2026 au 18/08/2026</span>
+          <label class="weekend-toggle">
+            <input type="checkbox" id="includeWeekends">
+            Inclure week-ends
+          </label>
+        </div>
+        <button type="button" class="btn-confirm" id="confirmAdd">Ajouter la période</button>
+      </div>
+    </div>
+
+    <div id="monthGroups"><div class="month-group"><div class="month-title">Août 2026</div><ul class="period-list"><li class="entry paid">
+          <span>
+            <span class="range">14/08 → 18/08/2026</span>
+            <span class="meta">3 jours</span>
+          </span>
+          <span class="right">
+            <span class="amount">240 €</span>
+            <button class="pay-btn is-paid" data-id="mtbq46uytodw">Payé ✓</button>
+            <button class="del" data-id="mtbq46uytodw" aria-label="Supprimer la période">✕</button>
+          </span>
+        </li></ul></div></div>
+
+    <div class="totals">
+      <div class="count" id="countText"><b>1</b> période — <b>3</b> jours</div>
+      <div class="stamp">
+        <div class="label">Total payé</div>
+        <div class="value" id="totalValue">240 €</div>
+        <div class="rate">80 €/jour</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="backup-row">
+    <button class="backup-btn" id="saveHtmlBtn">💾 Sauvegarder le HTML</button>
+    <button class="backup-btn" id="saveJsonBtn">📄 Exporter en JSON</button>
+    <button class="backup-btn" id="loadJsonBtn">📥 Importer un JSON</button>
+    <input type="file" id="jsonFileInput" accept="application/json,.json" style="display:none;">
+  </div>
+
+  <footer>
+    <button class="print-btn" id="printBtn">🖨 Imprimer le carnet</button>
+    <button class="reset" id="resetBtn">Effacer tout le carnet</button>
+  </footer>
+  <div class="status" id="status" style="color: rgb(139, 132, 101);">Carnet à jour (sauvegardé sur cet appareil).</div>
+</div>
+
+<script>
+const RATE = 80;
+const STORAGE_KEY = 'reserve-periods';
+const monthGroupsEl = document.getElementById('monthGroups');
+const countText = document.getElementById('countText');
+const totalValue = document.getElementById('totalValue');
+const statusEl = document.getElementById('status');
+
+const pickerTrigger = document.getElementById('pickerTrigger');
+const pickerLabel = document.getElementById('pickerLabel');
+const calendarPop = document.getElementById('calendarPop');
+const calGrid = document.getElementById('calGrid');
+const calMonthLabel = document.getElementById('calMonthLabel');
+const calSelection = document.getElementById('calSelection');
+const prevMonthBtn = document.getElementById('prevMonth');
+const nextMonthBtn = document.getElementById('nextMonth');
+const includeWeekendsChk = document.getElementById('includeWeekends');
+const confirmBtn = document.getElementById('confirmAdd');
+
+const MOIS_FR = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const MOIS_FR_SHORT = ['jan.','fév.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+const DOW_LETTERS = ['L','M','M','J','V','S','D'];
+
+let periods = [];
+let quotas = {};
+let selectedYear = new Date().getFullYear();
+const quotaYearEl = document.getElementById('quotaYear');
+const prevYearBtn = document.getElementById('prevYear');
+const nextYearBtn = document.getElementById('nextYear');
+const quotaInput = document.getElementById('quotaInput');
+const usedDaysVal = document.getElementById('usedDaysVal');
+const remainingDaysVal = document.getElementById('remainingDaysVal');
+quotaYearEl.textContent = selectedYear;
+
+prevYearBtn.addEventListener('click', ()=>{
+  selectedYear -= 1;
+  quotaYearEl.textContent = selectedYear;
+  quotaInput.value = quotas[selectedYear] ?? 30;
+  updateQuotaDisplay();
+});
+nextYearBtn.addEventListener('click', ()=>{
+  selectedYear += 1;
+  quotaYearEl.textContent = selectedYear;
+  quotaInput.value = quotas[selectedYear] ?? 30;
+  updateQuotaDisplay();
+});
+let viewDate = new Date();
+viewDate.setDate(1);
+let selStart = null;
+let selEnd = null;
+
+function setStatus(msg, isError){
+  statusEl.textContent = msg || '';
+  statusEl.style.color = isError ? '#A63A2E' : '#8b8465';
+}
+
+function pad(n){ return String(n).padStart(2,'0'); }
+function toISO(d){ return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`; }
+function fromISO(iso){ return new Date(iso + 'T00:00:00'); }
+function formatShort(iso){
+  const d = fromISO(iso);
+  return `${pad(d.getDate())}/${pad(d.getMonth()+1)}`;
+}
+function formatFull(iso){
+  const d = fromISO(iso);
+  return `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()}`;
+}
+
+/* ---------- storage (window.storage si dispo, sinon localStorage) ---------- */
+const hasClaudeStorage = () => typeof window.storage !== 'undefined' && window.storage && typeof window.storage.get === 'function';
+
+async function loadPeriods(){
+  try{
+    if(hasClaudeStorage()){
+      const result = await window.storage.get(STORAGE_KEY, false);
+      periods = result && result.value ? JSON.parse(result.value) : [];
+    } else {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      periods = raw ? JSON.parse(raw) : [];
+    }
+  }catch(e){
+    periods = [];
+  }
+  render();
+}
+async function savePeriods(){
+  try{
+    if(hasClaudeStorage()){
+      const result = await window.storage.set(STORAGE_KEY, JSON.stringify(periods), false);
+      setStatus(result ? 'Carnet à jour.' : 'Échec de la sauvegarde. Réessaie.', !result);
+    } else {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(periods));
+      setStatus('Carnet à jour (sauvegardé sur cet appareil).', false);
+    }
+  }catch(e){
+    setStatus('Échec de la sauvegarde. Réessaie.', true);
+  }
+}
+
+const QUOTA_KEY = 'reserve-quotas';
+async function loadQuotas(){
+  try{
+    if(hasClaudeStorage()){
+      const result = await window.storage.get(QUOTA_KEY, false);
+      quotas = result && result.value ? JSON.parse(result.value) : {};
+    } else {
+      const raw = localStorage.getItem(QUOTA_KEY);
+      quotas = raw ? JSON.parse(raw) : {};
+    }
+  }catch(e){
+    quotas = {};
+  }
+  quotaInput.value = quotas[selectedYear] ?? 30;
+  updateQuotaDisplay();
+}
+async function saveQuotas(){
+  try{
+    if(hasClaudeStorage()){
+      await window.storage.set(QUOTA_KEY, JSON.stringify(quotas), false);
+    } else {
+      localStorage.setItem(QUOTA_KEY, JSON.stringify(quotas));
+    }
+  }catch(e){ /* silencieux : le quota n'est pas critique */ }
+}
+
+function updateQuotaDisplay(){
+  const usedDays = periods
+    .flatMap(p => p.dates)
+    .filter(iso => fromISO(iso).getFullYear() === selectedYear)
+    .length;
+  const granted = parseInt(quotaInput.value, 10) || 0;
+  const remaining = granted - usedDays;
+
+  usedDaysVal.textContent = usedDays;
+  remainingDaysVal.textContent = remaining;
+  remainingDaysVal.classList.toggle('over', remaining < 0);
+}
+
+quotaInput.addEventListener('input', async ()=>{
+  quotas[selectedYear] = parseInt(quotaInput.value, 10) || 0;
+  updateQuotaDisplay();
+  await saveQuotas();
+});
+
+/* ---------- calendar rendering ---------- */
+function renderCalendar(){
+  calMonthLabel.textContent = `${MOIS_FR[viewDate.getMonth()]} ${viewDate.getFullYear()}`;
+  calGrid.innerHTML = '';
+
+  DOW_LETTERS.forEach(l=>{
+    const el = document.createElement('div');
+    el.className = 'cal-dow';
+    el.textContent = l;
+    calGrid.appendChild(el);
+  });
+
+  const firstOfMonth = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
+  let startOffset = firstOfMonth.getDay() - 1;
+  if(startOffset < 0) startOffset = 6;
+
+  const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth()+1, 0).getDate();
+  const todayISO = toISO(new Date());
+
+  for(let i=0;i<startOffset;i++){
+    const el = document.createElement('div');
+    el.className = 'cal-day muted';
+    calGrid.appendChild(el);
+  }
+
+  for(let day=1; day<=daysInMonth; day++){
+    const d = new Date(viewDate.getFullYear(), viewDate.getMonth(), day);
+    const iso = toISO(d);
+    const el = document.createElement('button');
+    el.type = 'button';
+    el.className = 'cal-day';
+    el.textContent = day;
+    if(iso === todayISO) el.classList.add('today');
+
+    if(selStart && iso === selStart) el.classList.add('range-start');
+    if(selEnd && iso === selEnd) el.classList.add('range-end');
+    if(selStart && selEnd && iso > selStart && iso < selEnd) el.classList.add('in-range');
+    if(selStart && !selEnd && iso === selStart) el.classList.add('range-start');
+
+    el.addEventListener('click', () => onDayClick(iso));
+    calGrid.appendChild(el);
+  }
+
+  updateSelectionLabel();
+}
+
+function onDayClick(iso){
+  if(!selStart || (selStart && selEnd)){
+    selStart = iso;
+    selEnd = null;
+  } else {
+    if(iso < selStart){
+      selEnd = selStart;
+      selStart = iso;
+    } else {
+      selEnd = iso;
+    }
+  }
+  renderCalendar();
+}
+
+function updateSelectionLabel(){
+  if(selStart && selEnd){
+    calSelection.textContent = `Du ${formatFull(selStart)} au ${formatFull(selEnd)}`;
+    confirmBtn.disabled = false;
+  } else if(selStart){
+    calSelection.textContent = `Début : ${formatFull(selStart)} — choisis la fin`;
+    confirmBtn.disabled = true;
+  } else {
+    calSelection.textContent = 'Sélectionne le premier jour';
+    confirmBtn.disabled = true;
+  }
+}
+
+function openCalendar(){
+  calendarPop.classList.add('open');
+  renderCalendar();
+}
+function closeCalendar(){
+  calendarPop.classList.remove('open');
+}
+
+pickerTrigger.addEventListener('click', (e)=>{
+  e.stopPropagation();
+  openCalendar();
+});
+prevMonthBtn.addEventListener('click', ()=>{
+  viewDate.setMonth(viewDate.getMonth()-1);
+  renderCalendar();
+});
+nextMonthBtn.addEventListener('click', ()=>{
+  viewDate.setMonth(viewDate.getMonth()+1);
+  renderCalendar();
+});
+
+/* ---------- add period ---------- */
+confirmBtn.addEventListener('click', async ()=>{
+  if(!selStart || !selEnd) return;
+
+  const weekendsOk = includeWeekendsChk.checked;
+  const dates = [];
+  let cursor = fromISO(selStart);
+  const last = fromISO(selEnd);
+  while(cursor <= last){
+    const dow = cursor.getDay();
+    const isWeekend = (dow === 0 || dow === 6);
+    if(weekendsOk || !isWeekend){
+      dates.push(toISO(cursor));
+    }
+    cursor.setDate(cursor.getDate()+1);
+  }
+
+  if(dates.length === 0){
+    setStatus('Aucun jour ouvré dans cette période.', true);
+    return;
+  }
+
+  const allExisting = new Set(periods.flatMap(p => p.dates));
+  const overlap = dates.some(d => allExisting.has(d));
+  if(overlap){
+    setStatus('Cette période chevauche des jours déjà consignés.', true);
+    return;
+  }
+
+  periods.push({
+    id: Date.now().toString(36) + Math.random().toString(36).slice(2,6),
+    start: selStart,
+    end: selEnd,
+    dates,
+    paid: false
+  });
+
+  selStart = null; selEnd = null;
+  includeWeekendsChk.checked = false;
+  closeCalendar();
+  pickerLabel.textContent = 'Choisir une période…';
+  pickerLabel.classList.add('ph');
+  render();
+  await savePeriods();
+});
+
+/* ---------- render list grouped by month ---------- */
+function monthKey(iso){
+  const d = fromISO(iso);
+  return `${d.getFullYear()}-${pad(d.getMonth()+1)}`;
+}
+
+function render(){
+  monthGroupsEl.innerHTML = '';
+  const sorted = [...periods].sort((a,b)=> a.start.localeCompare(b.start));
+
+  if(sorted.length === 0){
+    monthGroupsEl.innerHTML = '<div class="empty">Aucune période consignée pour le moment.</div>';
+  } else {
+    const groups = {};
+    sorted.forEach(p=>{
+      const key = monthKey(p.start);
+      if(!groups[key]) groups[key] = [];
+      groups[key].push(p);
+    });
+
+    Object.keys(groups).sort().forEach(key=>{
+      const [y,m] = key.split('-');
+      const groupEl = document.createElement('div');
+      groupEl.className = 'month-group';
+      groupEl.innerHTML = `<div class="month-title">${MOIS_FR[parseInt(m,10)-1]} ${y}</div>`;
+      const ul = document.createElement('ul');
+      ul.className = 'period-list';
+
+      groups[key].forEach(p=>{
+        const amount = p.dates.length * RATE;
+        const li = document.createElement('li');
+        li.className = 'entry' + (p.paid ? ' paid' : '');
+        const rangeLabel = p.start === p.end
+          ? formatFull(p.start)
+          : `${formatShort(p.start)} → ${formatFull(p.end)}`;
+        li.innerHTML = `
+          <span>
+            <span class="range">${rangeLabel}</span>
+            <span class="meta">${p.dates.length} jour${p.dates.length===1?'':'s'}</span>
+          </span>
+          <span class="right">
+            <span class="amount">${amount} €</span>
+            <button class="pay-btn ${p.paid?'is-paid':''}" data-id="${p.id}">${p.paid ? 'Payé ✓' : 'Marquer payé'}</button>
+            <button class="del" data-id="${p.id}" aria-label="Supprimer la période">✕</button>
+          </span>
+        `;
+        ul.appendChild(li);
+      });
+
+      groupEl.appendChild(ul);
+      monthGroupsEl.appendChild(groupEl);
+    });
+  }
+
+  const totalDays = sorted.reduce((s,p)=> s + p.dates.length, 0);
+  const paidDays = sorted.filter(p=>p.paid).reduce((s,p)=> s + p.dates.length, 0);
+  const paidAmount = paidDays * RATE;
+  const pendingDays = totalDays - paidDays;
+  const pendingAmount = pendingDays * RATE;
+
+  countText.innerHTML = `<b>${sorted.length}</b> période${sorted.length===1?'':'s'} — <b>${totalDays}</b> jour${totalDays===1?'':'s'}`
+    + (pendingDays > 0 ? `<div class="sub-line">dont ${pendingAmount} € en attente de paiement (${pendingDays} j.)</div>` : '');
+  totalValue.textContent = `${paidAmount} €`;
+  updateQuotaDisplay();
+}
+
+monthGroupsEl.addEventListener('click', async (e)=>{
+  const payBtn = e.target.closest('.pay-btn');
+  const delBtn = e.target.closest('.del');
+  if(payBtn){
+    const id = payBtn.dataset.id;
+    const p = periods.find(x=>x.id===id);
+    if(p){ p.paid = !p.paid; render(); await savePeriods(); }
+  }
+  if(delBtn){
+    const id = delBtn.dataset.id;
+    periods = periods.filter(x=>x.id!==id);
+    render();
+    await savePeriods();
+  }
+});
+
+document.getElementById('printBtn').addEventListener('click', ()=>{
+  window.print();
+});
+
+function downloadBlob(content, filename, type){
+  const blob = new Blob([content], {type});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(()=> URL.revokeObjectURL(url), 2000);
+}
+
+document.getElementById('saveHtmlBtn').addEventListener('click', ()=>{
+  const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  downloadBlob(fullHtml, 'carnet-reserve.html', 'text/html');
+  setStatus('Fichier HTML téléchargé — ouvre-le ensuite depuis Fichiers.', false);
+});
+
+document.getElementById('saveJsonBtn').addEventListener('click', ()=>{
+  const exportData = {
+    exported_at: new Date().toISOString(),
+    periods,
+    quotas
+  };
+  downloadBlob(JSON.stringify(exportData, null, 2), 'carnet-reserve-donnees.json', 'application/json');
+  setStatus('Fichier JSON exporté.', false);
+});
+
+const jsonFileInput = document.getElementById('jsonFileInput');
+document.getElementById('loadJsonBtn').addEventListener('click', ()=>{
+  jsonFileInput.value = '';
+  jsonFileInput.click();
+});
+
+jsonFileInput.addEventListener('change', async (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+
+  try{
+    const text = await file.text();
+    const data = JSON.parse(text);
+
+    if(!data || !Array.isArray(data.periods)){
+      setStatus('Fichier JSON invalide : format non reconnu.', true);
+      return;
+    }
+
+    const validPeriods = data.periods.every(p =>
+      p && typeof p.id === 'string' && typeof p.start === 'string'
+      && typeof p.end === 'string' && Array.isArray(p.dates)
+    );
+    if(!validPeriods){
+      setStatus('Fichier JSON invalide : périodes mal formées.', true);
+      return;
+    }
+
+    const ok = confirm(`Importer ce fichier remplacera toutes les données actuelles (${periods.length} période(s)) par ${data.periods.length} période(s). Continuer ?`);
+    if(!ok) return;
+
+    periods = data.periods;
+    quotas = (data.quotas && typeof data.quotas === 'object') ? data.quotas : {};
+    quotaInput.value = quotas[selectedYear] ?? 30;
+
+    render();
+    await savePeriods();
+    await saveQuotas();
+    setStatus('Import réussi.', false);
+  }catch(err){
+    setStatus('Échec de la lecture du fichier JSON.', true);
+  }
+});
+
+document.getElementById('resetBtn').addEventListener('click', async ()=>{
+  if(!confirm('Effacer toutes les périodes consignées ? Cette action est irréversible.')) return;
+  periods = [];
+  render();
+  await savePeriods();
+});
+
+loadQuotas().then(loadPeriods);
+
+/* ---------- bannière écran d'accueil (iOS Safari uniquement) ---------- */
+(function initInstallBanner(){
+  const banner = document.getElementById('installBanner');
+  const closeBtn = document.getElementById('closeBanner');
+  const DISMISS_KEY = 'reserve-install-banner-dismissed';
+
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const isStandalone = window.navigator.standalone === true
+    || window.matchMedia('(display-mode: standalone)').matches;
+
+  let dismissed = false;
+  try{ dismissed = localStorage.getItem(DISMISS_KEY) === '1'; }catch(e){}
+
+  if(isIOS && !isStandalone && !dismissed){
+    banner.classList.add('show');
+  }
+
+  closeBtn.addEventListener('click', ()=>{
+    banner.classList.remove('show');
+    try{ localStorage.setItem(DISMISS_KEY, '1'); }catch(e){}
+  });
+})();
+</script>
+
+
+
+
+</body></html>
