@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Carnet Réserve">
 
-<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAInUlEQVR4nO2dT2gUdxTHZzdG8s8WDYIUCYZWjamViLV4MIItWsFKo5Rqc6jUUxA8FAoFzy14Ui+FnDy0kEJDEVPpQe1FLynoQaooIqmYVoI1Bkw2SY3r9jAlhp15v/3N7s577/eb7+cUMpOdN28++35v/mR+ud+/3xgAEEdeOgCgF8gBSCAHIIEcgARyABLIAUggByCBHIAEcgASyAFIIAcggRyABHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAH0JgY1xj8AAAAASUVORK5CYII=">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAInUlEQVR4nO2dT2gUdxTHZzdG8s8WDYIUCYZWjamViLV4MIItWsFKo5Rqc6jUUxA8FAoFzy14Ui+FnDy0kEJDEVPpQe1FLynoQaooIqmYVoI1Bkw2SY3r9jAlhp15v/3N7s577/eb7+cUMpOdN28++35v/mR+ud+/3xgAEEdeOgCgF8gBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAH0JgY1xj8AAAAASUVORK5CYII=">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@600;800&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
@@ -973,14 +973,19 @@ footer{
 'use strict';
 
 /* =========================================================
-   CONFIGURATION & CONSTANTES
+   CONFIGURATION & CONSTANTES (METTRE LES CLÉS ICI)
 ========================================================= */
 const RATE = 80;
 const DEFAULT_QUOTA = 30;
 const STORAGE_KEY = 'reserve-state-v2';
 const LEGACY_PERIODS_KEY = 'reserve-periods';
 const LEGACY_QUOTA_KEY = 'reserve-quotas';
+
+// URL de votre fonction Edge Supabase
 const GITHUB_FUNCTION_URL = 'https://iwmtlbqwzbbnyrzggjdz.supabase.co/functions/v1/save-to-github';
+
+// 🔑 PLACEZ VOTRE CLÉ SUPABASE (ANON / PUBLIC) ENTRE LES GUILLEMETS CI-DESSOUS :
+const SUPABASE_ANON_KEY = 'VOTRE_CLE_SUPABASE_ANON_ICI';
 
 const MOIS_FR = [
   'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
@@ -1275,22 +1280,31 @@ async function syncWithServer() {
   if (syncing) return;
   syncing = true;
 
-  // 1. Verrouillage visuel immédiat
   saveHtmlBtn.disabled = true;
   syncBtn.disabled = true;
   saveHtmlBtn.textContent = '⏳ Sauvegarde...';
   syncBtn.textContent = '⏳ Sync...';
   setStatus('Synchronisation en cours...', '');
 
-  // 2. Annulation automatique après 8 secondes pour parer tout problème réseau
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 8000);
 
   try {
     const currentState = createState();
+    
+    // Construction des en-têtes avec la clé Supabase
+    const headers = { 
+      'Content-Type': 'application/json' 
+    };
+    
+    if (SUPABASE_ANON_KEY && SUPABASE_ANON_KEY !== 'VOTRE_CLE_SUPABASE_ANON_ICI') {
+      headers['apikey'] = SUPABASE_ANON_KEY;
+      headers['Authorization'] = `Bearer ${SUPABASE_ANON_KEY}`;
+    }
+
     const response = await fetch(GITHUB_FUNCTION_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: headers,
       body: JSON.stringify(currentState),
       signal: controller.signal
     });
@@ -1298,7 +1312,7 @@ async function syncWithServer() {
     clearTimeout(timeoutId);
 
     if (!response.ok) {
-      throw new Error(`Erreur réseau (${response.status})`);
+      throw new Error(`Erreur serveur (${response.status})`);
     }
 
     const resData = await response.json().catch(() => ({}));
@@ -1323,7 +1337,6 @@ async function syncWithServer() {
       setStatus('Échec réseau / serveur (sauvegardé en local)', 'error');
     }
   } finally {
-    // 3. Réactivation GARANTIE dans tous les cas de figure
     syncing = false;
     saveHtmlBtn.disabled = false;
     syncBtn.disabled = false;
@@ -1564,7 +1577,6 @@ function renderAll() {
    ÉVÉNEMENTS ET ACTIONS UTILISATEUR
 ========================================================= */
 function setupEventListeners() {
-  // Navigation Année
   prevYearBtn.addEventListener('click', () => {
     selectedYear--;
     viewDate.setFullYear(selectedYear);
@@ -1584,7 +1596,6 @@ function setupEventListeners() {
     renderAll();
   });
 
-  // Picker et Calendrier Pop-up
   pickerTrigger.addEventListener('click', () => {
     calendarPop.classList.toggle('open');
   });
@@ -1631,7 +1642,6 @@ function setupEventListeners() {
     setStatus('Période ajoutée avec succès !', 'success');
   });
 
-  // Action sur les éléments de liste (Payé / Supprimer)
   monthGroupsEl.addEventListener('click', (e) => {
     const target = e.target;
     if (!target) return;
@@ -1660,7 +1670,6 @@ function setupEventListeners() {
     }
   });
 
-  // Boutons de Sauvegarde et Synchronisation
   saveHtmlBtn.addEventListener('click', async () => {
     saveLocalState();
     await syncWithServer();
@@ -1670,7 +1679,6 @@ function setupEventListeners() {
     await syncWithServer();
   });
 
-  // Exportation JSON
   saveJsonBtn.addEventListener('click', () => {
     const state = createState();
     const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(state, null, 2));
@@ -1683,7 +1691,6 @@ function setupEventListeners() {
     setStatus('Export JSON réussi.', 'success');
   });
 
-  // Importation JSON
   loadJsonBtn.addEventListener('click', () => {
     jsonFileInput.click();
   });
@@ -1715,7 +1722,6 @@ function setupEventListeners() {
     jsonFileInput.value = '';
   });
 
-  // Impression & Reset
   printBtn.addEventListener('click', () => {
     window.print();
   });
