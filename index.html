@@ -3,197 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Carnet de Réserve</title>
-
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Carnet Réserve">
-
 <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAInUlEQVR4nO2dT2gUdxTHZzdG8s8WDYIUCYZWjamViLV4MIItWsFKo5Rqc6jUUxA8FAoFzy14Ui+FnDy0kEJDEVPpQe1FLynoQaooIqmYVoI1Bkw2SY3r9jAlhp15v/3N7s577/eb7+cUMpOdN28++35v/mR+ud+/3xgAEEdeOgCgF8gBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAH0JgY1xj8AAAAASUVORK5CYII=">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@600;800&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
 
 <script id="sync-state">
 window.__RESERVE_SYNC_STATE__ = {
   "version": 2,
-  "periods": [
-    {
-      "id": "mtcr9n2b2wjy",
-      "start": "2026-08-05",
-      "end": "2026-08-07",
-      "dates": [
-        "2026-08-05",
-        "2026-08-06",
-        "2026-08-07"
-      ],
-      "paid": false
-    },
-    {
-      "id": "mtcr7nx5lku7",
-      "start": "2026-09-07",
-      "end": "2026-09-09",
-      "dates": [
-        "2026-09-07",
-        "2026-09-08",
-        "2026-09-09"
-      ],
-      "paid": true
-    }
-  ],
-  "quotas": {
-    "2026": 30
-  },
+  "periods": [],
+  "quotas": { "2026": 30 },
   "updated_at": "2026-08-28T10:10:57.791Z"
 };
 </script>
 
 <style>
-:root{
-  --paper:#EDE6D6;
-  --olive:#3E4636;
-  --khaki:#A9A17E;
-  --ink:#1F2A24;
-  --rust:#A63A2E;
-  --gold:#C9A227;
-  --blue:#2B4C7E;
-  --blue-light:rgba(43,76,126,.28);
-}
-
+:root{--paper:#EDE6D6;--olive:#3E4636;--khaki:#A9A17E;--ink:#1F2A24;--rust:#A63A2E;--gold:#C9A227;--blue:#2B4C7E;--blue-light:rgba(43,76,126,.28);}
 *{box-sizing:border-box;}
 html{min-height:100%;}
-body{
-  margin:0;
-  min-height:100vh;
-  background:var(--olive);
-  background-image:repeating-linear-gradient(135deg, rgba(0,0,0,.05) 0px, rgba(0,0,0,.05) 2px, transparent 2px, transparent 6px);
-  font-family:'Courier Prime',monospace;
-  color:var(--ink);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding:28px 14px 60px;
-}
-
+body{margin:0;min-height:100vh;background:var(--olive);background-image:repeating-linear-gradient(135deg, rgba(0,0,0,.05) 0px, rgba(0,0,0,.05) 2px, transparent 2px, transparent 6px);font-family:'Courier Prime',monospace;color:var(--ink);display:flex;flex-direction:column;align-items:center;padding:28px 14px 60px;}
 button, input{font:inherit;}
 button{-webkit-tap-highlight-color:transparent;}
-
-.carnet{
-  width:100%;
-  max-width:800px;
-  background:var(--paper);
-  border:1px solid rgba(31,42,36,.35);
-  box-shadow:0 18px 40px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.15);
-  position:relative;
-  padding:0 0 28px;
-}
-
-.carnet::before{
-  content:"";
-  position:absolute;
-  top:0; left:0; right:0; height:10px;
-  background:repeating-linear-gradient(90deg, var(--gold) 0 14px, var(--olive) 14px 28px);
-}
-
-header{
-  position:relative;
-  padding:34px 32px 22px;
-  border-bottom:2px solid var(--ink);
-  margin-bottom:10px;
-}
-
-h1{
-  font-family:'Big Shoulders Stencil',sans-serif;
-  font-weight:800;
-  font-size:48px;
-  letter-spacing:2px;
-  margin:0;
-  text-transform:uppercase;
-  line-height:1;
-}
-
+.carnet{width:100%;max-width:800px;background:var(--paper);border:1px solid rgba(31,42,36,.35);box-shadow:0 18px 40px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.15);position:relative;padding:0 0 28px;}
+.carnet::before{content:"";position:absolute;top:0; left:0; right:0; height:10px;background:repeating-linear-gradient(90deg, var(--gold) 0 14px, var(--olive) 14px 28px);}
+header{position:relative;padding:34px 32px 22px;border-bottom:2px solid var(--ink);margin-bottom:10px;}
+h1{font-family:'Big Shoulders Stencil',sans-serif;font-weight:800;font-size:48px;letter-spacing:2px;margin:0;text-transform:uppercase;line-height:1;}
 .sub{font-size:14px; color:#5b5646; margin-top:10px;}
 section{padding:0 32px;}
-
-.field-label{
-  font-size:12px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  color:#5b5646;
-  margin:20px 0 7px;
-  font-weight:700;
-}
-
-.install-banner{
-  max-width:800px;
-  width:100%;
-  background:var(--paper);
-  border:1px solid var(--ink);
-  border-left:5px solid var(--gold);
-  padding:14px 16px;
-  margin:0 0 12px;
-  font-size:13px;
-  color:var(--ink);
-  display:none;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:12px;
-}
-
+.field-label{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#5b5646;margin:20px 0 7px;font-weight:700;}
+.install-banner{max-width:800px;width:100%;background:var(--paper);border:1px solid var(--ink);border-left:5px solid var(--gold);padding:14px 16px;margin:0 0 12px;font-size:13px;color:var(--ink);display:none;align-items:flex-start;justify-content:space-between;gap:12px;}
 .install-banner.show{display:flex;}
 .install-banner strong{display:block; font-family:'Big Shoulders Stencil',sans-serif; font-size:15px; margin-bottom:4px; text-transform:uppercase;}
 .install-banner .close-banner{background:none; border:none; color:#8b8465; font-size:18px; cursor:pointer;}
-
-.quota-box{
-  border:1px solid var(--ink);
-  background:rgba(169,161,126,.15);
-  padding:14px 16px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  flex-wrap:wrap;
-}
-
-.quota-title{
-  font-family:'Big Shoulders Stencil',sans-serif;
-  font-size:17px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-
-.year-nav{
-  background:none; border:1px solid var(--ink); color:var(--ink);
-  font-family:'Big Shoulders Stencil',sans-serif; font-size:17px;
-  width:30px; height:30px; cursor:pointer;
-}
-
+.quota-box{border:1px solid var(--ink);background:rgba(169,161,126,.15);padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;}
+.quota-title{font-family:'Big Shoulders Stencil',sans-serif;font-size:17px;letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:8px;}
+.year-nav{background:none; border:1px solid var(--ink); color:var(--ink);font-family:'Big Shoulders Stencil',sans-serif; font-size:17px;width:30px; height:30px; cursor:pointer;}
 .quota-fields{display:flex; align-items:center; gap:22px; flex-wrap:wrap;}
 .quota-field{display:flex; flex-direction:column; align-items:center; gap:3px;}
 .quota-field label{font-size:10px; letter-spacing:1px; text-transform:uppercase; color:#8b8465;}
 .quota-field input{width:80px; text-align:center; font-weight:700; font-size:17px; padding:7px 4px; border:1px solid var(--ink); background:#fbf8f0;}
-
 .static-num{font-family:'Big Shoulders Stencil',sans-serif; font-size:25px; font-weight:800; color:var(--olive);}
 .static-num.over{color:var(--rust);}
-
 .picker-wrap{position:relative;}
-.picker-trigger{
-  width:100%; text-align:left; background:#fbf8f0; border:1px solid var(--ink);
-  font-size:16px; padding:14px 16px; color:var(--ink); cursor:pointer;
-  display:flex; justify-content:space-between; align-items:center;
-}
-
-.calendar-pop{
-  position:absolute; top:calc(100% + 8px); left:0; right:0;
-  background:var(--paper); border:1px solid var(--ink); box-shadow:0 12px 28px rgba(0,0,0,.35);
-  z-index:50; padding:16px; display:none;
-}
+.picker-trigger{width:100%; text-align:left; background:#fbf8f0; border:1px solid var(--ink);font-size:16px; padding:14px 16px; color:var(--ink); cursor:pointer;display:flex; justify-content:space-between; align-items:center;}
+.calendar-pop{position:absolute; top:calc(100% + 8px); left:0; right:0;background:var(--paper); border:1px solid var(--ink); box-shadow:0 12px 28px rgba(0,0,0,.35);z-index:50; padding:16px; display:none;}
 .calendar-pop.open{display:block;}
-
 .cal-nav{display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;}
 .cal-nav button{background:none; border:1px solid var(--ink); font-family:'Big Shoulders Stencil',sans-serif; font-size:18px; width:34px; height:34px; cursor:pointer;}
 .cal-month{font-family:'Big Shoulders Stencil',sans-serif; font-size:19px; text-transform:uppercase;}
@@ -204,91 +61,56 @@ section{padding:0 32px;}
 .cal-day.today{border-color:var(--olive);}
 .cal-day.in-range{background:var(--blue-light);}
 .cal-day.range-start, .cal-day.range-end{background:var(--blue); color:var(--paper); font-weight:700;}
-
 .cal-footer{display:flex; align-items:center; justify-content:space-between; margin-top:12px; gap:10px; flex-wrap:wrap;}
 .weekend-toggle{display:flex; align-items:center; gap:6px; font-size:12px; color:#5b5646; cursor:pointer;}
-
-.btn-confirm{
-  background:var(--olive); color:var(--paper); border:1px solid var(--ink);
-  font-family:'Big Shoulders Stencil',sans-serif; font-weight:700; font-size:14px;
-  padding:10px 18px; cursor:pointer; width:100%; margin-top:12px; text-transform:uppercase;
-}
+.btn-confirm{background:var(--olive); color:var(--paper); border:1px solid var(--ink);font-family:'Big Shoulders Stencil',sans-serif; font-weight:700; font-size:14px;padding:10px 18px; cursor:pointer; width:100%; margin-top:12px; text-transform:uppercase;}
 .btn-confirm:disabled{opacity:.4; cursor:not-allowed;}
-
-.month-group{margin-top:26px;}
-.month-title{font-family:'Big Shoulders Stencil',sans-serif; font-size:17px; text-transform:uppercase; color:var(--olive); display:flex; align-items:center; gap:10px;}
-.month-title::after{content:""; flex:1; border-top:2px double var(--ink);}
-.period-list{list-style:none; margin:0; padding:0;}
-
 .entry{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:13px 2px; border-bottom:1px dotted #8b8465; font-size:14px;}
 .entry .range{font-weight:700;}
 .entry .meta{font-size:11px; color:#8b8465; display:block;}
 .entry .right{display:flex; align-items:center; gap:10px;}
 .entry .amount{color:var(--olive); font-weight:700;}
 .entry.paid .range, .entry.paid .amount{color:#8b8465;}
-
 .pay-btn{background:none; border:1px solid var(--khaki); color:#5b5646; font-size:10px; padding:5px 8px; cursor:pointer;}
 .pay-btn.is-paid{border:2px solid var(--rust); color:var(--rust); background:rgba(166,58,46,.06); font-weight:700;}
 .del{background:none; color:var(--rust); font-weight:700; font-size:15px; border:none; cursor:pointer;}
-
 .empty{padding:28px 2px; text-align:center; color:#8b8465;}
 .totals{margin-top:28px; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;}
 .count{font-size:13px; color:#5b5646;}
 .count b{color:var(--ink); font-size:15px;}
-
-.stamp{
-  width:128px; height:128px; border-radius:50%; border:4px double var(--rust); color:var(--rust);
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  transform:rotate(-9deg); opacity:.88; text-align:center; padding:6px;
-}
+.stamp{width:128px; height:128px; border-radius:50%; border:4px double var(--rust); color:var(--rust);display:flex; flex-direction:column; align-items:center; justify-content:center;transform:rotate(-9deg); opacity:.88; text-align:center; padding:6px;}
 .stamp .label{font-family:'Big Shoulders Stencil',sans-serif; font-size:12px; font-weight:700;}
 .stamp .value{font-family:'Big Shoulders Stencil',sans-serif; font-size:22px; font-weight:800;}
 .stamp .rate{font-size:10px;}
-
+.token-config-box{margin:20px 32px 0;padding:12px 14px;background:rgba(31,42,36,.05);border:1px dashed var(--khaki);display:flex;flex-direction:column;gap:6px;}
+.token-config-box label{font-size:11px; text-transform:uppercase; font-weight:700; color:#5b5646;}
+.token-config-box input{width:100%; padding:8px; border:1px solid var(--ink); background:#fbf8f0; font-size:13px;}
 .backup-row{display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:0 32px; margin-top:16px;}
-.backup-btn{
-  background:none; color:var(--olive); border:1px solid var(--olive);
-  font-family:'Big Shoulders Stencil',sans-serif; font-weight:700; font-size:13px;
-  padding:11px 10px; cursor:pointer; text-transform:uppercase;
-}
-.backup-btn:hover{background:var(--khaki);}
+.backup-btn{background:none; color:var(--olive); border:1px solid var(--olive);font-family:'Big Shoulders Stencil',sans-serif; font-weight:700; font-size:13px;padding:11px 10px; cursor:pointer; text-transform:uppercase;}
 .backup-btn.main-save{background:var(--olive); color:var(--paper);}
-.backup-btn.main-save:hover{background:var(--ink);}
-
 footer{padding:18px 32px 0; display:flex; justify-content:space-between; align-items:center;}
 .print-btn{background:var(--olive); color:var(--paper); border:1px solid var(--ink); font-family:'Big Shoulders Stencil',sans-serif; font-weight:700; font-size:13px; padding:10px 18px; cursor:pointer;}
 .reset{background:none; color:#8b8465; font-size:11px; text-decoration:underline; border:none; cursor:pointer;}
 .status{font-size:12px; color:#8b8465; padding:0 32px; margin-top:10px; min-height:18px;}
 .status.error{color:var(--rust); font-weight:700;}
 .status.success{color:var(--olive); font-weight:700;}
-
-@media(max-width:650px){
-  body{padding:15px 8px 40px;}
-  header, section, .backup-row, footer, .status{padding-left:16px; padding-right:16px;}
-  h1{font-size:36px;}
-}
+@media(max-width:650px){body{padding:15px 8px 40px;} header, section, .token-config-box, .backup-row, footer, .status{padding-left:16px; padding-right:16px;} h1{font-size:36px;}}
 </style>
 </head>
 
 <body>
-
 <div class="install-banner show" id="installBanner">
-  <span>
-    <strong>Ajoute-la à l'écran d'accueil</strong>
-    <span>Touche <b>⬆️ Partager</b> sur Safari, puis <b>« Sur l'écran d'accueil »</b>.</span>
-  </span>
+  <span><strong>Ajoute-la à l'écran d'accueil</strong><span>Touche <b>⬆️ Partager</b>, puis <b>« Sur l'écran d'accueil »</b>.</span></span>
   <button class="close-banner" id="closeBanner" type="button">✕</button>
 </div>
 
 <div class="carnet">
-
 <header>
   <h1>Carnet de réserve</h1>
   <div class="sub">Enregistrement des périodes de réserve</div>
 </header>
 
 <section>
-
 <div class="field-label">Quota annuel</div>
 <div class="quota-box">
   <div class="quota-title">
@@ -297,28 +119,17 @@ footer{padding:18px 32px 0; display:flex; justify-content:space-between; align-i
     <button type="button" class="year-nav" id="nextYear">›</button>
   </div>
   <div class="quota-fields">
-    <div class="quota-field">
-      <label for="quotaInput">Accordés</label>
-      <input type="number" id="quotaInput" min="0" step="1">
-    </div>
-    <div class="quota-field">
-      <label>Utilisés</label>
-      <span class="static-num" id="usedDaysVal">0</span>
-    </div>
-    <div class="quota-field">
-      <label>Restants</label>
-      <span class="static-num" id="remainingDaysVal">0</span>
-    </div>
+    <div class="quota-field"><label for="quotaInput">Accordés</label><input type="number" id="quotaInput" min="0" step="1"></div>
+    <div class="quota-field"><label>Utilisés</label><span class="static-num" id="usedDaysVal">0</span></div>
+    <div class="quota-field"><label>Restants</label><span class="static-num" id="remainingDaysVal">0</span></div>
   </div>
 </div>
 
 <div class="field-label">Nouvelle période</div>
 <div class="picker-wrap">
   <button type="button" class="picker-trigger" id="pickerTrigger">
-    <span id="pickerLabel" class="ph">Choisir une période…</span>
-    <span>📅</span>
+    <span id="pickerLabel" class="ph">Choisir une période…</span><span>📅</span>
   </button>
-
   <div class="calendar-pop" id="calendarPop">
     <div class="cal-nav">
       <button type="button" id="prevMonth">‹</button>
@@ -328,9 +139,7 @@ footer{padding:18px 32px 0; display:flex; justify-content:space-between; align-i
     <div class="cal-grid" id="calGrid"></div>
     <div class="cal-footer">
       <span class="cal-selection" id="calSelection">Sélectionne le premier jour</span>
-      <label class="weekend-toggle">
-        <input type="checkbox" id="includeWeekends"> Inclure week-ends
-      </label>
+      <label class="weekend-toggle"><input type="checkbox" id="includeWeekends"> Inclure week-ends</label>
     </div>
     <button type="button" class="btn-confirm" id="confirmAdd" disabled>Ajouter la période</button>
   </div>
@@ -346,8 +155,12 @@ footer{padding:18px 32px 0; display:flex; justify-content:space-between; align-i
     <div class="rate">80 €/jour</div>
   </div>
 </div>
-
 </section>
+
+<div class="token-config-box">
+  <label for="tokenInput">🔑 Clef d'accès GitHub (Token PAT) :</label>
+  <input type="password" id="tokenInput" placeholder="Collez votre ghp_... ici (une seule fois)">
+</div>
 
 <div class="backup-row">
   <button class="backup-btn main-save" id="saveHtmlBtn" type="button">💾 Sauvegarder</button>
@@ -360,48 +173,22 @@ footer{padding:18px 32px 0; display:flex; justify-content:space-between; align-i
 </footer>
 
 <div class="status" id="status" aria-live="polite"></div>
-
 </div>
 
 <script>
 'use strict';
-
-// ⚠️ METTEZ VOTRE JETON GITHUB ICI ENTRE LES GUILLEMETS :
-const GITHUB_PAT = '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';
-
-const RATE = 80;
-const DEFAULT_QUOTA = 30;
-const STORAGE_KEY = 'reserve-state-v2';
-
-const GITHUB_USER = 'ICBEST32';
-const GITHUB_REPO = 'Carnet-R-serve';
-const GITHUB_FILE_PATH = 'index.html';
-
+const RATE = 80; const DEFAULT_QUOTA = 30; const STORAGE_KEY = 'reserve-state-v2';
+const GITHUB_USER = 'ICBEST32'; const GITHUB_REPO = 'Carnet-R-serve'; const GITHUB_FILE_PATH = 'index.html';
 const MOIS_FR = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 const DOW_LETTERS = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
-
 const $ = id => document.getElementById(id);
 
-let periods = [];
-let quotas = {};
-let selectedYear = new Date().getFullYear();
-let viewDate = new Date(selectedYear, new Date().getMonth(), 1);
-let selStart = null;
-let selEnd = null;
-let syncing = false;
+let periods = [], quotas = {}, selectedYear = new Date().getFullYear(), viewDate = new Date(selectedYear, new Date().getMonth(), 1), selStart = null, selEnd = null, syncing = false;
 
-function setStatus(msg, type = '') {
-  $('status').textContent = msg || '';
-  $('status').className = 'status ' + type;
-}
-
+function setStatus(msg, type = '') { $('status').textContent = msg || ''; $('status').className = 'status ' + type; }
 function pad(v) { return String(v).padStart(2, '0'); }
 function isValidISO(v) { return typeof v === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v); }
-function fromISO(iso) {
-  if (!isValidISO(iso)) return null;
-  const p = iso.split('-').map(Number);
-  return new Date(p[0], p[1] - 1, p[2]);
-}
+function fromISO(iso) { if (!isValidISO(iso)) return null; const p = iso.split('-').map(Number); return new Date(p[0], p[1] - 1, p[2]); }
 function toISO(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
 function formatShort(iso) { const d = fromISO(iso); return d ? pad(d.getDate()) + '/' + pad(d.getMonth() + 1) : '—'; }
 function formatFull(iso) { const d = fromISO(iso); return d ? pad(d.getDate()) + '/' + pad(d.getMonth() + 1) + '/' + d.getFullYear() : '—'; }
@@ -410,140 +197,66 @@ function generateId() { return Date.now().toString(36) + '-' + Math.random().toS
 function normalizePeriods(input) {
   if (!Array.isArray(input)) return [];
   return input.filter(p => p && isValidISO(p.start) && isValidISO(p.end)).map(p => ({
-    id: p.id || generateId(),
-    start: p.start,
-    end: p.end,
-    dates: Array.isArray(p.dates) ? p.dates : [],
-    paid: p.paid === true
+    id: p.id || generateId(), start: p.start, end: p.end, dates: Array.isArray(p.dates) ? p.dates : [], paid: p.paid === true
   }));
 }
-
 function normalizeQuotas(input) {
   if (!input || typeof input !== 'object') return {};
-  const res = {};
-  Object.keys(input).forEach(y => { res[y] = Number(input[y]) || DEFAULT_QUOTA; });
-  return res;
+  const res = {}; Object.keys(input).forEach(y => { res[y] = Number(input[y]) || DEFAULT_QUOTA; }); return res;
 }
-
-function createState() {
-  return {
-    version: 2,
-    periods: normalizePeriods(periods),
-    quotas: normalizeQuotas(quotas),
-    updated_at: new Date().toISOString()
-  };
-}
+function createState() { return { version: 2, periods: normalizePeriods(periods), quotas: normalizeQuotas(quotas), updated_at: new Date().toISOString() }; }
 
 function initData() {
+  const savedToken = localStorage.getItem('github_pat') || '';
+  if (savedToken) $('tokenInput').value = savedToken;
   let chosen = null;
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) chosen = JSON.parse(raw);
-  } catch (e) {}
-
-  try {
-    const embedded = window.__RESERVE_SYNC_STATE__;
-    if (embedded && (!chosen || new Date(embedded.updated_at) > new Date(chosen.updated_at))) {
-      chosen = embedded;
-    }
-  } catch (e) {}
-
-  if (chosen) {
-    periods = normalizePeriods(chosen.periods);
-    quotas = normalizeQuotas(chosen.quotas);
-  }
+  try { const raw = localStorage.getItem(STORAGE_KEY); if (raw) chosen = JSON.parse(raw); } catch (e) {}
+  try { const embedded = window.__RESERVE_SYNC_STATE__; if (embedded && (!chosen || new Date(embedded.updated_at) > new Date(chosen.updated_at))) chosen = embedded; } catch (e) {}
+  if (chosen) { periods = normalizePeriods(chosen.periods); quotas = normalizeQuotas(chosen.quotas); }
   if (!quotas[selectedYear]) quotas[selectedYear] = DEFAULT_QUOTA;
 }
 
-function saveLocalState() {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(createState()));
-  } catch (e) {}
-}
+function saveLocalState() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(createState())); } catch (e) {} }
 
 async function syncWithServer() {
   if (syncing) return;
+  const token = $('tokenInput').value.trim();
+  if (!token) { setStatus('Veuillez d\'abord collez votre jeton GitHub ci-dessus.', 'error'); return; }
+  localStorage.setItem('github_pat', token);
 
-  if (!GITHUB_PAT || GITHUB_PAT === 'COLLEZ_VOTRE_TOKEN_GHP_ICI') {
-    setStatus('Veuillez configurer GITHUB_PAT à la ligne 272 du fichier index.html.', 'error');
-    return;
-  }
-
-  syncing = true;
-  $('saveHtmlBtn').disabled = true;
-  $('saveHtmlBtn').textContent = '⏳ Enregistrement...';
-  setStatus('Sauvegarde en cours sur GitHub...', '');
+  syncing = true; $('saveHtmlBtn').disabled = true; $('saveHtmlBtn').textContent = '⏳ Enregistrement...'; setStatus('Sauvegarde en cours sur GitHub...', '');
 
   try {
     const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${GITHUB_FILE_PATH}`;
-
-    const getRes = await fetch(url, {
-      headers: {
-        'Authorization': `token ${GITHUB_PAT}`,
-        'Accept': 'application/vnd.github.v3+json'
-      }
-    });
-
-    if (getRes.status === 401 || getRes.status === 403) {
-      throw new Error('Jeton GitHub invalide ou expiré.');
-    }
+    const getRes = await fetch(url, { headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' } });
+    if (getRes.status === 401 || getRes.status === 403) throw new Error('Jeton GitHub invalide ou expiré.');
     if (!getRes.ok) throw new Error('Impossible de joindre GitHub.');
 
     const fileData = await getRes.json();
-    const sha = fileData.sha;
-
-    const currentHtml = new TextDecoder().decode(
-      Uint8Array.from(atob(fileData.content.replace(/\s/g, '')), c => c.charCodeAt(0))
-    );
-
+    const currentHtml = new TextDecoder().decode(Uint8Array.from(atob(fileData.content.replace(/\s/g, '')), c => c.charCodeAt(0)));
     const jsonState = JSON.stringify(createState(), null, 2);
     const newScript = `<script id="sync-state">\nwindow.__RESERVE_SYNC_STATE__ = ${jsonState};\n<\/script>`;
-    
-    const updatedHtml = currentHtml.replace(
-      /<script id="sync-state">[\s\S]*?<\/script>/,
-      newScript
-    );
+    const updatedHtml = currentHtml.replace(/<script id="sync-state">[\s\S]*?<\/script>/, newScript);
 
     const encoder = new TextEncoder();
     const encodedContent = btoa(String.fromCharCode(...encoder.encode(updatedHtml)));
 
     const putRes = await fetch(url, {
       method: 'PUT',
-      headers: {
-        'Authorization': `token ${GITHUB_PAT}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        message: 'Mise à jour du carnet',
-        content: encodedContent,
-        sha: sha
-      })
+      headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: 'Mise à jour du carnet', content: encodedContent, sha: fileData.sha })
     });
 
     if (!putRes.ok) throw new Error('Erreur lors de la mise à jour GitHub.');
-
-    saveLocalState();
-    setStatus('Sauvegardé avec succès sur GitHub !', 'success');
-  } catch (err) {
-    setStatus('Erreur : ' + err.message, 'error');
-  } finally {
-    syncing = false;
-    $('saveHtmlBtn').disabled = false;
-    $('saveHtmlBtn').textContent = '💾 Sauvegarder';
-  }
+    saveLocalState(); setStatus('Sauvegardé avec succès sur GitHub !', 'success');
+  } catch (err) { setStatus('Erreur : ' + err.message, 'error'); } 
+  finally { syncing = false; $('saveHtmlBtn').disabled = false; $('saveHtmlBtn').textContent = '💾 Sauvegarder'; }
 }
 
 function buildDates(startISO, endISO, includeWeekends) {
-  const start = fromISO(startISO);
-  const end = fromISO(endISO);
-  if (!start || !end) return [];
-  const dates = [];
-  const cur = new Date(start);
-  while (cur <= end) {
-    const day = cur.getDay();
-    if (includeWeekends || (day !== 0 && day !== 6)) dates.push(toISO(cur));
-    cur.setDate(cur.getDate() + 1);
-  }
+  const start = fromISO(startISO), end = fromISO(endISO); if (!start || !end) return [];
+  const dates = [], cur = new Date(start);
+  while (cur <= end) { const day = cur.getDay(); if (includeWeekends || (day !== 0 && day !== 6)) dates.push(toISO(cur)); cur.setDate(cur.getDate() + 1); }
   return dates;
 }
 
@@ -556,111 +269,49 @@ function renderAll() {
   const used = yearPeriods.reduce((acc, p) => acc + p.dates.filter(d => d.startsWith(String(selectedYear))).length, 0);
   const remaining = quotas[selectedYear] - used;
 
-  $('usedDaysVal').textContent = used;
-  $('remainingDaysVal').textContent = remaining;
+  $('usedDaysVal').textContent = used; $('remainingDaysVal').textContent = remaining;
   $('remainingDaysVal').className = 'static-num' + (remaining < 0 ? ' over' : '');
 
-  // Render Calendar
   $('calGrid').innerHTML = '';
-  DOW_LETTERS.forEach(l => {
-    const d = document.createElement('div');
-    d.className = 'cal-dow';
-    d.textContent = l;
-    $('calGrid').appendChild(d);
-  });
+  DOW_LETTERS.forEach(l => { const d = document.createElement('div'); d.className = 'cal-dow'; d.textContent = l; $('calGrid').appendChild(d); });
 
-  const year = viewDate.getFullYear();
-  const month = viewDate.getMonth();
+  const year = viewDate.getFullYear(), month = viewDate.getMonth();
   $('calMonthLabel').textContent = MOIS_FR[month] + ' ' + year;
+  let startDow = new Date(year, month, 1).getDay() - 1; if (startDow === -1) startDow = 6;
+  for (let i = 0; i < startDow; i++) { const cell = document.createElement('div'); cell.className = 'cal-day muted'; $('calGrid').appendChild(cell); }
 
-  let startDow = new Date(year, month, 1).getDay() - 1;
-  if (startDow === -1) startDow = 6;
-
-  for (let i = 0; i < startDow; i++) {
-    const cell = document.createElement('div');
-    cell.className = 'cal-day muted';
-    $('calGrid').appendChild(cell);
-  }
-
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-  const todayISO = toISO(new Date());
-
+  const daysInMonth = new Date(year, month + 1, 0).getDate(), todayISO = toISO(new Date());
   for (let day = 1; day <= daysInMonth; day++) {
     const iso = toISO(new Date(year, month, day));
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'cal-day' + (iso === todayISO ? ' today' : '');
-    btn.textContent = day;
-
+    const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'cal-day' + (iso === todayISO ? ' today' : ''); btn.textContent = day;
     if (selStart && !selEnd && iso === selStart) btn.classList.add('range-start');
     if (selStart && selEnd) {
       if (iso === selStart) btn.classList.add('range-start');
       if (iso === selEnd) btn.classList.add('range-end');
       if (iso > selStart && iso < selEnd) btn.classList.add('in-range');
     }
-
-    btn.onclick = () => {
-      if (!selStart || (selStart && selEnd)) { selStart = iso; selEnd = null; }
-      else if (iso >= selStart) { selEnd = iso; }
-      else { selStart = iso; selEnd = null; }
-      renderAll();
-    };
+    btn.onclick = () => { if (!selStart || (selStart && selEnd)) { selStart = iso; selEnd = null; } else if (iso >= selStart) { selEnd = iso; } else { selStart = iso; selEnd = null; } renderAll(); };
     $('calGrid').appendChild(btn);
   }
 
-  if (!selStart) {
-    $('calSelection').textContent = 'Sélectionnez la date de début';
-    $('confirmAdd').disabled = true;
-  } else if (!selEnd) {
-    $('calSelection').textContent = 'Du ' + formatShort(selStart) + ' (choisir la fin)';
-    $('confirmAdd').disabled = true;
-  } else {
-    const dates = buildDates(selStart, selEnd, $('includeWeekends').checked);
-    $('calSelection').textContent = formatShort(selStart) + ' → ' + formatShort(selEnd) + ' (' + dates.length + ' j.)';
-    $('confirmAdd').disabled = false;
-  }
+  if (!selStart) { $('calSelection').textContent = 'Sélectionnez la date de début'; $('confirmAdd').disabled = true; }
+  else if (!selEnd) { $('calSelection').textContent = 'Du ' + formatShort(selStart) + ' (choisir la fin)'; $('confirmAdd').disabled = true; }
+  else { const dates = buildDates(selStart, selEnd, $('includeWeekends').checked); $('calSelection').textContent = formatShort(selStart) + ' → ' + formatShort(selEnd) + ' (' + dates.length + ' j.)'; $('confirmAdd').disabled = false; }
 
-  // Render Periods List
   $('monthGroups').innerHTML = '';
   if (yearPeriods.length === 0) {
     $('monthGroups').innerHTML = '<div class="empty">Aucune période en ' + selectedYear + '.</div>';
-    $('countText').innerHTML = '<b>0</b> période — <b>0</b> jour';
-    $('totalValue').textContent = '0 €';
-    return;
+    $('countText').innerHTML = '<b>0</b> période — <b>0</b> jour'; $('totalValue').textContent = '0 €'; return;
   }
 
-  let totalPaid = 0;
-  let totalDays = 0;
-
+  let totalPaid = 0, totalDays = 0;
   yearPeriods.sort((a, b) => a.start.localeCompare(b.start)).forEach(p => {
     const dCount = p.dates.filter(d => d.startsWith(String(selectedYear))).length;
-    totalDays += dCount;
-    const amt = dCount * RATE;
-    if (p.paid) totalPaid += amt;
-
-    const div = document.createElement('div');
-    div.className = 'entry' + (p.paid ? ' paid' : '');
-    div.innerHTML = `
-      <span>
-        <span class="range">${formatShort(p.start)} → ${formatFull(p.end)}</span>
-        <span class="meta">${dCount} jour(s)</span>
-      </span>
-      <span class="right">
-        <span class="amount">${amt} €</span>
-        <button type="button" class="pay-btn ${p.paid ? 'is-paid' : ''}">${p.paid ? 'Payé ✓' : 'Payer'}</button>
-        <button type="button" class="del">✕</button>
-      </span>
-    `;
-
+    totalDays += dCount; const amt = dCount * RATE; if (p.paid) totalPaid += amt;
+    const div = document.createElement('div'); div.className = 'entry' + (p.paid ? ' paid' : '');
+    div.innerHTML = `<span><span class="range">${formatShort(p.start)} → ${formatFull(p.end)}</span><span class="meta">${dCount} jour(s)</span></span><span class="right"><span class="amount">${amt} €</span><button type="button" class="pay-btn ${p.paid ? 'is-paid' : ''}">${p.paid ? 'Payé ✓' : 'Payer'}</button><button type="button" class="del">✕</button></span>`;
     div.querySelector('.pay-btn').onclick = () => { p.paid = !p.paid; saveLocalState(); renderAll(); };
-    div.querySelector('.del').onclick = () => {
-      if (confirm('Supprimer cette période ?')) {
-        periods = periods.filter(x => x.id !== p.id);
-        saveLocalState();
-        renderAll();
-      }
-    };
-
+    div.querySelector('.del').onclick = () => { if (confirm('Supprimer cette période ?')) { periods = periods.filter(x => x.id !== p.id); saveLocalState(); renderAll(); } };
     $('monthGroups').appendChild(div);
   });
 
@@ -670,7 +321,7 @@ function renderAll() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initData();
-
+  $('tokenInput').onchange = (e) => localStorage.setItem('github_pat', e.target.value.trim());
   $('prevYear').onclick = () => { selectedYear--; renderAll(); };
   $('nextYear').onclick = () => { selectedYear++; renderAll(); };
   $('quotaInput').onchange = (e) => { quotas[selectedYear] = Number(e.target.value) || 0; saveLocalState(); renderAll(); };
@@ -678,34 +329,21 @@ document.addEventListener('DOMContentLoaded', () => {
   $('prevMonth').onclick = () => { viewDate.setMonth(viewDate.getMonth() - 1); renderAll(); };
   $('nextMonth').onclick = () => { viewDate.setMonth(viewDate.getMonth() + 1); renderAll(); };
   $('includeWeekends').onchange = () => renderAll();
-
   $('confirmAdd').onclick = () => {
     const dates = buildDates(selStart, selEnd, $('includeWeekends').checked);
     periods.push({ id: generateId(), start: selStart, end: selEnd, dates: dates, paid: false });
-    saveLocalState();
-    selStart = null; selEnd = null;
-    $('calendarPop').classList.remove('open');
-    renderAll();
+    saveLocalState(); selStart = null; selEnd = null; $('calendarPop').classList.remove('open'); renderAll();
   };
-
   $('saveHtmlBtn').onclick = syncWithServer;
   $('saveJsonBtn').onclick = () => {
     const blob = new Blob([JSON.stringify(createState(), null, 2)], { type: 'application/json' });
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'carnet.json'; a.click();
   };
-
   $('printBtn').onclick = () => window.print();
-  $('resetBtn').onclick = () => {
-    if (confirm('Tout réinitialiser ?')) {
-      periods = []; quotas = {}; saveLocalState(); renderAll();
-    }
-  };
+  $('resetBtn').onclick = () => { if (confirm('Tout réinitialiser ?')) { periods = []; quotas = {}; saveLocalState(); renderAll(); } };
   $('closeBanner').onclick = () => $('installBanner').style.display = 'none';
-
-  renderAll();
-  setStatus('Prêt');
+  renderAll(); setStatus('Prêt');
 });
 </script>
-
 </body>
 </html>
