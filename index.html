@@ -978,15 +978,13 @@ footer{
 const RATE = 80;
 const DEFAULT_QUOTA = 30;
 const STORAGE_KEY = 'reserve-state-v2';
-const LEGACY_PERIODS_KEY = 'reserve-periods';
-const LEGACY_QUOTA_KEY = 'reserve-quotas';
 
-// 🔑 RENSEIGNEZ VOS INFORMATIONS GITHUB ICI POUR ÉCRASER LE FICHIER DIRECTEMENT :
+// 🔑 VOS CONFIGURATIONS GITHUB (SANS AUCUN TOKEN DANS LE CODE) :
 const GITHUB_USER = 'ICBEST32';
 const GITHUB_REPO = 'Carnet-R-serve';
 const GITHUB_FILE_PATH = 'index.html';
-// On laisse la variable vide dans le code !
 let GITHUB_TOKEN = localStorage.getItem('github_pat') || '';
+
 const MOIS_FR = [
   'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
   'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'
@@ -1247,11 +1245,17 @@ function initData() {
 
 async function syncWithServer() {
   if (syncing) return;
-  
-  if (!GITHUB_TOKEN || GITHUB_TOKEN === 'VOTRE_TOKEN_GHP') {
-    saveLocalState();
-    setStatus('Sauvegardé en local (Configurez GITHUB_TOKEN pour écraser sur GitHub)', 'success');
-    return;
+
+  // Demande le token si non enregistré dans le navigateur
+  if (!GITHUB_TOKEN) {
+    const inputToken = prompt("Entrez votre jeton GitHub (ghp_...) pour autoriser l'écriture :");
+    if (!inputToken) {
+      saveLocalState();
+      setStatus('Sauvegardé en local uniquement (Jeton absent).', 'error');
+      return;
+    }
+    GITHUB_TOKEN = inputToken.trim();
+    localStorage.setItem('github_pat', GITHUB_TOKEN);
   }
 
   syncing = true;
@@ -1266,13 +1270,19 @@ async function syncWithServer() {
     const currentState = createState();
     const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${GITHUB_FILE_PATH}`;
 
-    // 1. Récupération du fichier existant sur GitHub pour obtenir son SHA actuel
+    // 1. Récupération du SHA du fichier sur GitHub
     const getRes = await fetch(url, {
       headers: {
         'Authorization': `token ${GITHUB_TOKEN}`,
         'Accept': 'application/vnd.github.v3+json'
       }
     });
+
+    if (getRes.status === 401 || getRes.status === 403) {
+      localStorage.removeItem('github_pat');
+      GITHUB_TOKEN = '';
+      throw new Error('Jeton GitHub invalide ou expiré. Veuillez réessayer.');
+    }
 
     if (!getRes.ok) {
       throw new Error(`Fichier introuvable sur GitHub (${getRes.status})`);
@@ -1281,12 +1291,12 @@ async function syncWithServer() {
     const fileData = await getRes.json();
     const sha = fileData.sha;
 
-    // Décodage du contenu HTML présent sur GitHub
+    // Décodage UTF-8 du HTML existant
     const currentHtml = new TextDecoder().decode(
       Uint8Array.from(atob(fileData.content.replace(/\s/g, '')), c => c.charCodeAt(0))
     );
 
-    // 2. Remplacement des données dans le bloc <script id="sync-state">
+    // 2. Remplacement du JSON dans la balise <script id="sync-state">
     const jsonState = JSON.stringify(currentState, null, 2);
     const newScript = `<script id="sync-state">\nwindow.__RESERVE_SYNC_STATE__ = ${jsonState};\n<\/script>`;
     
@@ -1295,11 +1305,11 @@ async function syncWithServer() {
       newScript
     );
 
-    // Encodage Base64 UTF-8
+    // Encodage Base64
     const encoder = new TextEncoder();
     const encodedContent = btoa(String.fromCharCode(...encoder.encode(updatedHtml)));
 
-    // 3. Écrasement direct du fichier sur GitHub via l'API
+    // 3. Écrasement du fichier sur GitHub
     const putRes = await fetch(url, {
       method: 'PUT',
       headers: {
@@ -1308,7 +1318,7 @@ async function syncWithServer() {
         'Accept': 'application/vnd.github.v3+json'
       },
       body: JSON.stringify({
-        message: 'Mise à jour du carnet de réserve',
+        message: 'Mise à jour automatique - Carnet de Réserve',
         content: encodedContent,
         sha: sha
       })
@@ -1325,7 +1335,7 @@ async function syncWithServer() {
   } catch (err) {
     console.error('Erreur GitHub API:', err);
     saveLocalState();
-    setStatus('Erreur GitHub : ' + err.message + ' (enregistré en local)', 'error');
+    setStatus('Erreur : ' + err.message, 'error');
   } finally {
     syncing = false;
     saveHtmlBtn.disabled = false;
