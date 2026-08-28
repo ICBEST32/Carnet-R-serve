@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Carnet Réserve">
 
-<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAInUlEQVR4nO2dT2gUdxTHZzdG8s8WDYIUCYZWjamViLV4MIItWsFKo5Rqc6jUUxA8FAoFzy14Ui+FnDy0kEJDEVPpQe1FLynoQaooIqmYVoI1Bkw2SY3r9jAlhp15v/3N7s577/eb7+cUMpOdN28++35v/mR+ud+/3xgAEEdeOgCgF8gBSCAHIIEcgARyABLIAUggByCBHIAEcgASyAFIIAcggRyABHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAH0JgY1xj8AAAAASUVORK5CYII=">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAInUlEQVR4nO2dT2gUdxTHZzdG8s8WDYIUCYZWjamViLV4MIItWsFKo5Rqc6jUUxA8FAoFzy14Ui+FnDy0kEJDEVPpQe1FLynoQaooIqmYVoI1Bkw2SY3r9jAlhp15v/3N7s577/eb7+cUMpOdN28++35v/mR+ud+/3xgAEEdeOgCgF8gBSCAHIIEcgARyABLIAUggByCBHIAEcgASyAFIIAcggRyABHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAH0JgY1xj8AAAAASUVORK5CYII=">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@600;800&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
@@ -1035,7 +1035,6 @@ let selectedYear = new Date().getFullYear();
 let viewDate = new Date(selectedYear, new Date().getMonth(), 1);
 let selStart = null;
 let selEnd = null;
-let saving = false;
 let syncing = false;
 
 /* =========================================================
@@ -1275,17 +1274,28 @@ function initData() {
 async function syncWithServer() {
   if (syncing) return;
   syncing = true;
-  syncBtn.disabled = true;
+
+  // 1. Verrouillage visuel immédiat
   saveHtmlBtn.disabled = true;
+  syncBtn.disabled = true;
+  saveHtmlBtn.textContent = '⏳ Sauvegarde...';
+  syncBtn.textContent = '⏳ Sync...';
   setStatus('Synchronisation en cours...', '');
+
+  // 2. Annulation automatique après 8 secondes pour parer tout problème réseau
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 8000);
 
   try {
     const currentState = createState();
     const response = await fetch(GITHUB_FUNCTION_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(currentState)
+      body: JSON.stringify(currentState),
+      signal: controller.signal
     });
+
+    clearTimeout(timeoutId);
 
     if (!response.ok) {
       throw new Error(`Erreur réseau (${response.status})`);
@@ -1306,11 +1316,19 @@ async function syncWithServer() {
   } catch (err) {
     console.error('Erreur de synchronisation:', err);
     saveLocalState();
-    setStatus('Échec de la synchronisation (sauvegardé en local)', 'error');
+
+    if (err.name === 'AbortError') {
+      setStatus('Délai dépassé (sauvegardé en local)', 'error');
+    } else {
+      setStatus('Échec réseau / serveur (sauvegardé en local)', 'error');
+    }
   } finally {
+    // 3. Réactivation GARANTIE dans tous les cas de figure
     syncing = false;
-    syncBtn.disabled = false;
     saveHtmlBtn.disabled = false;
+    syncBtn.disabled = false;
+    saveHtmlBtn.textContent = '💾 Sauvegarder';
+    syncBtn.textContent = '🔄 Synchroniser';
   }
 }
 
@@ -1613,7 +1631,7 @@ function setupEventListeners() {
     setStatus('Période ajoutée avec succès !', 'success');
   });
 
-  // Action sur les éléments de liste (Payé / Supprimer) via délégation
+  // Action sur les éléments de liste (Payé / Supprimer)
   monthGroupsEl.addEventListener('click', (e) => {
     const target = e.target;
     if (!target) return;
