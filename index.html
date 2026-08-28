@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr"><head>
+<html lang="fr" __gcrremoteframetoken="5a43273b1171c12d41e9b5ab57fd94e6"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -752,7 +752,7 @@ footer{
 
 <body>
 
-<div class="install-banner" id="installBanner">
+<div class="install-banner show" id="installBanner">
   <span>
     <strong>Ajoute-la à l'écran d'accueil</strong>
     <span class="steps">
@@ -796,17 +796,17 @@ Réserve <span id="quotaYear">2026</span>
 ```
 <div class="quota-field">
   <label for="quotaInput">Accordés</label>
-  <input type="number" id="quotaInput" min="0" step="1" inputmode="numeric">
+  <input type="number" id="quotaInput" min="0" step="1" inputmode="numeric" __gcruniqueid="1">
 </div>
 
 <div class="quota-field">
   <label>Utilisés</label>
-  <span class="static-num" id="usedDaysVal">0</span>
+  <span class="static-num" id="usedDaysVal">1</span>
 </div>
 
 <div class="quota-field">
   <label>Restants</label>
-  <span class="static-num" id="remainingDaysVal">30</span>
+  <span class="static-num" id="remainingDaysVal">29</span>
 </div>
 ```
 
@@ -837,12 +837,12 @@ Réserve <span id="quotaYear">2026</span>
 
   </div>
 
-  <div class="cal-grid" id="calGrid"><div class="cal-dow">L</div><div class="cal-dow">M</div><div class="cal-dow">M</div><div class="cal-dow">J</div><div class="cal-dow">V</div><div class="cal-dow">S</div><div class="cal-dow">D</div><div class="cal-day muted"></div><div class="cal-day muted"></div><div class="cal-day muted"></div><div class="cal-day muted"></div><div class="cal-day muted"></div><button type="button" class="cal-day">1</button><button type="button" class="cal-day">2</button><button type="button" class="cal-day">3</button><button type="button" class="cal-day">4</button><button type="button" class="cal-day">5</button><button type="button" class="cal-day">6</button><button type="button" class="cal-day">7</button><button type="button" class="cal-day">8</button><button type="button" class="cal-day">9</button><button type="button" class="cal-day">10</button><button type="button" class="cal-day">11</button><button type="button" class="cal-day">12</button><button type="button" class="cal-day">13</button><button type="button" class="cal-day">14</button><button type="button" class="cal-day">15</button><button type="button" class="cal-day">16</button><button type="button" class="cal-day">17</button><button type="button" class="cal-day">18</button><button type="button" class="cal-day">19</button><button type="button" class="cal-day">20</button><button type="button" class="cal-day">21</button><button type="button" class="cal-day">22</button><button type="button" class="cal-day">23</button><button type="button" class="cal-day">24</button><button type="button" class="cal-day">25</button><button type="button" class="cal-day">26</button><button type="button" class="cal-day">27</button><button type="button" class="cal-day today">28</button><button type="button" class="cal-day">29</button><button type="button" class="cal-day">30</button><button type="button" class="cal-day">31</button></div>
+  <div class="cal-grid" id="calGrid"><div class="cal-dow">L</div><div class="cal-dow">M</div><div class="cal-dow">M</div><div class="cal-dow">J</div><div class="cal-dow">V</div><div class="cal-dow">S</div><div class="cal-dow">D</div><div class="cal-day muted"></div><div class="cal-day muted"></div><div class="cal-day muted"></div><div class="cal-day muted"></div><div class="cal-day muted"></div><button type="button" class="cal-day">1</button><button type="button" class="cal-day">2</button><button type="button" class="cal-day">3</button><button type="button" class="cal-day">4</button><button type="button" class="cal-day">5</button><button type="button" class="cal-day">6</button><button type="button" class="cal-day">7</button><button type="button" class="cal-day">8</button><button type="button" class="cal-day">9</button><button type="button" class="cal-day">10</button><button type="button" class="cal-day">11</button><button type="button" class="cal-day">12</button><button type="button" class="cal-day">13</button><button type="button" class="cal-day">14</button><button type="button" class="cal-day">15</button><button type="button" class="cal-day">16</button><button type="button" class="cal-day">17</button><button type="button" class="cal-day">18</button><button type="button" class="cal-day">19</button><button type="button" class="cal-day">20</button><button type="button" class="cal-day">21</button><button type="button" class="cal-day">22</button><button type="button" class="cal-day">23</button><button type="button" class="cal-day">24</button><button type="button" class="cal-day">25</button><button type="button" class="cal-day">26</button><button type="button" class="cal-day">27</button><button type="button" class="cal-day today range-start">28</button><button type="button" class="cal-day in-range">29</button><button type="button" class="cal-day range-end">30</button><button type="button" class="cal-day">31</button></div>
 
   <div class="cal-footer">
 
 ```
-<span class="cal-selection" id="calSelection">Sélectionne le premier jour</span>
+<span class="cal-selection" id="calSelection">Du 28/08/2026 au 30/08/2026</span>
 
 <label class="weekend-toggle">
 
@@ -855,7 +855,7 @@ Réserve <span id="quotaYear">2026</span>
 
   </div>
 
-<button type="button" class="btn-confirm" id="confirmAdd" disabled="">
+<button type="button" class="btn-confirm" id="confirmAdd">
 
 ```
 Ajouter la période
@@ -866,15 +866,51 @@ Ajouter la période
 </div>
 </div>
 
-<div id="monthGroups"><div class="empty">Aucune période consignée pour le moment.</div></div>
+<div id="monthGroups"><div class="month-group"><div class="month-title">
+            Août 2026
+          </div><ul class="period-list"><li class="entry">
+
+            <span>
+
+              <span class="range">
+                28/08 → 30/08/2026
+              </span>
+
+              <span class="meta">
+                1
+                jour
+              </span>
+
+            </span>
+
+            <span class="right">
+
+              <span class="amount">
+                80 €
+              </span>
+
+              <button class="pay-btn " data-id="mtcrvd4lnn94" type="button">
+                Marquer payé
+              </button>
+
+              <button class="del" data-id="mtcrvd4lnn94" type="button" aria-label="Supprimer la période">
+                ✕
+              </button>
+
+            </span>
+          </li></ul></div></div>
 
 <div class="totals">
 
-  <div class="count" id="countText"><b>0</b>
-     périodes
+  <div class="count" id="countText"><b>1</b>
+     période
      —
-     <b>0</b>
-     jours</div>
+     <b>1</b>
+     jour<div class="sub-line">
+             dont 80 €
+             en attente de paiement
+             (1 j.)
+           </div></div>
 
   <div class="stamp">
 
