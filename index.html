@@ -50,7 +50,6 @@ window.__RESERVE_SYNC_STATE__ = {
 </script>
 
 <style>
-
 :root{
   --paper:#EDE6D6;
   --olive:#3E4636;
@@ -62,25 +61,13 @@ window.__RESERVE_SYNC_STATE__ = {
   --blue-light:rgba(43,76,126,.28);
 }
 
-*{
-  box-sizing:border-box;
-}
-
-html{
-  min-height:100%;
-}
-
+*{box-sizing:border-box;}
+html{min-height:100%;}
 body{
   margin:0;
   min-height:100vh;
   background:var(--olive);
-  background-image:repeating-linear-gradient(
-    135deg,
-    rgba(0,0,0,.05) 0px,
-    rgba(0,0,0,.05) 2px,
-    transparent 2px,
-    transparent 6px
-  );
+  background-image:repeating-linear-gradient(135deg, rgba(0,0,0,.05) 0px, rgba(0,0,0,.05) 2px, transparent 2px, transparent 6px);
   font-family:'Courier Prime',monospace;
   color:var(--ink);
   display:flex;
@@ -89,29 +76,15 @@ body{
   padding:28px 14px 60px;
 }
 
-button,
-input{
-  font:inherit;
-}
-
-button{
-  -webkit-tap-highlight-color:transparent;
-}
-
-button:focus-visible,
-input:focus-visible{
-  outline:2px solid var(--blue);
-  outline-offset:2px;
-}
+button, input{font:inherit;}
+button{-webkit-tap-highlight-color:transparent;}
 
 .carnet{
   width:100%;
   max-width:800px;
   background:var(--paper);
   border:1px solid rgba(31,42,36,.35);
-  box-shadow:
-    0 18px 40px rgba(0,0,0,.35),
-    inset 0 0 0 1px rgba(255,255,255,.15);
+  box-shadow:0 18px 40px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.15);
   position:relative;
   padding:0 0 28px;
 }
@@ -119,15 +92,8 @@ input:focus-visible{
 .carnet::before{
   content:"";
   position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height:10px;
-  background:repeating-linear-gradient(
-    90deg,
-    var(--gold) 0 14px,
-    var(--olive) 14px 28px
-  );
+  top:0; left:0; right:0; height:10px;
+  background:repeating-linear-gradient(90deg, var(--gold) 0 14px, var(--olive) 14px 28px);
 }
 
 header{
@@ -147,15 +113,8 @@ h1{
   line-height:1;
 }
 
-.sub{
-  font-size:14px;
-  color:#5b5646;
-  margin-top:10px;
-}
-
-section{
-  padding:0 32px;
-}
+.sub{font-size:14px; color:#5b5646; margin-top:10px;}
+section{padding:0 32px;}
 
 .field-label{
   font-size:12px;
@@ -180,33 +139,11 @@ section{
   align-items:flex-start;
   justify-content:space-between;
   gap:12px;
-  line-height:1.5;
 }
 
-.install-banner.show{
-  display:flex;
-}
-
-.install-banner strong{
-  display:block;
-  font-family:'Big Shoulders Stencil',sans-serif;
-  letter-spacing:1px;
-  font-size:15px;
-  margin-bottom:4px;
-  text-transform:uppercase;
-}
-
-.install-banner .steps{
-  color:#5b5646;
-}
-
-.install-banner .close-banner{
-  background:none;
-  border:none;
-  color:#8b8465;
-  font-size:18px;
-  cursor:pointer;
-}
+.install-banner.show{display:flex;}
+.install-banner strong{display:block; font-family:'Big Shoulders Stencil',sans-serif; font-size:15px; margin-bottom:4px; text-transform:uppercase;}
+.install-banner .close-banner{background:none; border:none; color:#8b8465; font-size:18px; cursor:pointer;}
 
 .quota-box{
   border:1px solid var(--ink);
@@ -230,626 +167,120 @@ section{
 }
 
 .year-nav{
-  background:none;
-  border:1px solid var(--ink);
-  color:var(--ink);
-  font-family:'Big Shoulders Stencil',sans-serif;
-  font-size:17px;
-  width:30px;
-  height:30px;
-  cursor:pointer;
+  background:none; border:1px solid var(--ink); color:var(--ink);
+  font-family:'Big Shoulders Stencil',sans-serif; font-size:17px;
+  width:30px; height:30px; cursor:pointer;
 }
 
-.year-nav:hover{
-  background:var(--khaki);
-}
+.quota-fields{display:flex; align-items:center; gap:22px; flex-wrap:wrap;}
+.quota-field{display:flex; flex-direction:column; align-items:center; gap:3px;}
+.quota-field label{font-size:10px; letter-spacing:1px; text-transform:uppercase; color:#8b8465;}
+.quota-field input{width:80px; text-align:center; font-weight:700; font-size:17px; padding:7px 4px; border:1px solid var(--ink); background:#fbf8f0;}
 
-.quota-title span{
-  color:#8b8465;
-  font-size:13px;
-  letter-spacing:.5px;
-  text-transform:none;
-  font-family:'Courier Prime',monospace;
-}
+.static-num{font-family:'Big Shoulders Stencil',sans-serif; font-size:25px; font-weight:800; color:var(--olive);}
+.static-num.over{color:var(--rust);}
 
-.quota-fields{
-  display:flex;
-  align-items:center;
-  gap:22px;
-  flex-wrap:wrap;
-}
-
-.quota-field{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:3px;
-}
-
-.quota-field label{
-  font-size:10px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  color:#8b8465;
-}
-
-.quota-field input{
-  width:80px;
-  text-align:center;
-  font-family:'Courier Prime',monospace;
-  font-weight:700;
-  font-size:17px;
-  padding:7px 4px;
-  border:1px solid var(--ink);
-  background:#fbf8f0;
-  color:var(--ink);
-}
-
-.static-num{
-  font-family:'Big Shoulders Stencil',sans-serif;
-  font-size:25px;
-  font-weight:800;
-  color:var(--olive);
-}
-
-.static-num.over{
-  color:var(--rust);
-}
-
-.picker-wrap{
-  position:relative;
-}
-
+.picker-wrap{position:relative;}
 .picker-trigger{
-  width:100%;
-  text-align:left;
-  background:#fbf8f0;
-  border:1px solid var(--ink);
-  font-family:'Courier Prime',monospace;
-  font-size:16px;
-  padding:14px 16px;
-  color:var(--ink);
-  cursor:pointer;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.picker-trigger:hover{
-  background:#f4efdf;
-}
-
-.picker-trigger .ph{
-  color:#8b8465;
+  width:100%; text-align:left; background:#fbf8f0; border:1px solid var(--ink);
+  font-size:16px; padding:14px 16px; color:var(--ink); cursor:pointer;
+  display:flex; justify-content:space-between; align-items:center;
 }
 
 .calendar-pop{
-  position:absolute;
-  top:calc(100% + 8px);
-  left:0;
-  right:0;
-  background:var(--paper);
-  border:1px solid var(--ink);
-  box-shadow:0 12px 28px rgba(0,0,0,.35);
-  z-index:50;
-  padding:16px;
-  display:none;
+  position:absolute; top:calc(100% + 8px); left:0; right:0;
+  background:var(--paper); border:1px solid var(--ink); box-shadow:0 12px 28px rgba(0,0,0,.35);
+  z-index:50; padding:16px; display:none;
 }
+.calendar-pop.open{display:block;}
 
-.calendar-pop.open{
-  display:block;
-}
+.cal-nav{display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;}
+.cal-nav button{background:none; border:1px solid var(--ink); font-family:'Big Shoulders Stencil',sans-serif; font-size:18px; width:34px; height:34px; cursor:pointer;}
+.cal-month{font-family:'Big Shoulders Stencil',sans-serif; font-size:19px; text-transform:uppercase;}
+.cal-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:3px;}
+.cal-dow{font-size:10px; text-align:center; color:#8b8465; text-transform:uppercase;}
+.cal-day{aspect-ratio:1; display:flex; align-items:center; justify-content:center; font-size:13px; cursor:pointer; background:transparent; border:1px solid transparent;}
+.cal-day.muted{color:#c7c0aa; cursor:default;}
+.cal-day.today{border-color:var(--olive);}
+.cal-day.in-range{background:var(--blue-light);}
+.cal-day.range-start, .cal-day.range-end{background:var(--blue); color:var(--paper); font-weight:700;}
 
-.cal-nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:12px;
-}
-
-.cal-nav button{
-  background:none;
-  border:1px solid var(--ink);
-  color:var(--ink);
-  font-family:'Big Shoulders Stencil',sans-serif;
-  font-size:18px;
-  width:34px;
-  height:34px;
-  cursor:pointer;
-}
-
-.cal-nav button:hover{
-  background:var(--khaki);
-}
-
-.cal-month{
-  font-family:'Big Shoulders Stencil',sans-serif;
-  letter-spacing:1.5px;
-  font-size:19px;
-  text-transform:uppercase;
-}
-
-.cal-grid{
-  display:grid;
-  grid-template-columns:repeat(7,1fr);
-  gap:3px;
-}
-
-.cal-dow{
-  font-size:10px;
-  text-align:center;
-  color:#8b8465;
-  letter-spacing:1px;
-  padding-bottom:5px;
-  text-transform:uppercase;
-}
-
-.cal-day{
-  aspect-ratio:1;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:13px;
-  cursor:pointer;
-  background:transparent;
-  border:1px solid transparent;
-  color:var(--ink);
-  padding:0;
-}
-
-.cal-day.muted{
-  color:#c7c0aa;
-  cursor:default;
-}
-
-.cal-day.today{
-  border-color:var(--olive);
-}
-
-.cal-day:hover:not(.muted){
-  background:var(--khaki);
-}
-
-.cal-day.in-range{
-  background:var(--blue-light);
-}
-
-.cal-day.range-start,
-.cal-day.range-end{
-  background:var(--blue);
-  color:var(--paper);
-  font-weight:700;
-}
-
-.cal-footer{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-top:12px;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.cal-selection{
-  font-size:12px;
-  color:#5b5646;
-}
-
-.weekend-toggle{
-  display:flex;
-  align-items:center;
-  gap:6px;
-  font-size:12px;
-  color:#5b5646;
-  cursor:pointer;
-}
-
-.weekend-toggle input{
-  accent-color:var(--rust);
-  width:14px;
-  height:14px;
-}
+.cal-footer{display:flex; align-items:center; justify-content:space-between; margin-top:12px; gap:10px; flex-wrap:wrap;}
+.weekend-toggle{display:flex; align-items:center; gap:6px; font-size:12px; color:#5b5646; cursor:pointer;}
 
 .btn-confirm{
-  background:var(--olive);
-  color:var(--paper);
-  border:1px solid var(--ink);
-  font-family:'Big Shoulders Stencil',sans-serif;
-  font-weight:700;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  font-size:14px;
-  padding:10px 18px;
-  cursor:pointer;
-  width:100%;
-  margin-top:12px;
+  background:var(--olive); color:var(--paper); border:1px solid var(--ink);
+  font-family:'Big Shoulders Stencil',sans-serif; font-weight:700; font-size:14px;
+  padding:10px 18px; cursor:pointer; width:100%; margin-top:12px; text-transform:uppercase;
 }
+.btn-confirm:disabled{opacity:.4; cursor:not-allowed;}
 
-.btn-confirm:hover{
-  background:var(--ink);
-}
+.month-group{margin-top:26px;}
+.month-title{font-family:'Big Shoulders Stencil',sans-serif; font-size:17px; text-transform:uppercase; color:var(--olive); display:flex; align-items:center; gap:10px;}
+.month-title::after{content:""; flex:1; border-top:2px double var(--ink);}
+.period-list{list-style:none; margin:0; padding:0;}
 
-.btn-confirm:disabled{
-  opacity:.4;
-  cursor:not-allowed;
-}
+.entry{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:13px 2px; border-bottom:1px dotted #8b8465; font-size:14px;}
+.entry .range{font-weight:700;}
+.entry .meta{font-size:11px; color:#8b8465; display:block;}
+.entry .right{display:flex; align-items:center; gap:10px;}
+.entry .amount{color:var(--olive); font-weight:700;}
+.entry.paid .range, .entry.paid .amount{color:#8b8465;}
 
-.month-group{
-  margin-top:26px;
-}
+.pay-btn{background:none; border:1px solid var(--khaki); color:#5b5646; font-size:10px; padding:5px 8px; cursor:pointer;}
+.pay-btn.is-paid{border:2px solid var(--rust); color:var(--rust); background:rgba(166,58,46,.06); font-weight:700;}
+.del{background:none; color:var(--rust); font-weight:700; font-size:15px; border:none; cursor:pointer;}
 
-.month-title{
-  font-family:'Big Shoulders Stencil',sans-serif;
-  font-size:17px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:var(--olive);
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-bottom:6px;
-}
-
-.month-title::after{
-  content:"";
-  flex:1;
-  border-top:2px double var(--ink);
-}
-
-.period-list{
-  list-style:none;
-  margin:0;
-  padding:0;
-}
-
-.entry{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  padding:13px 2px;
-  border-bottom:1px dotted #8b8465;
-  font-size:14px;
-}
-
-.entry .range{
-  font-weight:700;
-  letter-spacing:.3px;
-}
-
-.entry .meta{
-  font-size:11px;
-  color:#8b8465;
-  display:block;
-  margin-top:3px;
-}
-
-.entry .right{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-shrink:0;
-}
-
-.entry .amount{
-  color:var(--olive);
-  font-weight:700;
-}
-
-.entry.paid .range,
-.entry.paid .amount{
-  color:#8b8465;
-}
-
-.pay-btn{
-  background:none;
-  border:1px solid var(--khaki);
-  color:#5b5646;
-  font-family:'Courier Prime',monospace;
-  font-size:10px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  padding:5px 8px;
-  cursor:pointer;
-}
-
-.pay-btn:hover{
-  border-color:var(--rust);
-  color:var(--rust);
-}
-
-.pay-btn.is-paid{
-  border:2px solid var(--rust);
-  color:var(--rust);
-  background:rgba(166,58,46,.06);
-  transform:rotate(-7deg);
-  font-weight:700;
-  opacity:.72;
-}
-
-.del{
-  background:none;
-  color:var(--rust);
-  font-family:'Courier Prime',monospace;
-  font-weight:700;
-  font-size:15px;
-  padding:2px 6px;
-  border:1px solid transparent;
-  cursor:pointer;
-}
-
-.del:hover{
-  border-color:var(--rust);
-}
-
-.empty{
-  padding:28px 2px;
-  text-align:center;
-  color:#8b8465;
-  font-size:14px;
-}
-
-.totals{
-  margin-top:28px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  flex-wrap:wrap;
-}
-
-.count{
-  font-size:13px;
-  color:#5b5646;
-  line-height:1.6;
-}
-
-.count b{
-  color:var(--ink);
-  font-size:15px;
-}
-
-.count .sub-line{
-  font-size:12px;
-  color:#8b8465;
-}
+.empty{padding:28px 2px; text-align:center; color:#8b8465;}
+.totals{margin-top:28px; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;}
+.count{font-size:13px; color:#5b5646;}
+.count b{color:var(--ink); font-size:15px;}
 
 .stamp{
-  width:128px;
-  height:128px;
-  border-radius:50%;
-  border:4px double var(--rust);
-  color:var(--rust);
+  width:128px; height:128px; border-radius:50%; border:4px double var(--rust); color:var(--rust);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  transform:rotate(-9deg); opacity:.88; text-align:center; padding:6px;
+}
+.stamp .label{font-family:'Big Shoulders Stencil',sans-serif; font-size:12px; font-weight:700;}
+.stamp .value{font-family:'Big Shoulders Stencil',sans-serif; font-size:22px; font-weight:800;}
+.stamp .rate{font-size:10px;}
+
+.token-config-box{
+  margin:20px 32px 0;
+  padding:12px 14px;
+  background:rgba(31,42,36,.05);
+  border:1px dashed var(--khaki);
   display:flex;
   flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  transform:rotate(-9deg);
-  opacity:.88;
-  flex-shrink:0;
-  mix-blend-mode:multiply;
-  text-align:center;
-  padding:6px;
+  gap:6px;
+}
+.token-config-box label{font-size:11px; text-transform:uppercase; font-weight:700; color:#5b5646;}
+.token-config-box input{
+  width:100%; padding:8px; border:1px solid var(--ink); background:#fbf8f0; font-size:13px;
 }
 
-.stamp .label{
-  font-family:'Big Shoulders Stencil',sans-serif;
-  font-size:12px;
-  letter-spacing:2px;
-  font-weight:700;
-}
-
-.stamp .value{
-  font-family:'Big Shoulders Stencil',sans-serif;
-  font-size:22px;
-  font-weight:800;
-  letter-spacing:1px;
-  margin:2px 0;
-}
-
-.stamp .rate{
-  font-size:10px;
-  letter-spacing:1px;
-}
-
-.backup-row{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-  padding:0 32px;
-  margin-top:24px;
-}
-
+.backup-row{display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:0 32px; margin-top:16px;}
 .backup-btn{
-  background:none;
-  color:var(--olive);
-  border:1px solid var(--olive);
-  font-family:'Big Shoulders Stencil',sans-serif;
-  font-weight:700;
-  letter-spacing:1.2px;
-  text-transform:uppercase;
-  font-size:12px;
-  padding:11px 10px;
-  cursor:pointer;
+  background:none; color:var(--olive); border:1px solid var(--olive);
+  font-family:'Big Shoulders Stencil',sans-serif; font-weight:700; font-size:13px;
+  padding:11px 10px; cursor:pointer; text-transform:uppercase;
 }
+.backup-btn:hover{background:var(--khaki);}
+.backup-btn.main-save{background:var(--olive); color:var(--paper);}
+.backup-btn.main-save:hover{background:var(--ink);}
 
-.backup-btn:hover{
-  background:var(--khaki);
-}
-
-.backup-btn:disabled{
-  opacity:.5;
-  cursor:not-allowed;
-}
-
-footer{
-  padding:18px 32px 0;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-}
-
-.print-btn{
-  background:var(--olive);
-  color:var(--paper);
-  border:1px solid var(--ink);
-  font-family:'Big Shoulders Stencil',sans-serif;
-  font-weight:700;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  font-size:13px;
-  padding:10px 18px;
-  cursor:pointer;
-}
-
-.print-btn:hover{
-  background:var(--ink);
-}
-
-.reset{
-  background:none;
-  color:#8b8465;
-  font-size:11px;
-  letter-spacing:1.5px;
-  text-decoration:underline;
-  padding:4px;
-  cursor:pointer;
-  border:none;
-}
-
-.reset:hover{
-  color:var(--rust);
-}
-
-.status{
-  font-size:12px;
-  color:#8b8465;
-  padding:0 32px;
-  margin-top:10px;
-  min-height:18px;
-}
-
-.status.error{
-  color:var(--rust);
-}
-
-.status.success{
-  color:var(--olive);
-}
+footer{padding:18px 32px 0; display:flex; justify-content:space-between; align-items:center;}
+.print-btn{background:var(--olive); color:var(--paper); border:1px solid var(--ink); font-family:'Big Shoulders Stencil',sans-serif; font-weight:700; font-size:13px; padding:10px 18px; cursor:pointer;}
+.reset{background:none; color:#8b8465; font-size:11px; text-decoration:underline; border:none; cursor:pointer;}
+.status{font-size:12px; color:#8b8465; padding:0 32px; margin-top:10px; min-height:18px;}
+.status.error{color:var(--rust); font-weight:700;}
+.status.success{color:var(--olive); font-weight:700;}
 
 @media(max-width:650px){
-  body{
-    padding:15px 8px 40px;
-  }
-  .carnet{
-    max-width:100%;
-  }
-  header{
-    padding:30px 20px 18px;
-  }
-  h1{
-    font-size:36px;
-  }
-  section{
-    padding:0 20px;
-  }
-  .backup-row{
-    padding:0 20px;
-    grid-template-columns:1fr 1fr;
-  }
-  footer{
-    padding-left:20px;
-    padding-right:20px;
-  }
-  .status{
-    padding-left:20px;
-    padding-right:20px;
-  }
-  .quota-box{
-    align-items:flex-start;
-  }
-  .entry{
-    align-items:flex-start;
-  }
-  .entry .right{
-    flex-wrap:wrap;
-    justify-content:flex-end;
-  }
+  body{padding:15px 8px 40px;}
+  header, section, .token-config-box, .backup-row, footer, .status{padding-left:16px; padding-right:16px;}
+  h1{font-size:36px;}
 }
-
-@media(max-width:420px){
-  h1{
-    font-size:31px;
-  }
-  .quota-fields{
-    width:100%;
-    justify-content:space-between;
-    gap:8px;
-  }
-  .stamp{
-    width:105px;
-    height:105px;
-  }
-  .entry{
-    flex-wrap:wrap;
-  }
-  .entry .right{
-    width:100%;
-    justify-content:flex-end;
-  }
-  .backup-row{
-    grid-template-columns:1fr;
-  }
-}
-
-@media print{
-  .install-banner,
-  .backup-row,
-  footer,
-  .status,
-  .picker-wrap{
-    display:none!important;
-  }
-  body{
-    background:#fff;
-    padding:0;
-    -webkit-print-color-adjust:exact;
-    print-color-adjust:exact;
-  }
-  .carnet{
-    box-shadow:none;
-    border:none;
-    max-width:100%;
-  }
-  .carnet::before{
-    display:none;
-  }
-  .pay-btn,
-  .del{
-    display:none!important;
-  }
-  .month-group{
-    page-break-inside:avoid;
-  }
-  .totals{
-    page-break-inside:avoid;
-    break-inside:avoid;
-    margin-top:30px;
-    border-top:1px solid var(--ink);
-    padding-top:18px;
-  }
-  .stamp{
-    mix-blend-mode:normal!important;
-    opacity:1!important;
-  }
-  @page{
-    size:A4;
-    margin:16mm;
-  }
-}
-
 </style>
 </head>
 
@@ -858,42 +289,31 @@ footer{
 <div class="install-banner show" id="installBanner">
   <span>
     <strong>Ajoute-la à l'écran d'accueil</strong>
-    <span class="steps">
-      Touche <b>⬆️ Partager</b> en bas de Safari,
-      puis <b>« Sur l'écran d'accueil »</b>.
-      Tu pourras ensuite l'ouvrir comme une vraie appli.
-    </span>
+    <span>Touche <b>⬆️ Partager</b> sur Safari, puis <b>« Sur l'écran d'accueil »</b>.</span>
   </span>
-  <button class="close-banner" id="closeBanner" aria-label="Fermer" type="button">✕</button>
+  <button class="close-banner" id="closeBanner" type="button">✕</button>
 </div>
 
 <div class="carnet">
 
 <header>
   <h1>Carnet de réserve</h1>
-  <div class="sub">
-    Enregistrement des périodes de réserve
-  </div>
+  <div class="sub">Enregistrement des périodes de réserve</div>
 </header>
 
 <section>
 
-<div class="field-label">
-  Quota annuel
-</div>
-
+<div class="field-label">Quota annuel</div>
 <div class="quota-box">
   <div class="quota-title">
-    <button type="button" class="year-nav" id="prevYear" aria-label="Année précédente">‹</button>
-    Réserve
-    <span id="quotaYear">2026</span>
-    <button type="button" class="year-nav" id="nextYear" aria-label="Année suivante">›</button>
+    <button type="button" class="year-nav" id="prevYear">‹</button>
+    Réserve <span id="quotaYear">2026</span>
+    <button type="button" class="year-nav" id="nextYear">›</button>
   </div>
-
   <div class="quota-fields">
     <div class="quota-field">
       <label for="quotaInput">Accordés</label>
-      <input type="number" id="quotaInput" min="0" step="1" inputmode="numeric">
+      <input type="number" id="quotaInput" min="0" step="1">
     </div>
     <div class="quota-field">
       <label>Utilisés</label>
@@ -906,10 +326,7 @@ footer{
   </div>
 </div>
 
-<div class="field-label">
-  Nouvelle période
-</div>
-
+<div class="field-label">Nouvelle période</div>
 <div class="picker-wrap">
   <button type="button" class="picker-trigger" id="pickerTrigger">
     <span id="pickerLabel" class="ph">Choisir une période…</span>
@@ -918,24 +335,18 @@ footer{
 
   <div class="calendar-pop" id="calendarPop">
     <div class="cal-nav">
-      <button type="button" id="prevMonth" aria-label="Mois précédent">‹</button>
+      <button type="button" id="prevMonth">‹</button>
       <span class="cal-month" id="calMonthLabel">Août 2026</span>
-      <button type="button" id="nextMonth" aria-label="Mois suivant">›</button>
+      <button type="button" id="nextMonth">›</button>
     </div>
-
     <div class="cal-grid" id="calGrid"></div>
-
     <div class="cal-footer">
       <span class="cal-selection" id="calSelection">Sélectionne le premier jour</span>
       <label class="weekend-toggle">
-        <input type="checkbox" id="includeWeekends">
-        Inclure week-ends
+        <input type="checkbox" id="includeWeekends"> Inclure week-ends
       </label>
     </div>
-
-    <button type="button" class="btn-confirm" id="confirmAdd" disabled>
-      Ajouter la période
-    </button>
+    <button type="button" class="btn-confirm" id="confirmAdd" disabled>Ajouter la période</button>
   </div>
 </div>
 
@@ -952,17 +363,19 @@ footer{
 
 </section>
 
+<div class="token-config-box">
+  <label for="tokenInput">🔑 Clef d'accès GitHub (Token PAT) :</label>
+  <input type="password" id="tokenInput" placeholder="Collez votre jeton ghp_... ici (une seule fois)">
+</div>
+
 <div class="backup-row">
-  <button class="backup-btn" id="saveHtmlBtn" type="button">💾 Sauvegarder</button>
-  <button class="backup-btn" id="syncBtn" type="button">🔄 Synchroniser</button>
+  <button class="backup-btn main-save" id="saveHtmlBtn" type="button">💾 Sauvegarder</button>
   <button class="backup-btn" id="saveJsonBtn" type="button">📄 Exporter JSON</button>
-  <button class="backup-btn" id="loadJsonBtn" type="button">📥 Importer JSON</button>
-  <input type="file" id="jsonFileInput" accept="application/json,.json" style="display:none">
 </div>
 
 <footer>
   <button class="print-btn" id="printBtn" type="button">🖨 Imprimer</button>
-  <button class="reset" id="resetBtn" type="button">Effacer tout le carnet</button>
+  <button class="reset" id="resetBtn" type="button">Effacer tout</button>
 </footer>
 
 <div class="status" id="status" aria-live="polite"></div>
@@ -972,66 +385,19 @@ footer{
 <script>
 'use strict';
 
-/* =========================================================
-   CONFIGURATION & CONSTANTES
-========================================================= */
 const RATE = 80;
 const DEFAULT_QUOTA = 30;
 const STORAGE_KEY = 'reserve-state-v2';
 
-// 🔑 VOS CONFIGURATIONS GITHUB (SANS AUCUN TOKEN DANS LE CODE) :
 const GITHUB_USER = 'ICBEST32';
 const GITHUB_REPO = 'Carnet-R-serve';
 const GITHUB_FILE_PATH = 'index.html';
-let GITHUB_TOKEN = localStorage.getItem('github_pat') || '';
 
-const MOIS_FR = [
-  'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
-  'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'
-];
+const MOIS_FR = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 const DOW_LETTERS = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
-/* =========================================================
-   ÉLÉMENTS DOM
-========================================================= */
 const $ = id => document.getElementById(id);
 
-const monthGroupsEl = $('monthGroups');
-const countText = $('countText');
-const totalValue = $('totalValue');
-const statusEl = $('status');
-
-const pickerTrigger = $('pickerTrigger');
-const pickerLabel = $('pickerLabel');
-const calendarPop = $('calendarPop');
-const calGrid = $('calGrid');
-const calMonthLabel = $('calMonthLabel');
-const calSelection = $('calSelection');
-const prevMonthBtn = $('prevMonth');
-const nextMonthBtn = $('nextMonth');
-const includeWeekendsChk = $('includeWeekends');
-const confirmBtn = $('confirmAdd');
-
-const quotaYearEl = $('quotaYear');
-const prevYearBtn = $('prevYear');
-const nextYearBtn = $('nextYear');
-const quotaInput = $('quotaInput');
-const usedDaysVal = $('usedDaysVal');
-const remainingDaysVal = $('remainingDaysVal');
-
-const saveHtmlBtn = $('saveHtmlBtn');
-const syncBtn = $('syncBtn');
-const saveJsonBtn = $('saveJsonBtn');
-const loadJsonBtn = $('loadJsonBtn');
-const jsonFileInput = $('jsonFileInput');
-const printBtn = $('printBtn');
-const resetBtn = $('resetBtn');
-const closeBanner = $('closeBanner');
-const installBanner = $('installBanner');
-
-/* =========================================================
-   ÉTAT DE L'APPLICATION
-========================================================= */
 let periods = [];
 let quotas = {};
 let selectedYear = new Date().getFullYear();
@@ -1040,117 +406,39 @@ let selStart = null;
 let selEnd = null;
 let syncing = false;
 
-/* =========================================================
-   UTILITAIRES ET FORMATAGE
-========================================================= */
-function setStatus(message, type = '') {
-  statusEl.textContent = message || '';
-  statusEl.classList.remove('error', 'success');
-  if (type) statusEl.classList.add(type);
+function setStatus(msg, type = '') {
+  $('status').textContent = msg || '';
+  $('status').className = 'status ' + type;
 }
 
-function pad(value) {
-  return String(value).padStart(2, '0');
-}
-
-function isValidISO(value) {
-  return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value);
-}
-
+function pad(v) { return String(v).padStart(2, '0'); }
+function isValidISO(v) { return typeof v === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v); }
 function fromISO(iso) {
   if (!isValidISO(iso)) return null;
-  const parts = iso.split('-').map(Number);
-  const date = new Date(parts[0], parts[1] - 1, parts[2]);
-  if (date.getFullYear() !== parts[0] || date.getMonth() !== parts[1] - 1 || date.getDate() !== parts[2]) {
-    return null;
-  }
-  return date;
+  const p = iso.split('-').map(Number);
+  return new Date(p[0], p[1] - 1, p[2]);
 }
-
-function toISO(date) {
-  return date.getFullYear() + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate());
-}
-
-function formatShort(iso) {
-  const date = fromISO(iso);
-  return date ? pad(date.getDate()) + '/' + pad(date.getMonth() + 1) : '—';
-}
-
-function formatFull(iso) {
-  const date = fromISO(iso);
-  return date ? pad(date.getDate()) + '/' + pad(date.getMonth() + 1) + '/' + date.getFullYear() : '—';
-}
-
-function generateId() {
-  return Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10);
-}
-
-function safeNumber(value, fallback = 0) {
-  const num = Number(value);
-  return Number.isFinite(num) ? num : fallback;
-}
-
-function validTimestamp(value) {
-  if (typeof value !== 'string' || !value) return null;
-  const time = Date.parse(value);
-  return Number.isNaN(time) ? null : time;
-}
-
-/* =========================================================
-   NORMALISATION DES DONNÉES
-========================================================= */
-function normalizeQuotas(input) {
-  if (!input || typeof input !== 'object' || Array.isArray(input)) return {};
-  const result = {};
-  Object.keys(input).forEach(year => {
-    if (/^\d{4}$/.test(year)) {
-      result[year] = Math.max(0, Math.floor(safeNumber(input[year], DEFAULT_QUOTA)));
-    }
-  });
-  return result;
-}
-
-function buildDates(startISO, endISO, includeWeekends) {
-  const start = fromISO(startISO);
-  const end = fromISO(endISO);
-  if (!start || !end) return [];
-  const dates = [];
-  const cursor = new Date(start);
-  while (cursor <= end) {
-    const day = cursor.getDay();
-    const isWeekend = (day === 0 || day === 6);
-    if (includeWeekends || !isWeekend) {
-      dates.push(toISO(cursor));
-    }
-    cursor.setDate(cursor.getDate() + 1);
-  }
-  return dates;
-}
+function toISO(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+function formatShort(iso) { const d = fromISO(iso); return d ? pad(d.getDate()) + '/' + pad(d.getMonth() + 1) : '—'; }
+function formatFull(iso) { const d = fromISO(iso); return d ? pad(d.getDate()) + '/' + pad(d.getMonth() + 1) + '/' + d.getFullYear() : '—'; }
+function generateId() { return Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10); }
 
 function normalizePeriods(input) {
   if (!Array.isArray(input)) return [];
-  const result = [];
-  input.forEach(period => {
-    if (!period || typeof period !== 'object') return;
-    if (!isValidISO(period.start) || !isValidISO(period.end)) return;
-    if (period.start > period.end) return;
+  return input.filter(p => p && isValidISO(p.start) && isValidISO(p.end)).map(p => ({
+    id: p.id || generateId(),
+    start: p.start,
+    end: p.end,
+    dates: Array.isArray(p.dates) ? p.dates : [],
+    paid: p.paid === true
+  }));
+}
 
-    let dates = Array.isArray(period.dates) ? period.dates.filter(isValidISO) : [];
-    dates = [...new Set(dates)].filter(d => d >= period.start && d <= period.end).sort();
-
-    if (dates.length === 0) {
-      dates = buildDates(period.start, period.end, true);
-    }
-
-    result.push({
-      id: typeof period.id === 'string' && period.id.trim() ? period.id : generateId(),
-      start: period.start,
-      end: period.end,
-      dates: dates,
-      paid: period.paid === true
-    });
-  });
-  return result;
+function normalizeQuotas(input) {
+  if (!input || typeof input !== 'object') return {};
+  const res = {};
+  Object.keys(input).forEach(y => { res[y] = Number(input[y]) || DEFAULT_QUOTA; });
+  return res;
 }
 
 function createState() {
@@ -1162,142 +450,74 @@ function createState() {
   };
 }
 
-/* =========================================================
-   GESTION DU STOCKAGE ET DE LA SYNCHRONISATION GITHUB
-========================================================= */
-function getEmbeddedState() {
-  try {
-    const state = window.__RESERVE_SYNC_STATE__;
-    if (!state || typeof state !== 'object') return null;
-    return {
-      version: Number(state.version) || 1,
-      periods: normalizePeriods(state.periods),
-      quotas: normalizeQuotas(state.quotas),
-      updated_at: validTimestamp(state.updated_at) ? new Date(validTimestamp(state.updated_at)).toISOString() : null
-    };
-  } catch (e) {
-    return null;
-  }
-}
+function initData() {
+  const token = localStorage.getItem('github_pat') || '';
+  if (token) $('tokenInput').value = token;
 
-function loadLocalState() {
+  let chosen = null;
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) {
-      const data = JSON.parse(raw);
-      if (data && typeof data === 'object') {
-        return {
-          periods: normalizePeriods(data.periods),
-          quotas: normalizeQuotas(data.quotas),
-          updated_at: validTimestamp(data.updated_at) ? new Date(validTimestamp(data.updated_at)).toISOString() : null
-        };
-      }
+    if (raw) chosen = JSON.parse(raw);
+  } catch (e) {}
+
+  try {
+    const embedded = window.__RESERVE_SYNC_STATE__;
+    if (embedded && (!chosen || new Date(embedded.updated_at) > new Date(chosen.updated_at))) {
+      chosen = embedded;
     }
-  } catch (e) {
-    console.warn('Erreur de lecture du localStorage:', e);
+  } catch (e) {}
+
+  if (chosen) {
+    periods = normalizePeriods(chosen.periods);
+    quotas = normalizeQuotas(chosen.quotas);
   }
-  return null;
+  if (!quotas[selectedYear]) quotas[selectedYear] = DEFAULT_QUOTA;
 }
 
 function saveLocalState() {
   try {
-    const state = createState();
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-    return true;
-  } catch (e) {
-    console.error('Sauvegarde locale impossible:', e);
-    return false;
-  }
-}
-
-function initData() {
-  const local = loadLocalState();
-  const embedded = getEmbeddedState();
-
-  let chosen = local;
-
-  if (embedded) {
-    if (!chosen) {
-      chosen = embedded;
-    } else {
-      const localTime = validTimestamp(chosen.updated_at) || 0;
-      const embeddedTime = validTimestamp(embedded.updated_at) || 0;
-      if (embeddedTime > localTime) {
-        chosen = embedded;
-      }
-    }
-  }
-
-  if (chosen) {
-    periods = chosen.periods || [];
-    quotas = chosen.quotas || {};
-  } else {
-    periods = [];
-    quotas = {};
-  }
-
-  if (!quotas[selectedYear]) {
-    quotas[selectedYear] = DEFAULT_QUOTA;
-  }
-
-  saveLocalState();
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(createState()));
+  } catch (e) {}
 }
 
 async function syncWithServer() {
   if (syncing) return;
 
-  // Demande le token si non enregistré dans le navigateur
-  if (!GITHUB_TOKEN) {
-    const inputToken = prompt("Entrez votre jeton GitHub (ghp_...) pour autoriser l'écriture :");
-    if (!inputToken) {
-      saveLocalState();
-      setStatus('Sauvegardé en local uniquement (Jeton absent).', 'error');
-      return;
-    }
-    GITHUB_TOKEN = inputToken.trim();
-    localStorage.setItem('github_pat', GITHUB_TOKEN);
+  const token = $('tokenInput').value.trim();
+  if (!token) {
+    setStatus('Veuillez d\'abord entrer votre jeton GitHub ci-dessus.', 'error');
+    return;
   }
+  localStorage.setItem('github_pat', token);
 
   syncing = true;
-
-  saveHtmlBtn.disabled = true;
-  syncBtn.disabled = true;
-  saveHtmlBtn.textContent = '⏳ Écriture...';
-  syncBtn.textContent = '⏳ Écriture...';
-  setStatus('Écrasement du fichier sur GitHub...', '');
+  $('saveHtmlBtn').disabled = true;
+  $('saveHtmlBtn').textContent = '⏳ Enregistrement...';
+  setStatus('Sauvegarde en cours sur GitHub...', '');
 
   try {
-    const currentState = createState();
     const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${GITHUB_FILE_PATH}`;
 
-    // 1. Récupération du SHA du fichier sur GitHub
     const getRes = await fetch(url, {
       headers: {
-        'Authorization': `token ${GITHUB_TOKEN}`,
+        'Authorization': `token ${token}`,
         'Accept': 'application/vnd.github.v3+json'
       }
     });
 
     if (getRes.status === 401 || getRes.status === 403) {
-      localStorage.removeItem('github_pat');
-      GITHUB_TOKEN = '';
-      throw new Error('Jeton GitHub invalide ou expiré. Veuillez réessayer.');
+      throw new Error('Jeton GitHub invalide ou expiré.');
     }
-
-    if (!getRes.ok) {
-      throw new Error(`Fichier introuvable sur GitHub (${getRes.status})`);
-    }
+    if (!getRes.ok) throw new Error('Impossible de joindre GitHub.');
 
     const fileData = await getRes.json();
     const sha = fileData.sha;
 
-    // Décodage UTF-8 du HTML existant
     const currentHtml = new TextDecoder().decode(
       Uint8Array.from(atob(fileData.content.replace(/\s/g, '')), c => c.charCodeAt(0))
     );
 
-    // 2. Remplacement du JSON dans la balise <script id="sync-state">
-    const jsonState = JSON.stringify(currentState, null, 2);
+    const jsonState = JSON.stringify(createState(), null, 2);
     const newScript = `<script id="sync-state">\nwindow.__RESERVE_SYNC_STATE__ = ${jsonState};\n<\/script>`;
     
     const updatedHtml = currentHtml.replace(
@@ -1305,449 +525,205 @@ async function syncWithServer() {
       newScript
     );
 
-    // Encodage Base64
     const encoder = new TextEncoder();
     const encodedContent = btoa(String.fromCharCode(...encoder.encode(updatedHtml)));
 
-    // 3. Écrasement du fichier sur GitHub
     const putRes = await fetch(url, {
       method: 'PUT',
       headers: {
-        'Authorization': `token ${GITHUB_TOKEN}`,
-        'Content-Type': 'application/json',
-        'Accept': 'application/vnd.github.v3+json'
+        'Authorization': `token ${token}`,
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        message: 'Mise à jour automatique - Carnet de Réserve',
+        message: 'Mise à jour du carnet',
         content: encodedContent,
         sha: sha
       })
     });
 
-    if (!putRes.ok) {
-      const errJson = await putRes.json().catch(() => ({}));
-      throw new Error(errJson.message || `Erreur GitHub ${putRes.status}`);
-    }
+    if (!putRes.ok) throw new Error('Erreur lors de la mise à jour GitHub.');
 
     saveLocalState();
-    setStatus('Fichier écrasé et mis à jour sur GitHub !', 'success');
-
+    setStatus('Sauvegardé avec succès sur GitHub !', 'success');
   } catch (err) {
-    console.error('Erreur GitHub API:', err);
-    saveLocalState();
     setStatus('Erreur : ' + err.message, 'error');
   } finally {
     syncing = false;
-    saveHtmlBtn.disabled = false;
-    syncBtn.disabled = false;
-    saveHtmlBtn.textContent = '💾 Sauvegarder';
-    syncBtn.textContent = '🔄 Synchroniser';
+    $('saveHtmlBtn').disabled = false;
+    $('saveHtmlBtn').textContent = '💾 Sauvegarder';
   }
 }
 
-/* =========================================================
-   RENDU UI ET CALENDRIER
-========================================================= */
-function updateQuotaDisplay() {
-  quotaYearEl.textContent = selectedYear;
-  if (quotas[selectedYear] === undefined) {
-    quotas[selectedYear] = DEFAULT_QUOTA;
+function buildDates(startISO, endISO, includeWeekends) {
+  const start = fromISO(startISO);
+  const end = fromISO(endISO);
+  if (!start || !end) return [];
+  const dates = [];
+  const cur = new Date(start);
+  while (cur <= end) {
+    const day = cur.getDay();
+    if (includeWeekends || (day !== 0 && day !== 6)) dates.push(toISO(cur));
+    cur.setDate(cur.getDate() + 1);
   }
-  quotaInput.value = quotas[selectedYear];
-
-  const yearPeriods = periods.filter(p => {
-    return p.dates.some(d => d.startsWith(String(selectedYear)));
-  });
-
-  const used = yearPeriods.reduce((acc, p) => {
-    const yearDates = p.dates.filter(d => d.startsWith(String(selectedYear)));
-    return acc + yearDates.length;
-  }, 0);
-
-  const totalQuota = safeNumber(quotas[selectedYear], DEFAULT_QUOTA);
-  const remaining = totalQuota - used;
-
-  usedDaysVal.textContent = used;
-  remainingDaysVal.textContent = remaining;
-
-  if (remaining < 0) {
-    remainingDaysVal.classList.add('over');
-  } else {
-    remainingDaysVal.classList.remove('over');
-  }
+  return dates;
 }
 
-function renderCalendar() {
-  calGrid.innerHTML = '';
+function renderAll() {
+  $('quotaYear').textContent = selectedYear;
+  if (quotas[selectedYear] === undefined) quotas[selectedYear] = DEFAULT_QUOTA;
+  $('quotaInput').value = quotas[selectedYear];
 
-  DOW_LETTERS.forEach(lettre => {
-    const dow = document.createElement('div');
-    dow.className = 'cal-dow';
-    dow.textContent = lettre;
-    calGrid.appendChild(dow);
+  const yearPeriods = periods.filter(p => p.dates.some(d => d.startsWith(String(selectedYear))));
+  const used = yearPeriods.reduce((acc, p) => acc + p.dates.filter(d => d.startsWith(String(selectedYear))).length, 0);
+  const remaining = quotas[selectedYear] - used;
+
+  $('usedDaysVal').textContent = used;
+  $('remainingDaysVal').textContent = remaining;
+  $('remainingDaysVal').className = 'static-num' + (remaining < 0 ? ' over' : '');
+
+  // Render Calendar
+  $('calGrid').innerHTML = '';
+  DOW_LETTERS.forEach(l => {
+    const d = document.createElement('div');
+    d.className = 'cal-dow';
+    d.textContent = l;
+    $('calGrid').appendChild(d);
   });
 
   const year = viewDate.getFullYear();
   const month = viewDate.getMonth();
+  $('calMonthLabel').textContent = MOIS_FR[month] + ' ' + year;
 
-  calMonthLabel.textContent = MOIS_FR[month] + ' ' + year;
-
-  const firstDay = new Date(year, month, 1);
-  let startDow = firstDay.getDay() - 1;
+  let startDow = new Date(year, month, 1).getDay() - 1;
   if (startDow === -1) startDow = 6;
 
   for (let i = 0; i < startDow; i++) {
-    const emptyCell = document.createElement('div');
-    emptyCell.className = 'cal-day muted';
-    calGrid.appendChild(emptyCell);
+    const cell = document.createElement('div');
+    cell.className = 'cal-day muted';
+    $('calGrid').appendChild(cell);
   }
 
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const todayISO = toISO(new Date());
 
   for (let day = 1; day <= daysInMonth; day++) {
-    const currentDate = new Date(year, month, day);
-    const iso = toISO(currentDate);
-
+    const iso = toISO(new Date(year, month, day));
     const btn = document.createElement('button');
     btn.type = 'button';
-    btn.className = 'cal-day';
+    btn.className = 'cal-day' + (iso === todayISO ? ' today' : '');
     btn.textContent = day;
 
-    if (iso === todayISO) {
-      btn.classList.add('today');
-    }
-
-    if (selStart && !selEnd && iso === selStart) {
-      btn.classList.add('range-start');
-    } else if (selStart && selEnd) {
+    if (selStart && !selEnd && iso === selStart) btn.classList.add('range-start');
+    if (selStart && selEnd) {
       if (iso === selStart) btn.classList.add('range-start');
       if (iso === selEnd) btn.classList.add('range-end');
       if (iso > selStart && iso < selEnd) btn.classList.add('in-range');
     }
 
-    btn.addEventListener('click', () => handleDayClick(iso));
-    calGrid.appendChild(btn);
+    btn.onclick = () => {
+      if (!selStart || (selStart && selEnd)) { selStart = iso; selEnd = null; }
+      else if (iso >= selStart) { selEnd = iso; }
+      else { selStart = iso; selEnd = null; }
+      renderAll();
+    };
+    $('calGrid').appendChild(btn);
   }
 
-  updateSelectionText();
-}
-
-function handleDayClick(iso) {
-  if (!selStart || (selStart && selEnd)) {
-    selStart = iso;
-    selEnd = null;
-  } else if (selStart && !selEnd) {
-    if (iso < selStart) {
-      selStart = iso;
-      selEnd = null;
-    } else {
-      selEnd = iso;
-    }
-  }
-  renderCalendar();
-}
-
-function updateSelectionText() {
   if (!selStart) {
-    calSelection.textContent = 'Sélectionne le premier jour';
-    confirmBtn.disabled = true;
-    pickerLabel.textContent = 'Choisir une période…';
-    pickerLabel.classList.add('ph');
-  } else if (selStart && !selEnd) {
-    calSelection.textContent = 'Du ' + formatFull(selStart) + ' (choisir fin)';
-    confirmBtn.disabled = true;
-    pickerLabel.textContent = 'Du ' + formatShort(selStart) + '...';
-    pickerLabel.classList.remove('ph');
+    $('calSelection').textContent = 'Sélectionnez la date de début';
+    $('confirmAdd').disabled = true;
+  } else if (!selEnd) {
+    $('calSelection').textContent = 'Du ' + formatShort(selStart) + ' (choisir la fin)';
+    $('confirmAdd').disabled = true;
   } else {
-    const dates = buildDates(selStart, selEnd, includeWeekendsChk.checked);
-    calSelection.textContent = 'Du ' + formatShort(selStart) + ' au ' + formatShort(selEnd) + ' (' + dates.length + ' j.)';
-    confirmBtn.disabled = false;
-    pickerLabel.textContent = formatShort(selStart) + ' → ' + formatShort(selEnd) + ' (' + dates.length + ' j.)';
-    pickerLabel.classList.remove('ph');
+    const dates = buildDates(selStart, selEnd, $('includeWeekends').checked);
+    $('calSelection').textContent = formatShort(selStart) + ' → ' + formatShort(selEnd) + ' (' + dates.length + ' j.)';
+    $('confirmAdd').disabled = false;
   }
-}
 
-function renderPeriods() {
-  monthGroupsEl.innerHTML = '';
-
-  const currentYearPeriods = periods.filter(p => {
-    return p.dates.some(d => d.startsWith(String(selectedYear)));
-  });
-
-  if (currentYearPeriods.length === 0) {
-    monthGroupsEl.innerHTML = '<div class="empty">Aucune période enregistrée pour ' + selectedYear + '.</div>';
-    countText.innerHTML = '<b>0</b> période — <b>0</b> jour';
-    totalValue.textContent = '0 €';
+  // Render Periods List
+  $('monthGroups').innerHTML = '';
+  if (yearPeriods.length === 0) {
+    $('monthGroups').innerHTML = '<div class="empty">Aucune période en ' + selectedYear + '.</div>';
+    $('countText').innerHTML = '<b>0</b> période — <b>0</b> jour';
+    $('totalValue').textContent = '0 €';
     return;
   }
 
-  const groups = {};
-  currentYearPeriods.sort((a, b) => a.start.localeCompare(b.start));
+  let totalPaid = 0;
+  let totalDays = 0;
 
-  currentYearPeriods.forEach(p => {
-    const d = fromISO(p.start);
-    if (!d) return;
-    const mKey = d.getFullYear() + '-' + pad(d.getMonth() + 1);
-    if (!groups[mKey]) groups[mKey] = [];
-    groups[mKey].push(p);
-  });
+  yearPeriods.sort((a, b) => a.start.localeCompare(b.start)).forEach(p => {
+    const dCount = p.dates.filter(d => d.startsWith(String(selectedYear))).length;
+    totalDays += dCount;
+    const amt = dCount * RATE;
+    if (p.paid) totalPaid += amt;
 
-  let totalDaysAll = 0;
-  let totalPaidAmount = 0;
-  let pendingAmount = 0;
-  let pendingDays = 0;
-
-  Object.keys(groups).sort().forEach(mKey => {
-    const [y, m] = mKey.split('-').map(Number);
-    const groupDiv = document.createElement('div');
-    groupDiv.className = 'month-group';
-
-    const titleDiv = document.createElement('div');
-    titleDiv.className = 'month-title';
-    titleDiv.textContent = MOIS_FR[m - 1] + ' ' + y;
-    groupDiv.appendChild(titleDiv);
-
-    const ul = document.createElement('ul');
-    ul.className = 'period-list';
-
-    groups[mKey].forEach(p => {
-      const yearDates = p.dates.filter(d => d.startsWith(String(selectedYear)));
-      const daysCount = yearDates.length;
-      totalDaysAll += daysCount;
-
-      const amount = daysCount * RATE;
-
-      if (p.paid) {
-        totalPaidAmount += amount;
-      } else {
-        pendingAmount += amount;
-        pendingDays += daysCount;
-      }
-
-      const li = document.createElement('li');
-      li.className = 'entry' + (p.paid ? ' paid' : '');
-
-      li.innerHTML = `
-        <span>
-          <span class="range">${formatShort(p.start)} → ${formatFull(p.end)}</span>
-          <span class="meta">${daysCount} jour${daysCount > 1 ? 's' : ''}</span>
-        </span>
-        <span class="right">
-          <span class="amount">${amount} €</span>
-          <button type="button" class="pay-btn ${p.paid ? 'is-paid' : ''}" data-id="${p.id}">
-            ${p.paid ? 'Payé ✓' : 'Marquer payé'}
-          </button>
-          <button type="button" class="del" data-id="${p.id}" aria-label="Supprimer la période">✕</button>
-        </span>
-      `;
-
-      ul.appendChild(li);
-    });
-
-    groupDiv.appendChild(ul);
-    monthGroupsEl.appendChild(groupDiv);
-  });
-
-  let subLineHTML = '';
-  if (pendingAmount > 0) {
-    subLineHTML = `
-      <div class="sub-line">
-        dont ${pendingAmount} € en attente de paiement (${pendingDays} j.)
-      </div>
+    const div = document.createElement('div');
+    div.className = 'entry' + (p.paid ? ' paid' : '');
+    div.innerHTML = `
+      <span>
+        <span class="range">${formatShort(p.start)} → ${formatFull(p.end)}</span>
+        <span class="meta">${dCount} jour(s)</span>
+      </span>
+      <span class="right">
+        <span class="amount">${amt} €</span>
+        <button type="button" class="pay-btn ${p.paid ? 'is-paid' : ''}">${p.paid ? 'Payé ✓' : 'Payer'}</button>
+        <button type="button" class="del">✕</button>
+      </span>
     `;
-  }
 
-  countText.innerHTML = `
-    <b>${currentYearPeriods.length}</b> période${currentYearPeriods.length > 1 ? 's' : ''} — 
-    <b>${totalDaysAll}</b> jour${totalDaysAll > 1 ? 's' : ''}
-    ${subLineHTML}
-  `;
-
-  totalValue.textContent = totalPaidAmount + ' €';
-}
-
-function renderAll() {
-  updateQuotaDisplay();
-  renderCalendar();
-  renderPeriods();
-}
-
-/* =========================================================
-   ÉVÉNEMENTS ET ACTIONS UTILISATEUR
-========================================================= */
-function setupEventListeners() {
-  prevYearBtn.addEventListener('click', () => {
-    selectedYear--;
-    viewDate.setFullYear(selectedYear);
-    renderAll();
-  });
-
-  nextYearBtn.addEventListener('click', () => {
-    selectedYear++;
-    viewDate.setFullYear(selectedYear);
-    renderAll();
-  });
-
-  quotaInput.addEventListener('change', () => {
-    const val = Math.max(0, Math.floor(safeNumber(quotaInput.value, DEFAULT_QUOTA)));
-    quotas[selectedYear] = val;
-    saveLocalState();
-    renderAll();
-  });
-
-  pickerTrigger.addEventListener('click', () => {
-    calendarPop.classList.toggle('open');
-  });
-
-  prevMonthBtn.addEventListener('click', () => {
-    viewDate.setMonth(viewDate.getMonth() - 1);
-    renderCalendar();
-  });
-
-  nextMonthBtn.addEventListener('click', () => {
-    viewDate.setMonth(viewDate.getMonth() + 1);
-    renderCalendar();
-  });
-
-  includeWeekendsChk.addEventListener('change', () => {
-    updateSelectionText();
-  });
-
-  confirmBtn.addEventListener('click', () => {
-    if (!selStart || !selEnd) return;
-
-    const dates = buildDates(selStart, selEnd, includeWeekendsChk.checked);
-    if (dates.length === 0) {
-      alert('Aucun jour sélectionné.');
-      return;
-    }
-
-    const newPeriod = {
-      id: generateId(),
-      start: selStart,
-      end: selEnd,
-      dates: dates,
-      paid: false
-    };
-
-    periods.push(newPeriod);
-    saveLocalState();
-
-    selStart = null;
-    selEnd = null;
-    calendarPop.classList.remove('open');
-
-    renderAll();
-    setStatus('Période ajoutée ! N\'oubliez pas de sauvegarder.', 'success');
-  });
-
-  monthGroupsEl.addEventListener('click', (e) => {
-    const target = e.target;
-    if (!target) return;
-
-    const payBtn = target.closest('.pay-btn');
-    if (payBtn) {
-      const id = payBtn.getAttribute('data-id');
-      const period = periods.find(p => p.id === id);
-      if (period) {
-        period.paid = !period.paid;
-        saveLocalState();
-        renderAll();
-      }
-      return;
-    }
-
-    const delBtn = target.closest('.del');
-    if (delBtn) {
-      const id = delBtn.getAttribute('data-id');
+    div.querySelector('.pay-btn').onclick = () => { p.paid = !p.paid; saveLocalState(); renderAll(); };
+    div.querySelector('.del').onclick = () => {
       if (confirm('Supprimer cette période ?')) {
-        periods = periods.filter(p => p.id !== id);
+        periods = periods.filter(x => x.id !== p.id);
         saveLocalState();
         renderAll();
-        setStatus('Période supprimée.', 'success');
-      }
-    }
-  });
-
-  saveHtmlBtn.addEventListener('click', async () => {
-    await syncWithServer();
-  });
-
-  syncBtn.addEventListener('click', async () => {
-    await syncWithServer();
-  });
-
-  saveJsonBtn.addEventListener('click', () => {
-    const state = createState();
-    const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(state, null, 2));
-    const downloadAnchor = document.createElement('a');
-    downloadAnchor.setAttribute('href', dataStr);
-    downloadAnchor.setAttribute('download', `carnet_reserve_${selectedYear}_${toISO(new Date())}.json`);
-    document.body.appendChild(downloadAnchor);
-    downloadAnchor.click();
-    downloadAnchor.remove();
-    setStatus('Export JSON réussi.', 'success');
-  });
-
-  loadJsonBtn.addEventListener('click', () => {
-    jsonFileInput.click();
-  });
-
-  jsonFileInput.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      try {
-        const imported = JSON.parse(event.target.result);
-        if (!imported || typeof imported !== 'object') {
-          throw new Error('Format JSON invalide');
-        }
-
-        periods = normalizePeriods(imported.periods);
-        quotas = normalizeQuotas(imported.quotas);
-
-        saveLocalState();
-        renderAll();
-        setStatus('Données importées avec succès !', 'success');
-      } catch (err) {
-        console.error('Erreur import JSON:', err);
-        setStatus('Erreur lors de l\'import JSON.', 'error');
       }
     };
-    reader.readAsText(file);
-    jsonFileInput.value = '';
+
+    $('monthGroups').appendChild(div);
   });
 
-  printBtn.addEventListener('click', () => {
-    window.print();
-  });
-
-  resetBtn.addEventListener('click', () => {
-    if (confirm('ATTENTION : Voulez-vous vraiment effacer tout le carnet ?')) {
-      periods = [];
-      quotas = { [selectedYear]: DEFAULT_QUOTA };
-      saveLocalState();
-      renderAll();
-      setStatus('Carnet réinitialisé.', 'success');
-    }
-  });
-
-  if (closeBanner) {
-    closeBanner.addEventListener('click', () => {
-      installBanner.style.display = 'none';
-    });
-  }
+  $('countText').innerHTML = `<b>${yearPeriods.length}</b> période(s) — <b>${totalDays}</b> jour(s)`;
+  $('totalValue').textContent = totalPaid + ' €';
 }
 
-/* =========================================================
-   INITIALISATION GLOBALE
-========================================================= */
 document.addEventListener('DOMContentLoaded', () => {
   initData();
-  setupEventListeners();
+
+  $('tokenInput').onchange = (e) => localStorage.setItem('github_pat', e.target.value.trim());
+  $('prevYear').onclick = () => { selectedYear--; renderAll(); };
+  $('nextYear').onclick = () => { selectedYear++; renderAll(); };
+  $('quotaInput').onchange = (e) => { quotas[selectedYear] = Number(e.target.value) || 0; saveLocalState(); renderAll(); };
+  $('pickerTrigger').onclick = () => $('calendarPop').classList.toggle('open');
+  $('prevMonth').onclick = () => { viewDate.setMonth(viewDate.getMonth() - 1); renderAll(); };
+  $('nextMonth').onclick = () => { viewDate.setMonth(viewDate.getMonth() + 1); renderAll(); };
+  $('includeWeekends').onchange = () => renderAll();
+
+  $('confirmAdd').onclick = () => {
+    const dates = buildDates(selStart, selEnd, $('includeWeekends').checked);
+    periods.push({ id: generateId(), start: selStart, end: selEnd, dates: dates, paid: false });
+    saveLocalState();
+    selStart = null; selEnd = null;
+    $('calendarPop').classList.remove('open');
+    renderAll();
+  };
+
+  $('saveHtmlBtn').onclick = syncWithServer;
+  $('saveJsonBtn').onclick = () => {
+    const blob = new Blob([JSON.stringify(createState(), null, 2)], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'carnet.json'; a.click();
+  };
+
+  $('printBtn').onclick = () => window.print();
+  $('resetBtn').onclick = () => {
+    if (confirm('Tout réinitialiser ?')) {
+      periods = []; quotas = {}; saveLocalState(); renderAll();
+    }
+  };
+  $('closeBanner').onclick = () => $('installBanner').style.display = 'none';
+
   renderAll();
   setStatus('Prêt');
 });
