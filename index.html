@@ -245,20 +245,6 @@ section{padding:0 32px;}
 .stamp .value{font-family:'Big Shoulders Stencil',sans-serif; font-size:22px; font-weight:800;}
 .stamp .rate{font-size:10px;}
 
-.token-config-box{
-  margin:20px 32px 0;
-  padding:12px 14px;
-  background:rgba(31,42,36,.05);
-  border:1px dashed var(--khaki);
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-.token-config-box label{font-size:11px; text-transform:uppercase; font-weight:700; color:#5b5646;}
-.token-config-box input{
-  width:100%; padding:8px; border:1px solid var(--ink); background:#fbf8f0; font-size:13px;
-}
-
 .backup-row{display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:0 32px; margin-top:16px;}
 .backup-btn{
   background:none; color:var(--olive); border:1px solid var(--olive);
@@ -278,7 +264,7 @@ footer{padding:18px 32px 0; display:flex; justify-content:space-between; align-i
 
 @media(max-width:650px){
   body{padding:15px 8px 40px;}
-  header, section, .token-config-box, .backup-row, footer, .status{padding-left:16px; padding-right:16px;}
+  header, section, .backup-row, footer, .status{padding-left:16px; padding-right:16px;}
   h1{font-size:36px;}
 }
 </style>
@@ -363,11 +349,6 @@ footer{padding:18px 32px 0; display:flex; justify-content:space-between; align-i
 
 </section>
 
-<div class="token-config-box">
-  <label for="tokenInput">🔑 Clef d'accès GitHub (Token PAT) :</label>
-  <input type="password" id="tokenInput" placeholder="Collez votre jeton ghp_... ici (une seule fois)">
-</div>
-
 <div class="backup-row">
   <button class="backup-btn main-save" id="saveHtmlBtn" type="button">💾 Sauvegarder</button>
   <button class="backup-btn" id="saveJsonBtn" type="button">📄 Exporter JSON</button>
@@ -384,6 +365,9 @@ footer{padding:18px 32px 0; display:flex; justify-content:space-between; align-i
 
 <script>
 'use strict';
+
+// ⚠️ METTEZ VOTRE JETON GITHUB ICI ENTRE LES GUILLEMETS :
+const GITHUB_PAT = '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';
 
 const RATE = 80;
 const DEFAULT_QUOTA = 30;
@@ -451,9 +435,6 @@ function createState() {
 }
 
 function initData() {
-  const token = localStorage.getItem('github_pat') || '';
-  if (token) $('tokenInput').value = token;
-
   let chosen = null;
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -483,12 +464,10 @@ function saveLocalState() {
 async function syncWithServer() {
   if (syncing) return;
 
-  const token = $('tokenInput').value.trim();
-  if (!token) {
-    setStatus('Veuillez d\'abord entrer votre jeton GitHub ci-dessus.', 'error');
+  if (!GITHUB_PAT || GITHUB_PAT === 'COLLEZ_VOTRE_TOKEN_GHP_ICI') {
+    setStatus('Veuillez configurer GITHUB_PAT à la ligne 272 du fichier index.html.', 'error');
     return;
   }
-  localStorage.setItem('github_pat', token);
 
   syncing = true;
   $('saveHtmlBtn').disabled = true;
@@ -500,7 +479,7 @@ async function syncWithServer() {
 
     const getRes = await fetch(url, {
       headers: {
-        'Authorization': `token ${token}`,
+        'Authorization': `token ${GITHUB_PAT}`,
         'Accept': 'application/vnd.github.v3+json'
       }
     });
@@ -531,7 +510,7 @@ async function syncWithServer() {
     const putRes = await fetch(url, {
       method: 'PUT',
       headers: {
-        'Authorization': `token ${token}`,
+        'Authorization': `token ${GITHUB_PAT}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -692,7 +671,6 @@ function renderAll() {
 document.addEventListener('DOMContentLoaded', () => {
   initData();
 
-  $('tokenInput').onchange = (e) => localStorage.setItem('github_pat', e.target.value.trim());
   $('prevYear').onclick = () => { selectedYear--; renderAll(); };
   $('nextYear').onclick = () => { selectedYear++; renderAll(); };
   $('quotaInput').onchange = (e) => { quotas[selectedYear] = Number(e.target.value) || 0; saveLocalState(); renderAll(); };
