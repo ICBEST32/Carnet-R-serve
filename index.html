@@ -973,7 +973,7 @@ footer{
 'use strict';
 
 /* =========================================================
-   CONFIGURATION & CONSTANTES (METTRE LES CLÉS ICI)
+   CONFIGURATION & CONSTANTES
 ========================================================= */
 const RATE = 80;
 const DEFAULT_QUOTA = 30;
@@ -981,12 +981,12 @@ const STORAGE_KEY = 'reserve-state-v2';
 const LEGACY_PERIODS_KEY = 'reserve-periods';
 const LEGACY_QUOTA_KEY = 'reserve-quotas';
 
-// URL de votre fonction Edge Supabase
-const GITHUB_FUNCTION_URL = 'https://iwmtlbqwzbbnyrzggjdz.supabase.co/functions/v1/save-to-github';
-
-// 🔑 PLACEZ VOTRE CLÉ SUPABASE (ANON / PUBLIC) ENTRE LES GUILLEMETS CI-DESSOUS :
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml3bXRsYnF3emJibnlyemdnamR6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc4NDM2ODEsImV4cCI6MjEwMzQxOTY4MX0.Pls-g8NMzSWpttc532gvLk3e2X-ZmHawnlh99bMZp4w';
-
+// 🔑 RENSEIGNEZ VOS INFORMATIONS GITHUB ICI POUR ÉCRASER LE FICHIER DIRECTEMENT :
+const GITHUB_USER = 'ICBEST32';
+const GITHUB_REPO = 'Carnet-R-serve';
+const GITHUB_FILE_PATH = 'index.html';
+// On laisse la variable vide dans le code !
+let GITHUB_TOKEN = localStorage.getItem('github_pat') || '';
 const MOIS_FR = [
   'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
   'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'
@@ -1165,7 +1165,7 @@ function createState() {
 }
 
 /* =========================================================
-   GESTION DU STOCKAGE ET DE LA SYNCHRONISATION
+   GESTION DU STOCKAGE ET DE LA SYNCHRONISATION GITHUB
 ========================================================= */
 function getEmbeddedState() {
   try {
@@ -1201,32 +1201,6 @@ function loadLocalState() {
   return null;
 }
 
-function loadLegacyLocalState() {
-  try {
-    const rawPeriods = localStorage.getItem(LEGACY_PERIODS_KEY);
-    const rawQuotas = localStorage.getItem(LEGACY_QUOTA_KEY);
-    if (!rawPeriods && !rawQuotas) return null;
-
-    let legacyPeriods = [];
-    let legacyQuotas = {};
-
-    if (rawPeriods) {
-      try { legacyPeriods = normalizePeriods(JSON.parse(rawPeriods)); } catch (e) {}
-    }
-    if (rawQuotas) {
-      try { legacyQuotas = normalizeQuotas(JSON.parse(rawQuotas)); } catch (e) {}
-    }
-
-    return {
-      periods: legacyPeriods,
-      quotas: legacyQuotas,
-      updated_at: new Date().toISOString()
-    };
-  } catch (e) {
-    return null;
-  }
-}
-
 function saveLocalState() {
   try {
     const state = createState();
@@ -1241,7 +1215,6 @@ function saveLocalState() {
 function initData() {
   const local = loadLocalState();
   const embedded = getEmbeddedState();
-  const legacy = loadLegacyLocalState();
 
   let chosen = local;
 
@@ -1255,10 +1228,6 @@ function initData() {
         chosen = embedded;
       }
     }
-  }
-
-  if (!chosen && legacy) {
-    chosen = legacy;
   }
 
   if (chosen) {
@@ -1278,64 +1247,85 @@ function initData() {
 
 async function syncWithServer() {
   if (syncing) return;
+  
+  if (!GITHUB_TOKEN || GITHUB_TOKEN === 'VOTRE_TOKEN_GHP') {
+    saveLocalState();
+    setStatus('Sauvegardé en local (Configurez GITHUB_TOKEN pour écraser sur GitHub)', 'success');
+    return;
+  }
+
   syncing = true;
 
   saveHtmlBtn.disabled = true;
   syncBtn.disabled = true;
-  saveHtmlBtn.textContent = '⏳ Sauvegarde...';
-  syncBtn.textContent = '⏳ Sync...';
-  setStatus('Synchronisation en cours...', '');
-
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 8000);
+  saveHtmlBtn.textContent = '⏳ Écriture...';
+  syncBtn.textContent = '⏳ Écriture...';
+  setStatus('Écrasement du fichier sur GitHub...', '');
 
   try {
     const currentState = createState();
-    
-    // Construction des en-têtes avec la clé Supabase
-    const headers = { 
-      'Content-Type': 'application/json' 
-    };
-    
-    if (SUPABASE_ANON_KEY && SUPABASE_ANON_KEY !== 'VOTRE_CLE_SUPABASE_ANON_ICI') {
-      headers['apikey'] = SUPABASE_ANON_KEY;
-      headers['Authorization'] = `Bearer ${SUPABASE_ANON_KEY}`;
-    }
+    const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${GITHUB_FILE_PATH}`;
 
-    const response = await fetch(GITHUB_FUNCTION_URL, {
-      method: 'POST',
-      headers: headers,
-      body: JSON.stringify(currentState),
-      signal: controller.signal
+    // 1. Récupération du fichier existant sur GitHub pour obtenir son SHA actuel
+    const getRes = await fetch(url, {
+      headers: {
+        'Authorization': `token ${GITHUB_TOKEN}`,
+        'Accept': 'application/vnd.github.v3+json'
+      }
     });
 
-    clearTimeout(timeoutId);
-
-    if (!response.ok) {
-      throw new Error(`Erreur serveur (${response.status})`);
+    if (!getRes.ok) {
+      throw new Error(`Fichier introuvable sur GitHub (${getRes.status})`);
     }
 
-    const resData = await response.json().catch(() => ({}));
+    const fileData = await getRes.json();
+    const sha = fileData.sha;
 
-    if (resData && resData.state) {
-      periods = normalizePeriods(resData.state.periods);
-      quotas = normalizeQuotas(resData.state.quotas);
-      saveLocalState();
-      renderAll();
-    } else {
-      saveLocalState();
+    // Décodage du contenu HTML présent sur GitHub
+    const currentHtml = new TextDecoder().decode(
+      Uint8Array.from(atob(fileData.content.replace(/\s/g, '')), c => c.charCodeAt(0))
+    );
+
+    // 2. Remplacement des données dans le bloc <script id="sync-state">
+    const jsonState = JSON.stringify(currentState, null, 2);
+    const newScript = `<script id="sync-state">\nwindow.__RESERVE_SYNC_STATE__ = ${jsonState};\n<\/script>`;
+    
+    const updatedHtml = currentHtml.replace(
+      /<script id="sync-state">[\s\S]*?<\/script>/,
+      newScript
+    );
+
+    // Encodage Base64 UTF-8
+    const encoder = new TextEncoder();
+    const encodedContent = btoa(String.fromCharCode(...encoder.encode(updatedHtml)));
+
+    // 3. Écrasement direct du fichier sur GitHub via l'API
+    const putRes = await fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `token ${GITHUB_TOKEN}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/vnd.github.v3+json'
+      },
+      body: JSON.stringify({
+        message: 'Mise à jour du carnet de réserve',
+        content: encodedContent,
+        sha: sha
+      })
+    });
+
+    if (!putRes.ok) {
+      const errJson = await putRes.json().catch(() => ({}));
+      throw new Error(errJson.message || `Erreur GitHub ${putRes.status}`);
     }
 
-    setStatus('Synchronisation réussie !', 'success');
-  } catch (err) {
-    console.error('Erreur de synchronisation:', err);
     saveLocalState();
+    setStatus('Fichier écrasé et mis à jour sur GitHub !', 'success');
 
-    if (err.name === 'AbortError') {
-      setStatus('Délai dépassé (sauvegardé en local)', 'error');
-    } else {
-      setStatus('Échec réseau / serveur (sauvegardé en local)', 'error');
-    }
+  } catch (err) {
+    console.error('Erreur GitHub API:', err);
+    saveLocalState();
+    setStatus('Erreur GitHub : ' + err.message + ' (enregistré en local)', 'error');
   } finally {
     syncing = false;
     saveHtmlBtn.disabled = false;
@@ -1639,7 +1629,7 @@ function setupEventListeners() {
     calendarPop.classList.remove('open');
 
     renderAll();
-    setStatus('Période ajoutée avec succès !', 'success');
+    setStatus('Période ajoutée ! N\'oubliez pas de sauvegarder.', 'success');
   });
 
   monthGroupsEl.addEventListener('click', (e) => {
@@ -1671,7 +1661,6 @@ function setupEventListeners() {
   });
 
   saveHtmlBtn.addEventListener('click', async () => {
-    saveLocalState();
     await syncWithServer();
   });
 
