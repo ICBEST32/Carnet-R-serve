@@ -37,22 +37,13 @@
         "2026-09-08",
         "2026-09-09"
       ],
-      "paid": false
-    },
-    {
-      "id": "mtcsidhv-wkxdzczv",
-      "start": "2026-08-29",
-      "end": "2026-08-31",
-      "dates": [
-        "2026-08-31"
-      ],
-      "paid": false
+      "paid": true
     }
   ],
   "quotas": {
     "2026": 30
   },
-  "updated_at": "2026-08-28T10:09:40.464Z"
+  "updated_at": "2026-08-28T10:09:59.401Z"
 };</script>
 
 <style>
@@ -952,7 +943,7 @@ footer{
         Utilisés
       </label>
 
-      <span class="static-num" id="usedDaysVal">7</span>
+      <span class="static-num" id="usedDaysVal">6</span>
 
     </div>
 
@@ -962,7 +953,7 @@ footer{
         Restants
       </label>
 
-      <span class="static-num" id="remainingDaysVal">23</span>
+      <span class="static-num" id="remainingDaysVal">24</span>
 
     </div>
 
@@ -1020,22 +1011,22 @@ footer{
 
 </div>
 
-<div id="monthGroups"><div class="month-group"><div class="month-title">Août 2026</div><ul class="period-list"><li class="entry"><span><span class="range">05/08 → 07/08/2026</span><span class="meta">3 jours</span></span><span class="right"><span class="amount">240 €</span><button type="button" class="pay-btn" data-id="mtcr9n2b2wjy">Marquer payé</button><button type="button" class="del" data-id="mtcr9n2b2wjy" aria-label="Supprimer la période">✕</button></span></li><li class="entry"><span><span class="range">29/08 → 31/08/2026</span><span class="meta">1 jour</span></span><span class="right"><span class="amount">80 €</span><button type="button" class="pay-btn" data-id="mtcsidhv-wkxdzczv">Marquer payé</button><button type="button" class="del" data-id="mtcsidhv-wkxdzczv" aria-label="Supprimer la période">✕</button></span></li></ul></div><div class="month-group"><div class="month-title">Septembre 2026</div><ul class="period-list"><li class="entry"><span><span class="range">07/09 → 09/09/2026</span><span class="meta">3 jours</span></span><span class="right"><span class="amount">240 €</span><button type="button" class="pay-btn" data-id="mtcr7nx5lku7">Marquer payé</button><button type="button" class="del" data-id="mtcr7nx5lku7" aria-label="Supprimer la période">✕</button></span></li></ul></div></div>
+<div id="monthGroups"><div class="month-group"><div class="month-title">Août 2026</div><ul class="period-list"><li class="entry"><span><span class="range">05/08 → 07/08/2026</span><span class="meta">3 jours</span></span><span class="right"><span class="amount">240 €</span><button type="button" class="pay-btn" data-id="mtcr9n2b2wjy">Marquer payé</button><button type="button" class="del" data-id="mtcr9n2b2wjy" aria-label="Supprimer la période">✕</button></span></li></ul></div><div class="month-group"><div class="month-title">Septembre 2026</div><ul class="period-list"><li class="entry paid"><span><span class="range">07/09 → 09/09/2026</span><span class="meta">3 jours</span></span><span class="right"><span class="amount">240 €</span><button type="button" class="pay-btn is-paid" data-id="mtcr7nx5lku7">Payé ✓</button><button type="button" class="del" data-id="mtcr7nx5lku7" aria-label="Supprimer la période">✕</button></span></li></ul></div></div>
 
 <div class="totals">
 
   <div class="count" id="countText">
-    <b>3</b>
+    <b>2</b>
     périodes
     —
-    <b>7</b>
+    <b>6</b>
     jours
 
     
           <div class="sub-line">
-            dont 560 €
+            dont 240 €
             en attente de paiement
-            (7 j.)
+            (3 j.)
           </div>
         
     </div>
@@ -1046,7 +1037,7 @@ footer{
       Total payé
     </div>
 
-    <div class="value" id="totalValue">0 €</div>
+    <div class="value" id="totalValue">240 €</div>
 
     <div class="rate">
       80 €/jour
@@ -1062,9 +1053,7 @@ footer{
 
   <button class="backup-btn" id="saveHtmlBtn" type="button" disabled="">⏳ Sauvegarde...</button>
 
-  <button class="backup-btn" id="syncBtn" type="button" disabled="">
-    🔄 Synchroniser
-  </button>
+  <button class="backup-btn" id="syncBtn" type="button" disabled="">🔄 Synchroniser</button>
 
   <button class="backup-btn" id="saveJsonBtn" type="button">
     📄 Exporter JSON
