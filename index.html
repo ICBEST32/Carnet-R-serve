@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="fr" __gcrremoteframetoken="1fc5c2349cdaaecb9cfd73702d299723"><head>
+<html lang="fr">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,12 +10,13 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Carnet Réserve">
 
-<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAInUlEQVR4nO2dT2gUdxTHZzdG8s8WDYIUCYZWjamViLV4MIItWsFKo5Rqc6jUUxA8FAoFzy14Ui+FnDy0kEJDEVPpQe1FLynoQaooIqmYVoI1Bkw2SY3r9jAlhp15v/3N7s577/eb7+cUMpOdN28++35v/mR+ud+/3xgAEEdeOgCgF8gBSCAHIIEcgARyABLIAUggByCBHIAEcgASyAFIcrv2vicdA1AKKgcggRyABHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEcgASyAFIIAcggRyABHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAH0JgY1xj8AAAAASUVORK5CYII=">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAInUlEQVR4nO2dT2gUdxTHZzdG8s8WDYIUCYZWjamViLV4MIItWsFKo5Rqc6jUUxA8FAoFzy14Ui+FnDy0kEJDEVPpQe1FLynoQaooIqmYVoI1Bkw2SY3r9jAlhp15v/3N7s577/eb7+cUMpOdN28++35v/mR+ud+/3xgAEEdeOgCgF8gBSCAHIIEcgARyABLIAUggByCBHIAEcgASyAFIIAcggRyABHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAUggByCBHIAEsgBSCAHIIEcgARyABLIAH0JgY1xj8AAAAASUVORK5CYII=">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@600;800&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
 
-<script id="sync-state">window.__RESERVE_SYNC_STATE__ = {
+<script id="sync-state">
+window.__RESERVE_SYNC_STATE__ = {
   "version": 2,
   "periods": [
     {
@@ -44,7 +46,8 @@
     "2026": 30
   },
   "updated_at": "2026-08-28T10:10:57.791Z"
-};</script>
+};
+</script>
 
 <style>
 
@@ -737,50 +740,39 @@ footer{
 }
 
 @media(max-width:650px){
-
   body{
     padding:15px 8px 40px;
   }
-
   .carnet{
     max-width:100%;
   }
-
   header{
     padding:30px 20px 18px;
   }
-
   h1{
     font-size:36px;
   }
-
   section{
     padding:0 20px;
   }
-
   .backup-row{
     padding:0 20px;
     grid-template-columns:1fr 1fr;
   }
-
   footer{
     padding-left:20px;
     padding-right:20px;
   }
-
   .status{
     padding-left:20px;
     padding-right:20px;
   }
-
   .quota-box{
     align-items:flex-start;
   }
-
   .entry{
     align-items:flex-start;
   }
-
   .entry .right{
     flex-wrap:wrap;
     justify-content:flex-end;
@@ -788,38 +780,31 @@ footer{
 }
 
 @media(max-width:420px){
-
   h1{
     font-size:31px;
   }
-
   .quota-fields{
     width:100%;
     justify-content:space-between;
     gap:8px;
   }
-
   .stamp{
     width:105px;
     height:105px;
   }
-
   .entry{
     flex-wrap:wrap;
   }
-
   .entry .right{
     width:100%;
     justify-content:flex-end;
   }
-
   .backup-row{
     grid-template-columns:1fr;
   }
 }
 
 @media print{
-
   .install-banner,
   .backup-row,
   footer,
@@ -827,33 +812,27 @@ footer{
   .picker-wrap{
     display:none!important;
   }
-
   body{
     background:#fff;
     padding:0;
     -webkit-print-color-adjust:exact;
     print-color-adjust:exact;
   }
-
   .carnet{
     box-shadow:none;
     border:none;
     max-width:100%;
   }
-
   .carnet::before{
     display:none;
   }
-
   .pay-btn,
   .del{
     display:none!important;
   }
-
   .month-group{
     page-break-inside:avoid;
   }
-
   .totals{
     page-break-inside:avoid;
     break-inside:avoid;
@@ -861,12 +840,10 @@ footer{
     border-top:1px solid var(--ink);
     padding-top:18px;
   }
-
   .stamp{
     mix-blend-mode:normal!important;
     opacity:1!important;
   }
-
   @page{
     size:A4;
     margin:16mm;
@@ -879,31 +856,24 @@ footer{
 <body>
 
 <div class="install-banner show" id="installBanner">
-
   <span>
     <strong>Ajoute-la à l'écran d'accueil</strong>
-
     <span class="steps">
       Touche <b>⬆️ Partager</b> en bas de Safari,
       puis <b>« Sur l'écran d'accueil »</b>.
       Tu pourras ensuite l'ouvrir comme une vraie appli.
     </span>
   </span>
-
   <button class="close-banner" id="closeBanner" aria-label="Fermer" type="button">✕</button>
-
 </div>
 
 <div class="carnet">
 
 <header>
-
   <h1>Carnet de réserve</h1>
-
   <div class="sub">
     Enregistrement des périodes de réserve
   </div>
-
 </header>
 
 <section>
@@ -913,52 +883,27 @@ footer{
 </div>
 
 <div class="quota-box">
-
   <div class="quota-title">
-
     <button type="button" class="year-nav" id="prevYear" aria-label="Année précédente">‹</button>
-
     Réserve
     <span id="quotaYear">2026</span>
-
     <button type="button" class="year-nav" id="nextYear" aria-label="Année suivante">›</button>
-
   </div>
 
   <div class="quota-fields">
-
     <div class="quota-field">
-
-      <label for="quotaInput">
-        Accordés
-      </label>
-
-      <input type="number" id="quotaInput" min="0" step="1" inputmode="numeric" __gcruniqueid="1">
-
+      <label for="quotaInput">Accordés</label>
+      <input type="number" id="quotaInput" min="0" step="1" inputmode="numeric">
     </div>
-
     <div class="quota-field">
-
-      <label>
-        Utilisés
-      </label>
-
-      <span class="static-num" id="usedDaysVal">6</span>
-
+      <label>Utilisés</label>
+      <span class="static-num" id="usedDaysVal">0</span>
     </div>
-
     <div class="quota-field">
-
-      <label>
-        Restants
-      </label>
-
-      <span class="static-num" id="remainingDaysVal">24</span>
-
+      <label>Restants</label>
+      <span class="static-num" id="remainingDaysVal">0</span>
     </div>
-
   </div>
-
 </div>
 
 <div class="field-label">
@@ -966,3305 +911,824 @@ footer{
 </div>
 
 <div class="picker-wrap">
-
   <button type="button" class="picker-trigger" id="pickerTrigger">
-
     <span id="pickerLabel" class="ph">Choisir une période…</span>
-
     <span>📅</span>
-
   </button>
 
   <div class="calendar-pop" id="calendarPop">
-
     <div class="cal-nav">
-
       <button type="button" id="prevMonth" aria-label="Mois précédent">‹</button>
-
       <span class="cal-month" id="calMonthLabel">Août 2026</span>
-
       <button type="button" id="nextMonth" aria-label="Mois suivant">›</button>
-
     </div>
 
-    <div class="cal-grid" id="calGrid"><div class="cal-dow">L</div><div class="cal-dow">M</div><div class="cal-dow">M</div><div class="cal-dow">J</div><div class="cal-dow">V</div><div class="cal-dow">S</div><div class="cal-dow">D</div><div class="cal-day muted"></div><div class="cal-day muted"></div><div class="cal-day muted"></div><div class="cal-day muted"></div><div class="cal-day muted"></div><button type="button" class="cal-day">1</button><button type="button" class="cal-day">2</button><button type="button" class="cal-day">3</button><button type="button" class="cal-day">4</button><button type="button" class="cal-day">5</button><button type="button" class="cal-day">6</button><button type="button" class="cal-day">7</button><button type="button" class="cal-day">8</button><button type="button" class="cal-day">9</button><button type="button" class="cal-day">10</button><button type="button" class="cal-day">11</button><button type="button" class="cal-day">12</button><button type="button" class="cal-day">13</button><button type="button" class="cal-day">14</button><button type="button" class="cal-day">15</button><button type="button" class="cal-day">16</button><button type="button" class="cal-day">17</button><button type="button" class="cal-day">18</button><button type="button" class="cal-day">19</button><button type="button" class="cal-day">20</button><button type="button" class="cal-day">21</button><button type="button" class="cal-day">22</button><button type="button" class="cal-day">23</button><button type="button" class="cal-day">24</button><button type="button" class="cal-day">25</button><button type="button" class="cal-day">26</button><button type="button" class="cal-day">27</button><button type="button" class="cal-day today">28</button><button type="button" class="cal-day range-start">29</button><button type="button" class="cal-day in-range">30</button><button type="button" class="cal-day range-end">31</button></div>
+    <div class="cal-grid" id="calGrid"></div>
 
     <div class="cal-footer">
-
       <span class="cal-selection" id="calSelection">Sélectionne le premier jour</span>
-
       <label class="weekend-toggle">
-
         <input type="checkbox" id="includeWeekends">
-
         Inclure week-ends
-
       </label>
-
     </div>
 
-    <button type="button" class="btn-confirm" id="confirmAdd" disabled="">
+    <button type="button" class="btn-confirm" id="confirmAdd" disabled>
       Ajouter la période
     </button>
-
   </div>
-
 </div>
 
-<div id="monthGroups"><div class="month-group"><div class="month-title">Août 2026</div><ul class="period-list"><li class="entry"><span><span class="range">05/08 → 07/08/2026</span><span class="meta">3 jours</span></span><span class="right"><span class="amount">240 €</span><button type="button" class="pay-btn" data-id="mtcr9n2b2wjy">Marquer payé</button><button type="button" class="del" data-id="mtcr9n2b2wjy" aria-label="Supprimer la période">✕</button></span></li></ul></div><div class="month-group"><div class="month-title">Septembre 2026</div><ul class="period-list"><li class="entry paid"><span><span class="range">07/09 → 09/09/2026</span><span class="meta">3 jours</span></span><span class="right"><span class="amount">240 €</span><button type="button" class="pay-btn is-paid" data-id="mtcr7nx5lku7">Payé ✓</button><button type="button" class="del" data-id="mtcr7nx5lku7" aria-label="Supprimer la période">✕</button></span></li></ul></div></div>
+<div id="monthGroups"></div>
 
 <div class="totals">
-
-  <div class="count" id="countText">
-    <b>2</b>
-    périodes
-    —
-    <b>6</b>
-    jours
-
-    
-          <div class="sub-line">
-            dont 240 €
-            en attente de paiement
-            (3 j.)
-          </div>
-        
-    </div>
-
+  <div class="count" id="countText"></div>
   <div class="stamp">
-
-    <div class="label">
-      Total payé
-    </div>
-
-    <div class="value" id="totalValue">240 €</div>
-
-    <div class="rate">
-      80 €/jour
-    </div>
-
+    <div class="label">Total payé</div>
+    <div class="value" id="totalValue">0 €</div>
+    <div class="rate">80 €/jour</div>
   </div>
-
 </div>
 
 </section>
 
 <div class="backup-row">
-
-  <button class="backup-btn" id="saveHtmlBtn" type="button" disabled="">⏳ Sauvegarde...</button>
-
-  <button class="backup-btn" id="syncBtn" type="button" disabled="">🔄 Synchroniser</button>
-
-  <button class="backup-btn" id="saveJsonBtn" type="button">
-    📄 Exporter JSON
-  </button>
-
-  <button class="backup-btn" id="loadJsonBtn" type="button">
-    📥 Importer JSON
-  </button>
-
+  <button class="backup-btn" id="saveHtmlBtn" type="button">💾 Sauvegarder</button>
+  <button class="backup-btn" id="syncBtn" type="button">🔄 Synchroniser</button>
+  <button class="backup-btn" id="saveJsonBtn" type="button">📄 Exporter JSON</button>
+  <button class="backup-btn" id="loadJsonBtn" type="button">📥 Importer JSON</button>
   <input type="file" id="jsonFileInput" accept="application/json,.json" style="display:none">
-
 </div>
 
 <footer>
-
-  <button class="print-btn" id="printBtn" type="button">
-    🖨 Imprimer
-  </button>
-
-  <button class="reset" id="resetBtn" type="button">
-    Effacer tout le carnet
-  </button>
-
+  <button class="print-btn" id="printBtn" type="button">🖨 Imprimer</button>
+  <button class="reset" id="resetBtn" type="button">Effacer tout le carnet</button>
 </footer>
 
-<div class="status" id="status" aria-live="polite">Préparation de la sauvegarde...</div>
+<div class="status" id="status" aria-live="polite"></div>
 
 </div>
 
 <script>
-
 'use strict';
 
 /* =========================================================
-   CONFIGURATION
+   CONFIGURATION & CONSTANTES
 ========================================================= */
-
 const RATE = 80;
-
 const DEFAULT_QUOTA = 30;
-
 const STORAGE_KEY = 'reserve-state-v2';
-
 const LEGACY_PERIODS_KEY = 'reserve-periods';
-
 const LEGACY_QUOTA_KEY = 'reserve-quotas';
-
-const GITHUB_FUNCTION_URL =
-  'https://iwmtlbqwzbbnyrzggjdz.supabase.co/functions/v1/save-to-github';
-
-
-/* =========================================================
-   ÉLÉMENTS
-========================================================= */
-
-const $ = id =>
-  document.getElementById(id);
-
-const monthGroupsEl =
-  $('monthGroups');
-
-const countText =
-  $('countText');
-
-const totalValue =
-  $('totalValue');
-
-const statusEl =
-  $('status');
-
-const pickerTrigger =
-  $('pickerTrigger');
-
-const pickerLabel =
-  $('pickerLabel');
-
-const calendarPop =
-  $('calendarPop');
-
-const calGrid =
-  $('calGrid');
-
-const calMonthLabel =
-  $('calMonthLabel');
-
-const calSelection =
-  $('calSelection');
-
-const prevMonthBtn =
-  $('prevMonth');
-
-const nextMonthBtn =
-  $('nextMonth');
-
-const includeWeekendsChk =
-  $('includeWeekends');
-
-const confirmBtn =
-  $('confirmAdd');
-
-const quotaYearEl =
-  $('quotaYear');
-
-const prevYearBtn =
-  $('prevYear');
-
-const nextYearBtn =
-  $('nextYear');
-
-const quotaInput =
-  $('quotaInput');
-
-const usedDaysVal =
-  $('usedDaysVal');
-
-const remainingDaysVal =
-  $('remainingDaysVal');
-
-const saveHtmlBtn =
-  $('saveHtmlBtn');
-
-const syncBtn =
-  $('syncBtn');
-
-const saveJsonBtn =
-  $('saveJsonBtn');
-
-const loadJsonBtn =
-  $('loadJsonBtn');
-
-const jsonFileInput =
-  $('jsonFileInput');
-
-const printBtn =
-  $('printBtn');
-
-const resetBtn =
-  $('resetBtn');
-
-
-/* =========================================================
-   CONSTANTES
-========================================================= */
+const GITHUB_FUNCTION_URL = 'https://iwmtlbqwzbbnyrzggjdz.supabase.co/functions/v1/save-to-github';
 
 const MOIS_FR = [
-  'Janvier',
-  'Février',
-  'Mars',
-  'Avril',
-  'Mai',
-  'Juin',
-  'Juillet',
-  'Août',
-  'Septembre',
-  'Octobre',
-  'Novembre',
-  'Décembre'
+  'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
+  'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'
 ];
-
-const DOW_LETTERS = [
-  'L','M','M','J','V','S','D'
-];
-
+const DOW_LETTERS = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
 /* =========================================================
-   ÉTAT
+   ÉLÉMENTS DOM
 ========================================================= */
+const $ = id => document.getElementById(id);
 
+const monthGroupsEl = $('monthGroups');
+const countText = $('countText');
+const totalValue = $('totalValue');
+const statusEl = $('status');
+
+const pickerTrigger = $('pickerTrigger');
+const pickerLabel = $('pickerLabel');
+const calendarPop = $('calendarPop');
+const calGrid = $('calGrid');
+const calMonthLabel = $('calMonthLabel');
+const calSelection = $('calSelection');
+const prevMonthBtn = $('prevMonth');
+const nextMonthBtn = $('nextMonth');
+const includeWeekendsChk = $('includeWeekends');
+const confirmBtn = $('confirmAdd');
+
+const quotaYearEl = $('quotaYear');
+const prevYearBtn = $('prevYear');
+const nextYearBtn = $('nextYear');
+const quotaInput = $('quotaInput');
+const usedDaysVal = $('usedDaysVal');
+const remainingDaysVal = $('remainingDaysVal');
+
+const saveHtmlBtn = $('saveHtmlBtn');
+const syncBtn = $('syncBtn');
+const saveJsonBtn = $('saveJsonBtn');
+const loadJsonBtn = $('loadJsonBtn');
+const jsonFileInput = $('jsonFileInput');
+const printBtn = $('printBtn');
+const resetBtn = $('resetBtn');
+const closeBanner = $('closeBanner');
+const installBanner = $('installBanner');
+
+/* =========================================================
+   ÉTAT DE L'APPLICATION
+========================================================= */
 let periods = [];
-
 let quotas = {};
-
-let selectedYear =
-  new Date().getFullYear();
-
-let viewDate =
-  new Date(
-    selectedYear,
-    new Date().getMonth(),
-    1
-  );
-
+let selectedYear = new Date().getFullYear();
+let viewDate = new Date(selectedYear, new Date().getMonth(), 1);
 let selStart = null;
-
 let selEnd = null;
-
 let saving = false;
-
 let syncing = false;
 
-
 /* =========================================================
-   UTILITAIRES
+   UTILITAIRES ET FORMATAGE
 ========================================================= */
-
-function setStatus(
-  message,
-  type = ''
-){
-
-  statusEl.textContent =
-    message || '';
-
-  statusEl.classList.remove(
-    'error',
-    'success'
-  );
-
-  if(type){
-    statusEl.classList.add(type);
-  }
-
+function setStatus(message, type = '') {
+  statusEl.textContent = message || '';
+  statusEl.classList.remove('error', 'success');
+  if (type) statusEl.classList.add(type);
 }
 
-
-function pad(value){
-
-  return String(value)
-    .padStart(2,'0');
-
+function pad(value) {
+  return String(value).padStart(2, '0');
 }
 
-
-function isValidISO(value){
-
-  return (
-    typeof value === 'string' &&
-    /^\d{4}-\d{2}-\d{2}$/.test(value)
-  );
-
+function isValidISO(value) {
+  return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value);
 }
 
-
-function fromISO(iso){
-
-  if(!isValidISO(iso)){
+function fromISO(iso) {
+  if (!isValidISO(iso)) return null;
+  const parts = iso.split('-').map(Number);
+  const date = new Date(parts[0], parts[1] - 1, parts[2]);
+  if (date.getFullYear() !== parts[0] || date.getMonth() !== parts[1] - 1 || date.getDate() !== parts[2]) {
     return null;
   }
-
-  const parts =
-    iso.split('-')
-      .map(Number);
-
-  const date =
-    new Date(
-      parts[0],
-      parts[1] - 1,
-      parts[2]
-    );
-
-  if(
-    date.getFullYear() !== parts[0] ||
-    date.getMonth() !== parts[1] - 1 ||
-    date.getDate() !== parts[2]
-  ){
-    return null;
-  }
-
   return date;
-
 }
 
-
-function toISO(date){
-
-  return (
-    date.getFullYear() +
-    '-' +
-    pad(date.getMonth() + 1) +
-    '-' +
-    pad(date.getDate())
-  );
-
+function toISO(date) {
+  return date.getFullYear() + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate());
 }
 
-
-function formatShort(iso){
-
-  const date =
-    fromISO(iso);
-
-  if(!date){
-    return '—';
-  }
-
-  return (
-    pad(date.getDate()) +
-    '/' +
-    pad(date.getMonth() + 1)
-  );
-
+function formatShort(iso) {
+  const date = fromISO(iso);
+  return date ? pad(date.getDate()) + '/' + pad(date.getMonth() + 1) : '—';
 }
 
-
-function formatFull(iso){
-
-  const date =
-    fromISO(iso);
-
-  if(!date){
-    return '—';
-  }
-
-  return (
-    pad(date.getDate()) +
-    '/' +
-    pad(date.getMonth() + 1) +
-    '/' +
-    date.getFullYear()
-  );
-
+function formatFull(iso) {
+  const date = fromISO(iso);
+  return date ? pad(date.getDate()) + '/' + pad(date.getMonth() + 1) + '/' + date.getFullYear() : '—';
 }
 
-
-function monthKey(iso){
-
-  const date =
-    fromISO(iso);
-
-  if(!date){
-    return '';
-  }
-
-  return (
-    date.getFullYear() +
-    '-' +
-    pad(date.getMonth() + 1)
-  );
-
+function generateId() {
+  return Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10);
 }
 
-
-function generateId(){
-
-  return (
-    Date.now().toString(36) +
-    '-' +
-    Math.random()
-      .toString(36)
-      .slice(2,10)
-  );
-
+function safeNumber(value, fallback = 0) {
+  const num = Number(value);
+  return Number.isFinite(num) ? num : fallback;
 }
 
-
-function safeNumber(
-  value,
-  fallback = 0
-){
-
-  const number =
-    Number(value);
-
-  if(
-    !Number.isFinite(number)
-  ){
-    return fallback;
-  }
-
-  return number;
-
+function validTimestamp(value) {
+  if (typeof value !== 'string' || !value) return null;
+  const time = Date.parse(value);
+  return Number.isNaN(time) ? null : time;
 }
-
 
 /* =========================================================
-   NORMALISATION DES QUOTAS
+   NORMALISATION DES DONNÉES
 ========================================================= */
-
-function normalizeQuotas(input){
-
-  if(
-    !input ||
-    typeof input !== 'object' ||
-    Array.isArray(input)
-  ){
-
-    return {};
-
-  }
-
+function normalizeQuotas(input) {
+  if (!input || typeof input !== 'object' || Array.isArray(input)) return {};
   const result = {};
-
-  Object.keys(input)
-    .forEach(year => {
-
-      if(
-        /^\d{4}$/.test(year)
-      ){
-
-        const value =
-          Math.max(
-            0,
-            Math.floor(
-              safeNumber(
-                input[year],
-                DEFAULT_QUOTA
-              )
-            )
-          );
-
-        result[year] =
-          value;
-
-      }
-
-    });
-
+  Object.keys(input).forEach(year => {
+    if (/^\d{4}$/.test(year)) {
+      result[year] = Math.max(0, Math.floor(safeNumber(input[year], DEFAULT_QUOTA)));
+    }
+  });
   return result;
-
 }
 
-
-/* =========================================================
-   NORMALISATION DES PÉRIODES
-========================================================= */
-
-function normalizePeriods(input){
-
-  if(!Array.isArray(input)){
-    return [];
+function buildDates(startISO, endISO, includeWeekends) {
+  const start = fromISO(startISO);
+  const end = fromISO(endISO);
+  if (!start || !end) return [];
+  const dates = [];
+  const cursor = new Date(start);
+  while (cursor <= end) {
+    const day = cursor.getDay();
+    const isWeekend = (day === 0 || day === 6);
+    if (includeWeekends || !isWeekend) {
+      dates.push(toISO(cursor));
+    }
+    cursor.setDate(cursor.getDate() + 1);
   }
+  return dates;
+}
 
+function normalizePeriods(input) {
+  if (!Array.isArray(input)) return [];
   const result = [];
-
   input.forEach(period => {
+    if (!period || typeof period !== 'object') return;
+    if (!isValidISO(period.start) || !isValidISO(period.end)) return;
+    if (period.start > period.end) return;
 
-    if(
-      !period ||
-      typeof period !== 'object'
-    ){
-      return;
-    }
+    let dates = Array.isArray(period.dates) ? period.dates.filter(isValidISO) : [];
+    dates = [...new Set(dates)].filter(d => d >= period.start && d <= period.end).sort();
 
-    if(
-      !isValidISO(period.start) ||
-      !isValidISO(period.end)
-    ){
-      return;
-    }
-
-    const start =
-      fromISO(period.start);
-
-    const end =
-      fromISO(period.end);
-
-    if(!start || !end){
-      return;
-    }
-
-    if(
-      period.start > period.end
-    ){
-      return;
-    }
-
-    let dates =
-      Array.isArray(period.dates)
-        ? period.dates.filter(
-            isValidISO
-          )
-        : [];
-
-    dates =
-      [...new Set(dates)]
-        .filter(date => {
-          return (
-            date >= period.start &&
-            date <= period.end
-          );
-        })
-        .sort();
-
-    if(dates.length === 0){
-
-      dates =
-        buildDates(
-          period.start,
-          period.end,
-          true
-        );
-
+    if (dates.length === 0) {
+      dates = buildDates(period.start, period.end, true);
     }
 
     result.push({
-
-      id:
-        typeof period.id === 'string' &&
-        period.id.trim()
-          ? period.id
-          : generateId(),
-
-      start:
-        period.start,
-
-      end:
-        period.end,
-
-      dates,
-
-      paid:
-        period.paid === true
-
+      id: typeof period.id === 'string' && period.id.trim() ? period.id : generateId(),
+      start: period.start,
+      end: period.end,
+      dates: dates,
+      paid: period.paid === true
     });
-
   });
-
   return result;
-
 }
 
-
-/* =========================================================
-   CONSTRUCTION DES DATES
-========================================================= */
-
-function buildDates(
-  startISO,
-  endISO,
-  includeWeekends
-){
-
-  const start =
-    fromISO(startISO);
-
-  const end =
-    fromISO(endISO);
-
-  if(!start || !end){
-    return [];
-  }
-
-  const dates = [];
-
-  const cursor =
-    new Date(start);
-
-  while(cursor <= end){
-
-    const day =
-      cursor.getDay();
-
-    const weekend =
-      day === 0 ||
-      day === 6;
-
-    if(
-      includeWeekends ||
-      !weekend
-    ){
-
-      dates.push(
-        toISO(cursor)
-      );
-
-    }
-
-    cursor.setDate(
-      cursor.getDate() + 1
-    );
-
-  }
-
-  return dates;
-
-}
-
-
-/* =========================================================
-   ÉTAT COMPLET
-========================================================= */
-
-function createState(){
-
+function createState() {
   return {
-
-    version:2,
-
-    periods:
-      normalizePeriods(periods),
-
-    quotas:
-      normalizeQuotas(quotas),
-
-    updated_at:
-      new Date().toISOString()
-
+    version: 2,
+    periods: normalizePeriods(periods),
+    quotas: normalizeQuotas(quotas),
+    updated_at: new Date().toISOString()
   };
-
 }
 
-
 /* =========================================================
-   DATE updated_at
+   GESTION DU STOCKAGE ET DE LA SYNCHRONISATION
 ========================================================= */
-
-function validTimestamp(value){
-
-  if(
-    typeof value !== 'string' ||
-    !value
-  ){
-    return null;
-  }
-
-  const time =
-    Date.parse(value);
-
-  if(
-    Number.isNaN(time)
-  ){
-    return null;
-  }
-
-  return time;
-
-}
-
-
-/* =========================================================
-   ÉTAT INTÉGRÉ AU HTML
-========================================================= */
-
-function getEmbeddedState(){
-
-  try{
-
-    const state =
-      window.__RESERVE_SYNC_STATE__;
-
-    if(
-      !state ||
-      typeof state !== 'object'
-    ){
-      return null;
-    }
-
-    const normalized = {
-
-      version:
-        Number(state.version) || 1,
-
-      periods:
-        normalizePeriods(
-          state.periods
-        ),
-
-      quotas:
-        normalizeQuotas(
-          state.quotas
-        ),
-
-      updated_at:
-        validTimestamp(
-          state.updated_at
-        )
-          ? new Date(
-              validTimestamp(
-                state.updated_at
-              )
-            ).toISOString()
-          : null
-
+function getEmbeddedState() {
+  try {
+    const state = window.__RESERVE_SYNC_STATE__;
+    if (!state || typeof state !== 'object') return null;
+    return {
+      version: Number(state.version) || 1,
+      periods: normalizePeriods(state.periods),
+      quotas: normalizeQuotas(state.quotas),
+      updated_at: validTimestamp(state.updated_at) ? new Date(validTimestamp(state.updated_at)).toISOString() : null
     };
-
-    return normalized;
-
-  }catch(error){
-
-    console.error(
-      'Erreur état intégré:',
-      error
-    );
-
+  } catch (e) {
     return null;
-
   }
-
 }
 
-
-/* =========================================================
-   LOCAL STORAGE
-========================================================= */
-
-function saveLocalState(){
-
-  try{
-
-    const state =
-      createState();
-
-    localStorage.setItem(
-      STORAGE_KEY,
-      JSON.stringify(state)
-    );
-
-    return true;
-
-  }catch(error){
-
-    console.error(
-      'Erreur sauvegarde locale:',
-      error
-    );
-
-    return false;
-
-  }
-
-}
-
-
-function loadLocalState(){
-
-  try{
-
-    const raw =
-      localStorage.getItem(
-        STORAGE_KEY
-      );
-
-    if(raw){
-
-      const data =
-        JSON.parse(raw);
-
-      if(
-        data &&
-        typeof data === 'object'
-      ){
-
+function loadLocalState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const data = JSON.parse(raw);
+      if (data && typeof data === 'object') {
         return {
-
-          periods:
-            normalizePeriods(
-              data.periods
-            ),
-
-          quotas:
-            normalizeQuotas(
-              data.quotas
-            ),
-
-          updated_at:
-            validTimestamp(
-              data.updated_at
-            )
-              ? new Date(
-                  validTimestamp(
-                    data.updated_at
-                  )
-                ).toISOString()
-              : null
-
+          periods: normalizePeriods(data.periods),
+          quotas: normalizeQuotas(data.quotas),
+          updated_at: validTimestamp(data.updated_at) ? new Date(validTimestamp(data.updated_at)).toISOString() : null
         };
-
       }
-
     }
-
-  }catch(error){
-
-    console.warn(
-      'Impossible de lire la sauvegarde locale:',
-      error
-    );
-
+  } catch (e) {
+    console.warn('Erreur de lecture du localStorage:', e);
   }
-
   return null;
-
 }
 
-
-/* =========================================================
-   MIGRATION ANCIENNE SAUVEGARDE LOCALE
-========================================================= */
-
-function loadLegacyLocalState(){
-
-  try{
-
-    const rawPeriods =
-      localStorage.getItem(
-        LEGACY_PERIODS_KEY
-      );
-
-    const rawQuotas =
-      localStorage.getItem(
-        LEGACY_QUOTA_KEY
-      );
-
-    if(
-      !rawPeriods &&
-      !rawQuotas
-    ){
-
-      return null;
-
-    }
+function loadLegacyLocalState() {
+  try {
+    const rawPeriods = localStorage.getItem(LEGACY_PERIODS_KEY);
+    const rawQuotas = localStorage.getItem(LEGACY_QUOTA_KEY);
+    if (!rawPeriods && !rawQuotas) return null;
 
     let legacyPeriods = [];
-
     let legacyQuotas = {};
 
-    if(rawPeriods){
-
-      try{
-
-        legacyPeriods =
-          normalizePeriods(
-            JSON.parse(
-              rawPeriods
-            )
-          );
-
-      }catch(error){}
-
+    if (rawPeriods) {
+      try { legacyPeriods = normalizePeriods(JSON.parse(rawPeriods)); } catch (e) {}
     }
-
-    if(rawQuotas){
-
-      try{
-
-        legacyQuotas =
-          normalizeQuotas(
-            JSON.parse(
-              rawQuotas
-            )
-          );
-
-      }catch(error){}
-
+    if (rawQuotas) {
+      try { legacyQuotas = normalizeQuotas(JSON.parse(rawQuotas)); } catch (e) {}
     }
 
     return {
-
-      periods:
-        legacyPeriods,
-
-      quotas:
-        legacyQuotas,
-
-      updated_at:null
-
+      periods: legacyPeriods,
+      quotas: legacyQuotas,
+      updated_at: new Date().toISOString()
     };
-
-  }catch(error){
-
+  } catch (e) {
     return null;
-
   }
-
 }
 
+function saveLocalState() {
+  try {
+    const state = createState();
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    return true;
+  } catch (e) {
+    console.error('Sauvegarde locale impossible:', e);
+    return false;
+  }
+}
 
-/* =========================================================
-   INITIALISATION DES DONNÉES
-========================================================= */
+function initData() {
+  const local = loadLocalState();
+  const embedded = getEmbeddedState();
+  const legacy = loadLegacyLocalState();
 
-function loadInitialData(){
+  let chosen = local;
 
-  const embedded =
-    getEmbeddedState();
-
-  const local =
-    loadLocalState();
-
-  /*
-    IMPORTANT :
-
-    Une ancienne sauvegarde locale sans updated_at
-    NE PEUT PLUS écraser une sauvegarde synchronisée.
-  */
-
-  if(embedded){
-
-    const remoteTime =
-      validTimestamp(
-        embedded.updated_at
-      );
-
-    const localTime =
-      validTimestamp(
-        local?.updated_at
-      );
-
-    if(
-      remoteTime !== null &&
-      localTime !== null &&
-      localTime > remoteTime
-    ){
-
-      /*
-        Le local est réellement plus récent.
-      */
-
-      periods =
-        normalizePeriods(
-          local.periods
-        );
-
-      quotas =
-        normalizeQuotas(
-          local.quotas
-        );
-
-    }else{
-
-      /*
-        Le serveur est prioritaire lorsque :
-        - aucune sauvegarde locale fiable n'existe
-        - le serveur est plus récent
-        - les deux sont à la même date
-      */
-
-      periods =
-        normalizePeriods(
-          embedded.periods
-        );
-
-      quotas =
-        normalizeQuotas(
-          embedded.quotas
-        );
-
+  if (embedded) {
+    if (!chosen) {
+      chosen = embedded;
+    } else {
+      const localTime = validTimestamp(chosen.updated_at) || 0;
+      const embeddedTime = validTimestamp(embedded.updated_at) || 0;
+      if (embeddedTime > localTime) {
+        chosen = embedded;
+      }
     }
-
-  }else if(local){
-
-    periods =
-      normalizePeriods(
-        local.periods
-      );
-
-    quotas =
-      normalizeQuotas(
-        local.quotas
-      );
-
-  }else{
-
-    const legacy =
-      loadLegacyLocalState();
-
-    if(legacy){
-
-      periods =
-        normalizePeriods(
-          legacy.periods
-        );
-
-      quotas =
-        normalizeQuotas(
-          legacy.quotas
-        );
-
-    }else{
-
-      periods = [];
-
-      quotas = {};
-
-    }
-
   }
 
-  ensureQuotaForYear();
+  if (!chosen && legacy) {
+    chosen = legacy;
+  }
+
+  if (chosen) {
+    periods = chosen.periods || [];
+    quotas = chosen.quotas || {};
+  } else {
+    periods = [];
+    quotas = {};
+  }
+
+  if (!quotas[selectedYear]) {
+    quotas[selectedYear] = DEFAULT_QUOTA;
+  }
 
   saveLocalState();
-
-  render();
-
 }
 
+async function syncWithServer() {
+  if (syncing) return;
+  syncing = true;
+  syncBtn.disabled = true;
+  saveHtmlBtn.disabled = true;
+  setStatus('Synchronisation en cours...', '');
 
-/* =========================================================
-   QUOTA
-========================================================= */
-
-function ensureQuotaForYear(){
-
-  const key =
-    String(selectedYear);
-
-  if(
-    !Object.prototype.hasOwnProperty.call(
-      quotas,
-      key
-    )
-  ){
-
-    quotas[key] =
-      DEFAULT_QUOTA;
-
-  }
-
-}
-
-
-function getUsedDaysForYear(year){
-
-  const yearString =
-    String(year);
-
-  const dates = new Set();
-
-  periods.forEach(period => {
-
-    if(
-      !Array.isArray(
-        period.dates
-      )
-    ){
-      return;
-    }
-
-    period.dates.forEach(date => {
-
-      if(
-        date.startsWith(
-          yearString + '-'
-        )
-      ){
-
-        dates.add(date);
-
-      }
-
+  try {
+    const currentState = createState();
+    const response = await fetch(GITHUB_FUNCTION_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(currentState)
     });
 
-  });
-
-  return dates.size;
-
-}
-
-
-function updateQuotaDisplay(){
-
-  ensureQuotaForYear();
-
-  const usedDays =
-    getUsedDaysForYear(
-      selectedYear
-    );
-
-  const granted =
-    Math.max(
-      0,
-      Math.floor(
-        safeNumber(
-          quotas[String(selectedYear)],
-          DEFAULT_QUOTA
-        )
-      )
-    );
-
-  const remaining =
-    granted - usedDays;
-
-  usedDaysVal.textContent =
-    usedDays;
-
-  remainingDaysVal.textContent =
-    remaining;
-
-  remainingDaysVal.classList.toggle(
-    'over',
-    remaining < 0
-  );
-
-  quotaInput.value =
-    granted;
-
-}
-
-
-/* =========================================================
-   MODIFICATION D'ÉTAT
-========================================================= */
-
-function stateChanged(
-  message = 'Modifications enregistrées localement.'
-){
-
-  saveLocalState();
-
-  render();
-
-  setStatus(
-    message,
-    'success'
-  );
-
-}
-
-
-/* =========================================================
-   ANNÉES
-========================================================= */
-
-prevYearBtn.addEventListener(
-  'click',
-  () => {
-
-    selectedYear--;
-
-    ensureQuotaForYear();
-
-    quotaYearEl.textContent =
-      selectedYear;
-
-    quotaInput.value =
-      quotas[String(selectedYear)];
-
-    updateQuotaDisplay();
-
-    saveLocalState();
-
-  }
-);
-
-
-nextYearBtn.addEventListener(
-  'click',
-  () => {
-
-    selectedYear++;
-
-    ensureQuotaForYear();
-
-    quotaYearEl.textContent =
-      selectedYear;
-
-    quotaInput.value =
-      quotas[String(selectedYear)];
-
-    updateQuotaDisplay();
-
-    saveLocalState();
-
-  }
-);
-
-
-quotaInput.addEventListener(
-  'input',
-  () => {
-
-    let value =
-      parseInt(
-        quotaInput.value,
-        10
-      );
-
-    if(
-      !Number.isFinite(value) ||
-      value < 0
-    ){
-
-      value = 0;
-
+    if (!response.ok) {
+      throw new Error(`Erreur réseau (${response.status})`);
     }
 
-    quotas[String(selectedYear)] =
-      value;
+    const resData = await response.json().catch(() => ({}));
 
-    updateQuotaDisplay();
+    if (resData && resData.state) {
+      periods = normalizePeriods(resData.state.periods);
+      quotas = normalizeQuotas(resData.state.quotas);
+      saveLocalState();
+      renderAll();
+    } else {
+      saveLocalState();
+    }
 
+    setStatus('Synchronisation réussie !', 'success');
+  } catch (err) {
+    console.error('Erreur de synchronisation:', err);
     saveLocalState();
-
+    setStatus('Échec de la synchronisation (sauvegardé en local)', 'error');
+  } finally {
+    syncing = false;
+    syncBtn.disabled = false;
+    saveHtmlBtn.disabled = false;
   }
-);
-
+}
 
 /* =========================================================
-   CALENDRIER
+   RENDU UI ET CALENDRIER
 ========================================================= */
+function updateQuotaDisplay() {
+  quotaYearEl.textContent = selectedYear;
+  if (quotas[selectedYear] === undefined) {
+    quotas[selectedYear] = DEFAULT_QUOTA;
+  }
+  quotaInput.value = quotas[selectedYear];
 
-function renderCalendar(){
+  const yearPeriods = periods.filter(p => {
+    return p.dates.some(d => d.startsWith(String(selectedYear)));
+  });
 
-  calMonthLabel.textContent =
-    `${MOIS_FR[viewDate.getMonth()]} ${viewDate.getFullYear()}`;
+  const used = yearPeriods.reduce((acc, p) => {
+    const yearDates = p.dates.filter(d => d.startsWith(String(selectedYear)));
+    return acc + yearDates.length;
+  }, 0);
 
+  const totalQuota = safeNumber(quotas[selectedYear], DEFAULT_QUOTA);
+  const remaining = totalQuota - used;
+
+  usedDaysVal.textContent = used;
+  remainingDaysVal.textContent = remaining;
+
+  if (remaining < 0) {
+    remainingDaysVal.classList.add('over');
+  } else {
+    remainingDaysVal.classList.remove('over');
+  }
+}
+
+function renderCalendar() {
   calGrid.innerHTML = '';
 
-  DOW_LETTERS.forEach(letter => {
-
-    const el =
-      document.createElement('div');
-
-    el.className =
-      'cal-dow';
-
-    el.textContent =
-      letter;
-
-    calGrid.appendChild(
-      el
-    );
-
+  DOW_LETTERS.forEach(lettre => {
+    const dow = document.createElement('div');
+    dow.className = 'cal-dow';
+    dow.textContent = lettre;
+    calGrid.appendChild(dow);
   });
 
-  const firstOfMonth =
-    new Date(
-      viewDate.getFullYear(),
-      viewDate.getMonth(),
-      1
-    );
+  const year = viewDate.getFullYear();
+  const month = viewDate.getMonth();
 
-  let startOffset =
-    firstOfMonth.getDay() - 1;
+  calMonthLabel.textContent = MOIS_FR[month] + ' ' + year;
 
-  if(startOffset < 0){
-    startOffset = 6;
+  const firstDay = new Date(year, month, 1);
+  let startDow = firstDay.getDay() - 1;
+  if (startDow === -1) startDow = 6;
+
+  for (let i = 0; i < startDow; i++) {
+    const emptyCell = document.createElement('div');
+    emptyCell.className = 'cal-day muted';
+    calGrid.appendChild(emptyCell);
   }
 
-  const daysInMonth =
-    new Date(
-      viewDate.getFullYear(),
-      viewDate.getMonth() + 1,
-      0
-    ).getDate();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const todayISO = toISO(new Date());
 
-  const todayISO =
-    toISO(new Date());
+  for (let day = 1; day <= daysInMonth; day++) {
+    const currentDate = new Date(year, month, day);
+    const iso = toISO(currentDate);
 
-  for(
-    let i = 0;
-    i < startOffset;
-    i++
-  ){
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cal-day';
+    btn.textContent = day;
 
-    const empty =
-      document.createElement('div');
+    if (iso === todayISO) {
+      btn.classList.add('today');
+    }
 
-    empty.className =
-      'cal-day muted';
+    if (selStart && !selEnd && iso === selStart) {
+      btn.classList.add('range-start');
+    } else if (selStart && selEnd) {
+      if (iso === selStart) btn.classList.add('range-start');
+      if (iso === selEnd) btn.classList.add('range-end');
+      if (iso > selStart && iso < selEnd) btn.classList.add('in-range');
+    }
 
-    calGrid.appendChild(
-      empty
-    );
-
+    btn.addEventListener('click', () => handleDayClick(iso));
+    calGrid.appendChild(btn);
   }
 
-  for(
-    let day = 1;
-    day <= daysInMonth;
-    day++
-  ){
-
-    const date =
-      new Date(
-        viewDate.getFullYear(),
-        viewDate.getMonth(),
-        day
-      );
-
-    const iso =
-      toISO(date);
-
-    const el =
-      document.createElement('button');
-
-    el.type =
-      'button';
-
-    el.className =
-      'cal-day';
-
-    el.textContent =
-      day;
-
-    if(
-      iso === todayISO
-    ){
-
-      el.classList.add(
-        'today'
-      );
-
-    }
-
-    if(
-      selStart &&
-      iso === selStart
-    ){
-
-      el.classList.add(
-        'range-start'
-      );
-
-    }
-
-    if(
-      selEnd &&
-      iso === selEnd
-    ){
-
-      el.classList.add(
-        'range-end'
-      );
-
-    }
-
-    if(
-      selStart &&
-      selEnd &&
-      iso > selStart &&
-      iso < selEnd
-    ){
-
-      el.classList.add(
-        'in-range'
-      );
-
-    }
-
-    el.addEventListener(
-      'click',
-      event => {
-
-        event.preventDefault();
-        event.stopPropagation();
-
-        onDayClick(
-          iso
-        );
-
-      }
-    );
-
-    calGrid.appendChild(
-      el
-    );
-
-  }
-
-  updateSelectionLabel();
-
+  updateSelectionText();
 }
 
+function handleDayClick(iso) {
+  if (!selStart || (selStart && selEnd)) {
+    selStart = iso;
+    selEnd = null;
+  } else if (selStart && !selEnd) {
+    if (iso < selStart) {
+      selStart = iso;
+      selEnd = null;
+    } else {
+      selEnd = iso;
+    }
+  }
+  renderCalendar();
+}
 
-function onDayClick(iso){
+function updateSelectionText() {
+  if (!selStart) {
+    calSelection.textContent = 'Sélectionne le premier jour';
+    confirmBtn.disabled = true;
+    pickerLabel.textContent = 'Choisir une période…';
+    pickerLabel.classList.add('ph');
+  } else if (selStart && !selEnd) {
+    calSelection.textContent = 'Du ' + formatFull(selStart) + ' (choisir fin)';
+    confirmBtn.disabled = true;
+    pickerLabel.textContent = 'Du ' + formatShort(selStart) + '...';
+    pickerLabel.classList.remove('ph');
+  } else {
+    const dates = buildDates(selStart, selEnd, includeWeekendsChk.checked);
+    calSelection.textContent = 'Du ' + formatShort(selStart) + ' au ' + formatShort(selEnd) + ' (' + dates.length + ' j.)';
+    confirmBtn.disabled = false;
+    pickerLabel.textContent = formatShort(selStart) + ' → ' + formatShort(selEnd) + ' (' + dates.length + ' j.)';
+    pickerLabel.classList.remove('ph');
+  }
+}
 
-  if(!isValidISO(iso)){
+function renderPeriods() {
+  monthGroupsEl.innerHTML = '';
+
+  const currentYearPeriods = periods.filter(p => {
+    return p.dates.some(d => d.startsWith(String(selectedYear)));
+  });
+
+  if (currentYearPeriods.length === 0) {
+    monthGroupsEl.innerHTML = '<div class="empty">Aucune période enregistrée pour ' + selectedYear + '.</div>';
+    countText.innerHTML = '<b>0</b> période — <b>0</b> jour';
+    totalValue.textContent = '0 €';
     return;
   }
 
-  if(
-    !selStart ||
-    selEnd
-  ){
-
-    selStart =
-      iso;
-
-    selEnd =
-      null;
-
-  }else{
-
-    if(
-      iso < selStart
-    ){
-
-      selEnd =
-        selStart;
-
-      selStart =
-        iso;
-
-    }else{
-
-      selEnd =
-        iso;
-
-    }
-
-  }
-
-  renderCalendar();
-
-}
-
-
-function updateSelectionLabel(){
-
-  if(
-    selStart &&
-    selEnd
-  ){
-
-    calSelection.textContent =
-      `Du ${formatFull(selStart)} au ${formatFull(selEnd)}`;
-
-    confirmBtn.disabled =
-      false;
-
-  }else if(selStart){
-
-    calSelection.textContent =
-      `Début : ${formatFull(selStart)} — choisis la fin`;
-
-    confirmBtn.disabled =
-      true;
-
-  }else{
-
-    calSelection.textContent =
-      'Sélectionne le premier jour';
-
-    confirmBtn.disabled =
-      true;
-
-  }
-
-}
-
-
-function resetCalendarSelection(){
-
-  selStart =
-    null;
-
-  selEnd =
-    null;
-
-  includeWeekendsChk.checked =
-    false;
-
-  pickerLabel.textContent =
-    'Choisir une période…';
-
-  pickerLabel.classList.add(
-    'ph'
-  );
-
-  updateSelectionLabel();
-
-}
-
-
-function openCalendar(){
-
-  calendarPop.classList.add(
-    'open'
-  );
-
-  renderCalendar();
-
-}
-
-
-function closeCalendar(){
-
-  calendarPop.classList.remove(
-    'open'
-  );
-
-}
-
-
-pickerTrigger.addEventListener(
-  'click',
-  event => {
-
-    event.preventDefault();
-
-    event.stopPropagation();
-
-    if(
-      calendarPop.classList.contains(
-        'open'
-      )
-    ){
-
-      closeCalendar();
-
-    }else{
-
-      openCalendar();
-
-    }
-
-  }
-);
-
-
-prevMonthBtn.addEventListener(
-  'click',
-  event => {
-
-    event.preventDefault();
-    event.stopPropagation();
-
-    viewDate =
-      new Date(
-        viewDate.getFullYear(),
-        viewDate.getMonth() - 1,
-        1
-      );
-
-    renderCalendar();
-
-  }
-);
-
-
-nextMonthBtn.addEventListener(
-  'click',
-  event => {
-
-    event.preventDefault();
-    event.stopPropagation();
-
-    viewDate =
-      new Date(
-        viewDate.getFullYear(),
-        viewDate.getMonth() + 1,
-        1
-      );
-
-    renderCalendar();
-
-  }
-);
-
-
-calendarPop.addEventListener(
-  'click',
-  event => {
-
-    event.stopPropagation();
-
-  }
-);
-
-
-document.addEventListener(
-  'click',
-  event => {
-
-    if(
-      !event.target.closest(
-        '.picker-wrap'
-      )
-    ){
-
-      closeCalendar();
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   AJOUT DE PÉRIODE
-========================================================= */
-
-confirmBtn.addEventListener(
-  'click',
-  event => {
-
-    event.preventDefault();
-    event.stopPropagation();
-
-    if(
-      !selStart ||
-      !selEnd
-    ){
-
-      setStatus(
-        'Sélectionne une date de début et une date de fin.',
-        'error'
-      );
-
-      return;
-
-    }
-
-    const includeWeekends =
-      includeWeekendsChk.checked;
-
-    const dates =
-      buildDates(
-        selStart,
-        selEnd,
-        includeWeekends
-      );
-
-    if(
-      dates.length === 0
-    ){
-
-      setStatus(
-        'Aucun jour à ajouter dans cette période.',
-        'error'
-      );
-
-      return;
-
-    }
-
-    const existingDates =
-      new Set();
-
-    periods.forEach(period => {
-
-      if(
-        Array.isArray(
-          period.dates
-        )
-      ){
-
-        period.dates.forEach(
-          date =>
-            existingDates.add(
-              date
-            )
-        );
-
-      }
-
-    });
-
-    const overlap =
-      dates.some(
-        date =>
-          existingDates.has(
-            date
-          )
-      );
-
-    if(overlap){
-
-      setStatus(
-        'Cette période chevauche des jours déjà enregistrés.',
-        'error'
-      );
-
-      return;
-
-    }
-
-    const period = {
-
-      id:
-        generateId(),
-
-      start:
-        selStart,
-
-      end:
-        selEnd,
-
-      dates:
-        dates,
-
-      paid:false
-
-    };
-
-    periods.push(
-      period
-    );
-
-    saveLocalState();
-
-    resetCalendarSelection();
-
-    closeCalendar();
-
-    render();
-
-    setStatus(
-      `${dates.length} jour${dates.length > 1 ? 's' : ''} ajouté${dates.length > 1 ? 's' : ''}.`,
-      'success'
-    );
-
-  }
-);
-
-
-/* =========================================================
-   AFFICHAGE
-========================================================= */
-
-function render(){
-
-  monthGroupsEl.innerHTML =
-    '';
-
-  const sorted =
-    [...periods]
-      .sort(
-        (a,b) =>
-          a.start.localeCompare(
-            b.start
-          )
-      );
-
-  if(
-    sorted.length === 0
-  ){
-
-    monthGroupsEl.innerHTML =
-      `
-      <div class="empty">
-        Aucune période consignée pour le moment.
-      </div>
-      `;
-
-  }else{
-
-    const groups = {};
-
-    sorted.forEach(period => {
-
-      const key =
-        monthKey(
-          period.start
-        );
-
-      if(!key){
-        return;
-      }
-
-      if(!groups[key]){
-        groups[key] = [];
-      }
-
-      groups[key].push(
-        period
-      );
-
-    });
-
-    Object.keys(groups)
-      .sort()
-      .forEach(key => {
-
-        const [
-          year,
-          month
-        ] =
-          key.split('-');
-
-        const group =
-          document.createElement(
-            'div'
-          );
-
-        group.className =
-          'month-group';
-
-        const title =
-          document.createElement(
-            'div'
-          );
-
-        title.className =
-          'month-title';
-
-        title.textContent =
-          `${MOIS_FR[parseInt(month,10)-1]} ${year}`;
-
-        group.appendChild(
-          title
-        );
-
-        const ul =
-          document.createElement(
-            'ul'
-          );
-
-        ul.className =
-          'period-list';
-
-        groups[key].forEach(
-          period => {
-
-            const dates =
-              Array.isArray(
-                period.dates
-              )
-                ? period.dates
-                : [];
-
-            const amount =
-              dates.length * RATE;
-
-            const li =
-              document.createElement(
-                'li'
-              );
-
-            li.className =
-              'entry' +
-              (
-                period.paid
-                  ? ' paid'
-                  : ''
-              );
-
-            const left =
-              document.createElement(
-                'span'
-              );
-
-            const range =
-              document.createElement(
-                'span'
-              );
-
-            range.className =
-              'range';
-
-            range.textContent =
-              period.start === period.end
-                ? formatFull(
-                    period.start
-                  )
-                : `${formatShort(period.start)} → ${formatFull(period.end)}`;
-
-            const meta =
-              document.createElement(
-                'span'
-              );
-
-            meta.className =
-              'meta';
-
-            meta.textContent =
-              `${dates.length} jour${dates.length === 1 ? '' : 's'}`;
-
-            left.appendChild(
-              range
-            );
-
-            left.appendChild(
-              meta
-            );
-
-            const right =
-              document.createElement(
-                'span'
-              );
-
-            right.className =
-              'right';
-
-            const amountEl =
-              document.createElement(
-                'span'
-              );
-
-            amountEl.className =
-              'amount';
-
-            amountEl.textContent =
-              `${amount} €`;
-
-            const payBtn =
-              document.createElement(
-                'button'
-              );
-
-            payBtn.type =
-              'button';
-
-            payBtn.className =
-              'pay-btn' +
-              (
-                period.paid
-                  ? ' is-paid'
-                  : ''
-              );
-
-            payBtn.dataset.id =
-              period.id;
-
-            payBtn.textContent =
-              period.paid
-                ? 'Payé ✓'
-                : 'Marquer payé';
-
-            const delBtn =
-              document.createElement(
-                'button'
-              );
-
-            delBtn.type =
-              'button';
-
-            delBtn.className =
-              'del';
-
-            delBtn.dataset.id =
-              period.id;
-
-            delBtn.setAttribute(
-              'aria-label',
-              'Supprimer la période'
-            );
-
-            delBtn.textContent =
-              '✕';
-
-            right.appendChild(
-              amountEl
-            );
-
-            right.appendChild(
-              payBtn
-            );
-
-            right.appendChild(
-              delBtn
-            );
-
-            li.appendChild(
-              left
-            );
-
-            li.appendChild(
-              right
-            );
-
-            ul.appendChild(
-              li
-            );
-
-          }
-        );
-
-        group.appendChild(
-          ul
-        );
-
-        monthGroupsEl.appendChild(
-          group
-        );
-
-      });
-
-  }
-
-  let totalDays = 0;
-
-  let paidDays = 0;
-
-  sorted.forEach(period => {
-
-    const count =
-      Array.isArray(
-        period.dates
-      )
-        ? period.dates.length
-        : 0;
-
-    totalDays +=
-      count;
-
-    if(period.paid){
-      paidDays +=
-        count;
-    }
-
+  const groups = {};
+  currentYearPeriods.sort((a, b) => a.start.localeCompare(b.start));
+
+  currentYearPeriods.forEach(p => {
+    const d = fromISO(p.start);
+    if (!d) return;
+    const mKey = d.getFullYear() + '-' + pad(d.getMonth() + 1);
+    if (!groups[mKey]) groups[mKey] = [];
+    groups[mKey].push(p);
   });
 
-  const paidAmount =
-    paidDays * RATE;
+  let totalDaysAll = 0;
+  let totalPaidAmount = 0;
+  let pendingAmount = 0;
+  let pendingDays = 0;
 
-  const pendingDays =
-    totalDays - paidDays;
+  Object.keys(groups).sort().forEach(mKey => {
+    const [y, m] = mKey.split('-').map(Number);
+    const groupDiv = document.createElement('div');
+    groupDiv.className = 'month-group';
 
-  const pendingAmount =
-    pendingDays * RATE;
+    const titleDiv = document.createElement('div');
+    titleDiv.className = 'month-title';
+    titleDiv.textContent = MOIS_FR[m - 1] + ' ' + y;
+    groupDiv.appendChild(titleDiv);
 
-  countText.innerHTML =
-    `
-    <b>${sorted.length}</b>
-    période${sorted.length === 1 ? '' : 's'}
-    —
-    <b>${totalDays}</b>
-    jour${totalDays === 1 ? '' : 's'}
+    const ul = document.createElement('ul');
+    ul.className = 'period-list';
 
-    ${
-      pendingDays > 0
-        ? `
-          <div class="sub-line">
-            dont ${pendingAmount} €
-            en attente de paiement
-            (${pendingDays} j.)
-          </div>
-        `
-        : ''
-    }
+    groups[mKey].forEach(p => {
+      const yearDates = p.dates.filter(d => d.startsWith(String(selectedYear)));
+      const daysCount = yearDates.length;
+      totalDaysAll += daysCount;
+
+      const amount = daysCount * RATE;
+
+      if (p.paid) {
+        totalPaidAmount += amount;
+      } else {
+        pendingAmount += amount;
+        pendingDays += daysCount;
+      }
+
+      const li = document.createElement('li');
+      li.className = 'entry' + (p.paid ? ' paid' : '');
+
+      li.innerHTML = `
+        <span>
+          <span class="range">${formatShort(p.start)} → ${formatFull(p.end)}</span>
+          <span class="meta">${daysCount} jour${daysCount > 1 ? 's' : ''}</span>
+        </span>
+        <span class="right">
+          <span class="amount">${amount} €</span>
+          <button type="button" class="pay-btn ${p.paid ? 'is-paid' : ''}" data-id="${p.id}">
+            ${p.paid ? 'Payé ✓' : 'Marquer payé'}
+          </button>
+          <button type="button" class="del" data-id="${p.id}" aria-label="Supprimer la période">✕</button>
+        </span>
+      `;
+
+      ul.appendChild(li);
+    });
+
+    groupDiv.appendChild(ul);
+    monthGroupsEl.appendChild(groupDiv);
+  });
+
+  let subLineHTML = '';
+  if (pendingAmount > 0) {
+    subLineHTML = `
+      <div class="sub-line">
+        dont ${pendingAmount} € en attente de paiement (${pendingDays} j.)
+      </div>
     `;
+  }
 
-  totalValue.textContent =
-    `${paidAmount} €`;
+  countText.innerHTML = `
+    <b>${currentYearPeriods.length}</b> période${currentYearPeriods.length > 1 ? 's' : ''} — 
+    <b>${totalDaysAll}</b> jour${totalDaysAll > 1 ? 's' : ''}
+    ${subLineHTML}
+  `;
 
-  quotaYearEl.textContent =
-    selectedYear;
+  totalValue.textContent = totalPaidAmount + ' €';
+}
 
-  ensureQuotaForYear();
-
-  quotaInput.value =
-    quotas[String(selectedYear)];
-
+function renderAll() {
   updateQuotaDisplay();
-
+  renderCalendar();
+  renderPeriods();
 }
 
-
 /* =========================================================
-   PAIEMENT / SUPPRESSION
+   ÉVÉNEMENTS ET ACTIONS UTILISATEUR
 ========================================================= */
-
-monthGroupsEl.addEventListener(
-  'click',
-  event => {
-
-    const payBtn =
-      event.target.closest(
-        '.pay-btn'
-      );
-
-    const delBtn =
-      event.target.closest(
-        '.del'
-      );
-
-    if(payBtn){
-
-      const id =
-        payBtn.dataset.id;
-
-      const period =
-        periods.find(
-          item =>
-            item.id === id
-        );
-
-      if(!period){
-        return;
-      }
-
-      period.paid =
-        !period.paid;
-
-      saveLocalState();
-
-      render();
-
-      setStatus(
-        period.paid
-          ? 'Période marquée comme payée.'
-          : 'Paiement annulé.',
-        'success'
-      );
-
-      return;
-
-    }
-
-    if(delBtn){
-
-      const id =
-        delBtn.dataset.id;
-
-      const period =
-        periods.find(
-          item =>
-            item.id === id
-        );
-
-      if(!period){
-        return;
-      }
-
-      const ok =
-        window.confirm(
-          'Supprimer cette période ?'
-        );
-
-      if(!ok){
-        return;
-      }
-
-      periods =
-        periods.filter(
-          item =>
-            item.id !== id
-        );
-
-      saveLocalState();
-
-      render();
-
-      setStatus(
-        'Période supprimée.',
-        'success'
-      );
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   IMPRESSION
-========================================================= */
-
-printBtn.addEventListener(
-  'click',
-  event => {
-
-    event.preventDefault();
-
-    window.print();
-
-  }
-);
-
-
-/* =========================================================
-   DOWNLOAD
-========================================================= */
-
-function downloadBlob(
-  content,
-  filename,
-  type
-){
-
-  try{
-
-    const blob =
-      new Blob(
-        [content],
-        {type}
-      );
-
-    const url =
-      URL.createObjectURL(
-        blob
-      );
-
-    const link =
-      document.createElement(
-        'a'
-      );
-
-    link.href =
-      url;
-
-    link.download =
-      filename;
-
-    link.style.display =
-      'none';
-
-    document.body.appendChild(
-      link
-    );
-
-    link.click();
-
-    link.remove();
-
-    setTimeout(
-      () => {
-        URL.revokeObjectURL(
-          url
-        );
-      },
-      1500
-    );
-
-  }catch(error){
-
-    console.error(
-      error
-    );
-
-    setStatus(
-      'Impossible de créer le fichier.',
-      'error'
-    );
-
-  }
-
-}
-
-
-/* =========================================================
-   CONSTRUCTION HTML SYNCHRONISÉ
-========================================================= */
-
-function buildSyncedHtml(){
-
-  const clone =
-    document.documentElement.cloneNode(
-      true
-    );
-
-  const stateScript =
-    clone.querySelector(
-      '#sync-state'
-    );
-
-  if(!stateScript){
-
-    throw new Error(
-      'Bloc de synchronisation introuvable.'
-    );
-
-  }
-
-  const state =
-    createState();
-
-  const json =
-    JSON.stringify(
-      state,
-      null,
-      2
-    )
-    .replace(
-      /</g,
-      '\\u003c'
-    );
-
-  stateScript.textContent =
-    `window.__RESERVE_SYNC_STATE__ = ${json};`;
-
-  return (
-    '<!DOCTYPE html>\n' +
-    clone.outerHTML
-  );
-
-}
-
-
-/* =========================================================
-   SAUVEGARDE GITHUB
-========================================================= */
-
-saveHtmlBtn.addEventListener(
-  'click',
-  async () => {
-
-    if(saving){
+function setupEventListeners() {
+  // Navigation Année
+  prevYearBtn.addEventListener('click', () => {
+    selectedYear--;
+    viewDate.setFullYear(selectedYear);
+    renderAll();
+  });
+
+  nextYearBtn.addEventListener('click', () => {
+    selectedYear++;
+    viewDate.setFullYear(selectedYear);
+    renderAll();
+  });
+
+  quotaInput.addEventListener('change', () => {
+    const val = Math.max(0, Math.floor(safeNumber(quotaInput.value, DEFAULT_QUOTA)));
+    quotas[selectedYear] = val;
+    saveLocalState();
+    renderAll();
+  });
+
+  // Picker et Calendrier Pop-up
+  pickerTrigger.addEventListener('click', () => {
+    calendarPop.classList.toggle('open');
+  });
+
+  prevMonthBtn.addEventListener('click', () => {
+    viewDate.setMonth(viewDate.getMonth() - 1);
+    renderCalendar();
+  });
+
+  nextMonthBtn.addEventListener('click', () => {
+    viewDate.setMonth(viewDate.getMonth() + 1);
+    renderCalendar();
+  });
+
+  includeWeekendsChk.addEventListener('change', () => {
+    updateSelectionText();
+  });
+
+  confirmBtn.addEventListener('click', () => {
+    if (!selStart || !selEnd) return;
+
+    const dates = buildDates(selStart, selEnd, includeWeekendsChk.checked);
+    if (dates.length === 0) {
+      alert('Aucun jour sélectionné.');
       return;
     }
 
-    saving = true;
-
-    saveHtmlBtn.disabled =
-      true;
-
-    syncBtn.disabled =
-      true;
-
-    saveHtmlBtn.textContent =
-      '⏳ Sauvegarde...';
-
-    setStatus(
-      'Préparation de la sauvegarde...',
-      ''
-    );
-
-    try{
-
-      /*
-        On construit l'état UNE SEULE FOIS.
-        Cela garantit que updated_at correspond
-        exactement au HTML envoyé.
-      */
-
-      const state =
-        createState();
-
-      const fullHtml =
-        buildSyncedHtml();
-
-      /*
-        Sauvegarde locale de sécurité.
-      */
-
-      localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify(
-          state
-        )
-      );
-
-      const controller =
-        new AbortController();
-
-      const timeout =
-        setTimeout(
-          () => {
-            controller.abort();
-          },
-          30000
-        );
-
-      let response;
-
-      try{
-
-        response =
-          await fetch(
-            GITHUB_FUNCTION_URL,
-            {
-              method:'POST',
-
-              headers:{
-                'Content-Type':
-                  'application/json',
-
-                'Accept':
-                  'application/json'
-              },
-
-              body:
-                JSON.stringify({
-                  content:
-                    fullHtml
-                }),
-
-              signal:
-                controller.signal
-            }
-          );
-
-      }finally{
-
-        clearTimeout(
-          timeout
-        );
-
-      }
-
-      const responseText =
-        await response.text();
-
-      let result =
-        null;
-
-      if(responseText){
-
-        try{
-
-          result =
-            JSON.parse(
-              responseText
-            );
-
-        }catch(error){
-
-          console.warn(
-            'Réponse non JSON:',
-            responseText
-          );
-
-        }
-
-      }
-
-      if(!response.ok){
-
-        throw new Error(
-          result?.error ||
-          result?.message ||
-          `Erreur serveur HTTP ${response.status}`
-        );
-
-      }
-
-      /*
-        Certaines versions de la fonction
-        peuvent renvoyer success:true.
-      */
-
-      if(
-        result &&
-        result.success === false
-      ){
-
-        throw new Error(
-          result.error ||
-          result.message ||
-          'La sauvegarde GitHub a été refusée.'
-        );
-
-      }
-
-      setStatus(
-        '✅ Sauvegarde GitHub effectuée. updated_at a été mis à jour.',
-        'success'
-      );
-
-    }catch(error){
-
-      console.error(
-        'Erreur sauvegarde GitHub:',
-        error
-      );
-
-      let message =
-        error?.message ||
-        'Erreur inconnue.';
-
-      if(
-        error?.name === 'AbortError'
-      ){
-
-        message =
-          'Le serveur n’a pas répondu dans les 30 secondes.';
-
-      }
-
-      if(
-        message.includes(
-          'Failed to fetch'
-        )
-      ){
-
-        message =
-          'Connexion impossible au serveur. Vérifie Internet et la fonction Supabase.';
-
-      }
-
-      setStatus(
-        '❌ Échec de la sauvegarde : ' +
-        message,
-        'error'
-      );
-
-    }finally{
-
-      saving =
-        false;
-
-      saveHtmlBtn.disabled =
-        false;
-
-      syncBtn.disabled =
-        false;
-
-      saveHtmlBtn.textContent =
-        '💾 Sauvegarder';
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   EXTRACTION D'ÉTAT D'UN HTML
-========================================================= */
-
-function extractStateFromHtml(
-  html
-){
-
-  if(
-    typeof html !== 'string' ||
-    !html.trim()
-  ){
-
-    throw new Error(
-      'Le document distant est vide.'
-    );
-
-  }
-
-  const parser =
-    new DOMParser();
-
-  const remoteDoc =
-    parser.parseFromString(
-      html,
-      'text/html'
-    );
-
-  const script =
-    remoteDoc.querySelector(
-      '#sync-state'
-    );
-
-  if(!script){
-
-    throw new Error(
-      'Le document distant ne contient aucune donnée synchronisée.'
-    );
-
-  }
-
-  const text =
-    script.textContent.trim();
-
-  /*
-    On accepte plusieurs formats :
-    window.__RESERVE_SYNC_STATE__ = {...};
-    ou directement {...}
-  */
-
-  let jsonText =
-    text;
-
-  const assignmentMatch =
-    text.match(
-      /window\.__RESERVE_SYNC_STATE__\s*=\s*([\s\S]*?);?\s*$/
-    );
-
-  if(assignmentMatch){
-
-    jsonText =
-      assignmentMatch[1].trim();
-
-  }
-
-  /*
-    Retrait d'un éventuel ; final.
-  */
-
-  if(
-    jsonText.endsWith(';')
-  ){
-
-    jsonText =
-      jsonText.slice(
-        0,
-        -1
-      ).trim();
-
-  }
-
-  let data;
-
-  try{
-
-    data =
-      JSON.parse(
-        jsonText
-      );
-
-  }catch(error){
-
-    throw new Error(
-      'Les données synchronisées sont corrompues ou invalides.'
-    );
-
-  }
-
-  if(
-    !data ||
-    typeof data !== 'object'
-  ){
-
-    throw new Error(
-      'État distant invalide.'
-    );
-
-  }
-
-  if(
-    !Array.isArray(
-      data.periods
-    )
-  ){
-
-    throw new Error(
-      'Les périodes distantes sont invalides.'
-    );
-
-  }
-
-  const timestamp =
-    validTimestamp(
-      data.updated_at
-    );
-
-  if(timestamp === null){
-
-    throw new Error(
-      'L’état distant ne possède pas de date updated_at valide.'
-    );
-
-  }
-
-  return {
-
-    version:
-      Number(data.version) || 1,
-
-    periods:
-      normalizePeriods(
-        data.periods
-      ),
-
-    quotas:
-      normalizeQuotas(
-        data.quotas
-      ),
-
-    updated_at:
-      new Date(
-        timestamp
-      ).toISOString()
-
-  };
-
-}
-
-
-/* =========================================================
-   SYNCHRONISATION
-========================================================= */
-
-syncBtn.addEventListener(
-  'click',
-  async () => {
-
-    if(syncing){
-      return;
-    }
-
-    syncing = true;
-
-    syncBtn.disabled =
-      true;
-
-    saveHtmlBtn.disabled =
-      true;
-
-    syncBtn.textContent =
-      '⏳ Synchronisation...';
-
-    setStatus(
-      'Recherche de la dernière sauvegarde...',
-      ''
-    );
-
-    try{
-
-      /*
-        On demande le HTML actuel avec un cache-buster.
-        Cela évite au maximum de récupérer une ancienne
-        version du document depuis le navigateur.
-      */
-
-      const url =
-        new URL(
-          window.location.href
-        );
-
-      url.searchParams.set(
-        'sync',
-        Date.now().toString()
-      );
-
-      const response =
-        await fetch(
-          url.toString(),
-          {
-            method:'GET',
-
-            cache:'no-store',
-
-            headers:{
-              'Cache-Control':
-                'no-cache, no-store, must-revalidate',
-
-              'Pragma':
-                'no-cache'
-            }
-          }
-        );
-
-      if(!response.ok){
-
-        throw new Error(
-          `Impossible de récupérer la sauvegarde (${response.status}).`
-        );
-
-      }
-
-      const html =
-        await response.text();
-
-      const remoteState =
-        extractStateFromHtml(
-          html
-        );
-
-      const remoteTime =
-        validTimestamp(
-          remoteState.updated_at
-        );
-
-      if(remoteTime === null){
-
-        throw new Error(
-          'Date updated_at distante invalide.'
-        );
-
-      }
-
-      const local =
-        loadLocalState();
-
-      const localTime =
-        validTimestamp(
-          local?.updated_at
-        );
-
-      /*
-        Si le local est plus récent, on NE l'écrase pas
-        automatiquement.
-
-        On indique simplement qu'il existe des données
-        locales plus récentes.
-      */
-
-      if(
-        localTime !== null &&
-        localTime > remoteTime
-      ){
-
-        const keepLocal =
-          window.confirm(
-            'Cette sauvegarde locale est plus récente que celle du serveur.\\n\\nOK = conserver la version locale.\\nAnnuler = utiliser la version du serveur.'
-          );
-
-        if(keepLocal){
-
-          periods =
-            normalizePeriods(
-              local.periods
-            );
-
-          quotas =
-            normalizeQuotas(
-              local.quotas
-            );
-
-          ensureQuotaForYear();
-
-          render();
-
-          setStatus(
-            'Version locale plus récente conservée. Utilise « Sauvegarder » pour l’envoyer sur GitHub.',
-            'success'
-          );
-
-          return;
-
-        }
-
-      }
-
-      /*
-        Le serveur est maintenant la source retenue.
-      */
-
-      periods =
-        normalizePeriods(
-          remoteState.periods
-        );
-
-      quotas =
-        normalizeQuotas(
-          remoteState.quotas
-        );
-
-      ensureQuotaForYear();
-
-      /*
-        On enregistre exactement la version distante
-        localement afin qu'une ancienne sauvegarde ne
-        puisse plus l'écraser au prochain chargement.
-      */
-
-      localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify({
-          version:
-            remoteState.version,
-
-          periods:
-            periods,
-
-          quotas:
-            quotas,
-
-          updated_at:
-            remoteState.updated_at
-        })
-      );
-
-      render();
-
-      setStatus(
-        `✅ Synchronisation terminée : ${periods.length} période(s), sauvegarde du ${new Date(remoteTime).toLocaleString('fr-FR')}.`,
-        'success'
-      );
-
-    }catch(error){
-
-      console.error(
-        'Erreur synchronisation:',
-        error
-      );
-
-      let message =
-        error?.message ||
-        'Erreur inconnue.';
-
-      if(
-        message.includes(
-          'Failed to fetch'
-        )
-      ){
-
-        message =
-          'Connexion impossible. Vérifie Internet et l’adresse de la page.';
-
-      }
-
-      setStatus(
-        '❌ Échec de la synchronisation : ' +
-        message,
-        'error'
-      );
-
-    }finally{
-
-      syncing =
-        false;
-
-      syncBtn.disabled =
-        false;
-
-      saveHtmlBtn.disabled =
-        false;
-
-      syncBtn.textContent =
-        '🔄 Synchroniser';
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   EXPORT JSON
-========================================================= */
-
-saveJsonBtn.addEventListener(
-  'click',
-  event => {
-
-    event.preventDefault();
-
-    try{
-
-      const state =
-        createState();
-
-      downloadBlob(
-        JSON.stringify(
-          state,
-          null,
-          2
-        ),
-        'carnet-reserve-donnees.json',
-        'application/json'
-      );
-
-      setStatus(
-        'Fichier JSON exporté.',
-        'success'
-      );
-
-    }catch(error){
-
-      console.error(
-        error
-      );
-
-      setStatus(
-        'Impossible d’exporter les données.',
-        'error'
-      );
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   IMPORT JSON
-========================================================= */
-
-loadJsonBtn.addEventListener(
-  'click',
-  event => {
-
-    event.preventDefault();
-
-    jsonFileInput.value =
-      '';
-
-    jsonFileInput.click();
-
-  }
-);
-
-
-jsonFileInput.addEventListener(
-  'change',
-  async event => {
-
-    const file =
-      event.target.files?.[0];
-
-    if(!file){
-      return;
-    }
-
-    try{
-
-      const text =
-        await file.text();
-
-      const data =
-        JSON.parse(
-          text
-        );
-
-      if(
-        !data ||
-        typeof data !== 'object'
-      ){
-
-        throw new Error(
-          'JSON invalide.'
-        );
-
-      }
-
-      if(
-        !Array.isArray(
-          data.periods
-        )
-      ){
-
-        throw new Error(
-          'Le fichier ne contient pas de périodes valides.'
-        );
-
-      }
-
-      const newPeriods =
-        normalizePeriods(
-          data.periods
-        );
-
-      const newQuotas =
-        normalizeQuotas(
-          data.quotas
-        );
-
-      const ok =
-        window.confirm(
-          `Importer ce fichier remplacera les ${periods.length} période(s) actuelles par ${newPeriods.length} période(s).\\n\\nContinuer ?`
-        );
-
-      if(!ok){
-        return;
-      }
-
-      periods =
-        newPeriods;
-
-      quotas =
-        newQuotas;
-
-      ensureQuotaForYear();
-
-      saveLocalState();
-
-      render();
-
-      setStatus(
-        '✅ Import JSON réussi.',
-        'success'
-      );
-
-    }catch(error){
-
-      console.error(
-        'Erreur import JSON:',
-        error
-      );
-
-      setStatus(
-        '❌ Échec de l’import JSON : ' +
-        (
-          error?.message ||
-          'fichier invalide.'
-        ),
-        'error'
-      );
-
-    }finally{
-
-      jsonFileInput.value =
-        '';
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   EFFACEMENT
-========================================================= */
-
-resetBtn.addEventListener(
-  'click',
-  event => {
-
-    event.preventDefault();
-
-    const ok =
-      window.confirm(
-        'Effacer toutes les périodes consignées ?\\n\\nCette action effacera aussi les données locales.'
-      );
-
-    if(!ok){
-      return;
-    }
-
-    periods = [];
-
-    /*
-      Les quotas restent conservés.
-      Seules les périodes sont supprimées.
-    */
-
+    const newPeriod = {
+      id: generateId(),
+      start: selStart,
+      end: selEnd,
+      dates: dates,
+      paid: false
+    };
+
+    periods.push(newPeriod);
     saveLocalState();
 
-    render();
+    selStart = null;
+    selEnd = null;
+    calendarPop.classList.remove('open');
 
-    setStatus(
-      'Carnet effacé localement. Pense à sauvegarder pour synchroniser cet état.',
-      'success'
-    );
+    renderAll();
+    setStatus('Période ajoutée avec succès !', 'success');
+  });
 
-  }
-);
+  // Action sur les éléments de liste (Payé / Supprimer) via délégation
+  monthGroupsEl.addEventListener('click', (e) => {
+    const target = e.target;
+    if (!target) return;
 
-
-/* =========================================================
-   BANNIÈRE IOS
-========================================================= */
-
-(function initInstallBanner(){
-
-  const banner =
-    $('installBanner');
-
-  const closeBtn =
-    $('closeBanner');
-
-  const DISMISS_KEY =
-    'reserve-install-banner-dismissed';
-
-  const isIOS =
-    /iphone|ipad|ipod/i.test(
-      navigator.userAgent
-    );
-
-  const isStandalone =
-    window.navigator.standalone === true ||
-    window.matchMedia(
-      '(display-mode: standalone)'
-    ).matches;
-
-  let dismissed =
-    false;
-
-  try{
-
-    dismissed =
-      localStorage.getItem(
-        DISMISS_KEY
-      ) === '1';
-
-  }catch(error){}
-
-  if(
-    isIOS &&
-    !isStandalone &&
-    !dismissed
-  ){
-
-    banner.classList.add(
-      'show'
-    );
-
-  }
-
-  closeBtn.addEventListener(
-    'click',
-    event => {
-
-      event.preventDefault();
-
-      banner.classList.remove(
-        'show'
-      );
-
-      try{
-
-        localStorage.setItem(
-          DISMISS_KEY,
-          '1'
-        );
-
-      }catch(error){}
-
+    const payBtn = target.closest('.pay-btn');
+    if (payBtn) {
+      const id = payBtn.getAttribute('data-id');
+      const period = periods.find(p => p.id === id);
+      if (period) {
+        period.paid = !period.paid;
+        saveLocalState();
+        renderAll();
+      }
+      return;
     }
-  );
 
-})();
+    const delBtn = target.closest('.del');
+    if (delBtn) {
+      const id = delBtn.getAttribute('data-id');
+      if (confirm('Supprimer cette période ?')) {
+        periods = periods.filter(p => p.id !== id);
+        saveLocalState();
+        renderAll();
+        setStatus('Période supprimée.', 'success');
+      }
+    }
+  });
 
+  // Boutons de Sauvegarde et Synchronisation
+  saveHtmlBtn.addEventListener('click', async () => {
+    saveLocalState();
+    await syncWithServer();
+  });
 
-/* =========================================================
-   INITIALISATION
-========================================================= */
+  syncBtn.addEventListener('click', async () => {
+    await syncWithServer();
+  });
 
-function init(){
+  // Exportation JSON
+  saveJsonBtn.addEventListener('click', () => {
+    const state = createState();
+    const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(state, null, 2));
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.setAttribute('href', dataStr);
+    downloadAnchor.setAttribute('download', `carnet_reserve_${selectedYear}_${toISO(new Date())}.json`);
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+    setStatus('Export JSON réussi.', 'success');
+  });
 
-  try{
+  // Importation JSON
+  loadJsonBtn.addEventListener('click', () => {
+    jsonFileInput.click();
+  });
 
-    quotaYearEl.textContent =
-      selectedYear;
+  jsonFileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
 
-    ensureQuotaForYear();
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      try {
+        const imported = JSON.parse(event.target.result);
+        if (!imported || typeof imported !== 'object') {
+          throw new Error('Format JSON invalide');
+        }
 
-    loadInitialData();
+        periods = normalizePeriods(imported.periods);
+        quotas = normalizeQuotas(imported.quotas);
 
-    renderCalendar();
+        saveLocalState();
+        renderAll();
+        setStatus('Données importées avec succès !', 'success');
+      } catch (err) {
+        console.error('Erreur import JSON:', err);
+        setStatus('Erreur lors de l\'import JSON.', 'error');
+      }
+    };
+    reader.readAsText(file);
+    jsonFileInput.value = '';
+  });
 
-    setStatus(
-      'Carnet prêt.',
-      'success'
-    );
+  // Impression & Reset
+  printBtn.addEventListener('click', () => {
+    window.print();
+  });
 
-  }catch(error){
+  resetBtn.addEventListener('click', () => {
+    if (confirm('ATTENTION : Voulez-vous vraiment effacer tout le carnet ?')) {
+      periods = [];
+      quotas = { [selectedYear]: DEFAULT_QUOTA };
+      saveLocalState();
+      renderAll();
+      setStatus('Carnet réinitialisé.', 'success');
+    }
+  });
 
-    console.error(
-      'Erreur initialisation:',
-      error
-    );
-
-    /*
-      On essaye tout de même d'afficher
-      une application fonctionnelle.
-    */
-
-    periods = [];
-
-    quotas = {};
-
-    ensureQuotaForYear();
-
-    render();
-
-    renderCalendar();
-
-    setStatus(
-      '❌ Une erreur est survenue pendant le chargement.',
-      'error'
-    );
-
+  if (closeBanner) {
+    closeBanner.addEventListener('click', () => {
+      installBanner.style.display = 'none';
+    });
   }
-
 }
 
-init();
-
+/* =========================================================
+   INITIALISATION GLOBALE
+========================================================= */
+document.addEventListener('DOMContentLoaded', () => {
+  initData();
+  setupEventListeners();
+  renderAll();
+  setStatus('Prêt');
+});
 </script>
 
-
-
-</body></html>
+</body>
+</html>
